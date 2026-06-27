@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản đồ số Hội nhập Việt Nam - Kinh tế Chính trị Mác-Lênin</title>
+    <!-- Google Fonts: Montserrat for Headings, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Leaflet CSS & JS for 2D Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Globe.gl for 3D Globe -->
+    <script src="https://unpkg.com/globe.gl"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background glow elements -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo-area">
+                <i class="fa-solid fa-earth-asia globe-icon"></i>
+                <div class="logo-text">
+                    <span class="badge">Sản phẩm sáng tạo - Nhóm 2</span>
+                    <h1>BẢN ĐỒ SỐ HỘI NHẬP VIỆT NAM</h1>
+                    <p class="subtitle">Trực quan hóa Hành trình, Tác động & Giải pháp Hội nhập Kinh tế Quốc tế (Chương 6 - Kinh tế Chính trị Mác-Lênin)</p>
+                </div>
+            </div>
+            
+            <!-- Navigation Tabs -->
+            <nav class="tabs-nav">
+                <button class="tab-btn active" data-tab="tab-impact">
+                    <i class="fa-solid fa-earth-americas"></i> Bản đồ Hội nhập (6.2.2)
+                </button>
+                <button class="tab-btn" data-tab="tab-solutions">
+                    <i class="fa-solid fa-sitemap"></i> Sơ đồ Tư duy Giải pháp (6.2.3)
+                </button>
+                <button class="tab-btn" data-tab="tab-quiz">
+                    <i class="fa-solid fa-circle-question"></i> Trắc nghiệm vui (Chương 6)
+                </button>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main>
+            <!-- TAB 1: BẢN ĐỒ HỘI NHẬP (6.2.2) -->
+            <section id="tab-impact" class="tab-content active-content">
+                <!-- Timeline Slider -->
+                <div class="timeline-container">
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                        <h3 class="section-title" style="margin: 0;"><i class="fa-regular fa-clock"></i> Chọn cột mốc lịch sử để hiển thị Bản đồ số:</h3>
+                        <button id="simBtn" class="sim-btn">
+                            <i class="fa-solid fa-play"></i> Trình chiếu tự động
+                        </button>
+                    </div>
+                    <div class="timeline-wrapper">
+                        <div class="timeline-progress" id="timeline-progress-bar"></div>
+                        <div class="timeline-milestones">
+                            <button class="milestone-dot" data-year="all">
+                                <span class="dot-circle"></span>
+                                <span class="dot-year">Toàn cảnh</span>
+                                <span class="dot-desc">2006 - 2025</span>
+                            </button>
+                            <button class="milestone-dot" data-year="1995">
+                                <span class="dot-circle"></span>
+                                <span class="dot-year">1995</span>
+                                <span class="dot-desc">ASEAN & AFTA</span>
+                            </button>
+                            <button class="milestone-dot" data-year="1998">
+                                <span class="dot-circle"></span>
+                                <span class="dot-year">1998</span>
+                                <span class="dot-desc">APEC</span>
+                            </button>
+                            <button class="milestone-dot active" data-year="2007">
+                                <span class="dot-circle"></span>
+                                <span class="dot-year">2007</span>
+                                <span class="dot-desc">WTO Accession</span>
+                            </button>
+                            <button class="milestone-dot" data-year="2019">
+                                <span class="dot-circle"></span>
+                                <span class="dot-year">2019</span>
+                                <span class="dot-desc">Hiệp định CPTPP</span>
+                            </button>
+                            <button class="milestone-dot" data-year="2020">
+                                <span class="dot-circle"></span>
+                                <span class="dot-year">2020</span>
+                                <span class="dot-desc">Hiệp định EVFTA</span>
+                            </button>
+                            <button class="milestone-dot" data-year="2025">
+                                <span class="dot-circle"></span>
+                                <span class="dot-year">2025</span>
+                                <span class="dot-desc">Kỷ lục mới</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-card-container command-center-container">
+                    <!-- Left side: Map Viewport -->
+                    <div class="map-viewport-wrapper">
+                        <div class="map-control-header">
+                            <div class="map-title-area">
+                                <h3 id="map-display-title">Bản đồ liên kết địa lý: Mốc WTO (2007)</h3>
+                                <p class="card-subtitle">Hệ thống mô phỏng hành trình hội nhập kinh tế quốc tế</p>
+                            </div>
+                            <!-- Map Selector Buttons -->
+                            <div class="map-mode-selector">
+                                <button class="map-mode-btn active" data-mode="3d">
+                                    <i class="fa-solid fa-globe"></i> Quả cầu 3D
+                                </button>
+                                <button class="map-mode-btn" data-mode="2d">
+                                    <i class="fa-solid fa-map-location-dot"></i> Vệ tinh 2D
+                                </button>
+                                <button class="map-mode-btn" data-mode="svg">
+                                    <i class="fa-solid fa-route"></i> Vector phẳng
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="world-map-viewport">
+                            <!-- 3D Globe Container -->
+                            <div id="globeMap" class="map-layer active-layer"></div>
+                            
+                            <!-- 2D Leaflet Container -->
+                            <div id="leafletMap" class="map-layer"></div>
+                            
+                            <!-- 2D SVG Container -->
+                            <div id="worldMapContainer" class="map-layer"></div>
+                            
+                            <!-- HUD Overlays -->
+                            <div class="map-hud-overlay top-left">
+                                <span class="hud-tag"><i class="fa-solid fa-satellite-dish pulse-green"></i> GPS: ACTIVE</span>
+                                <span class="hud-tag" id="hud-status">DATALINK: ONLINE</span>
+                            </div>
+                            
+                            <div class="map-hud-overlay top-right">
+                                <!-- Map Option Layer Toggle (Visible only for Leaflet) -->
+                                <div id="leaflet-layer-toggle" class="leaflet-layer-toggle-btn hidden">
+                                    <button id="btn-toggle-tiles" class="hud-btn" title="Chuyển nền bản đồ">
+                                        <i class="fa-solid fa-layer-group"></i> Nền
+                                    </button>
+                                </div>
+                                <!-- Auto-Rotate Toggle (Visible only for 3D Globe) -->
+                                <div id="globe-rotate-toggle" class="globe-rotate-toggle-btn">
+                                    <button id="btn-toggle-rotate" class="hud-btn active" title="Tự động xoay">
+                                        <i class="fa-solid fa-arrows-spin"></i> Xoay
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Tooltip -->
+                            <div id="mapTooltip" class="map-tooltip">Chọn mốc thời gian</div>
+                        </div>
+                        
+                        <!-- Map Legend Overlay -->
+                        <div class="map-legend-overlay">
+                            <span class="legend-item"><span class="legend-dot dot-vn"></span> Việt Nam</span>
+                            <span class="legend-item"><span class="legend-dot dot-active"></span> Vùng liên kết</span>
+                            <span class="legend-item"><span class="legend-dot dot-inactive"></span> Chưa liên kết/Khác</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side: Sidebar with Milestone details and Active KPIs -->
+                    <div class="milestone-sidebar">
+                        <div class="sidebar-header">
+                            <span class="sidebar-badge" id="sidebar-year-badge">WTO - 2007</span>
+                            <h3 id="sidebar-milestone-title">Gia nhập WTO (2007)</h3>
+                        </div>
+                        
+                        <div class="sidebar-content">
+                            <p id="sidebar-milestone-desc" class="sidebar-desc">
+                                Đang tải thông tin mô tả chi tiết...
+                            </p>
+                            
+                            <div class="sidebar-kpis-header">
+                                <h4><i class="fa-solid fa-chart-simple"></i> Số liệu kinh tế tiêu biểu:</h4>
+                            </div>
+                            
+                            <!-- Moved KPI Grid to Sidebar for better visual integration -->
+                            <div class="sidebar-kpi-grid">
+                                <div class="sidebar-kpi-card" id="kpi-export">
+                                    <span class="kpi-label"><i class="fa-solid fa-arrow-up-right-from-square text-export"></i> Xuất khẩu</span>
+                                    <div class="kpi-value-row">
+                                        <span class="kpi-value" id="val-export">48.6</span>
+                                        <span class="kpi-unit">Tỷ USD</span>
+                                    </div>
+                                </div>
+                                <div class="sidebar-kpi-card" id="kpi-import">
+                                    <span class="kpi-label"><i class="fa-solid fa-arrow-down-left-and-arrow-up-right-to-center text-import"></i> Nhập khẩu</span>
+                                    <div class="kpi-value-row">
+                                        <span class="kpi-value" id="val-import">62.8</span>
+                                        <span class="kpi-unit">Tỷ USD</span>
+                                    </div>
+                                </div>
+                                <div class="sidebar-kpi-card" id="kpi-fdi">
+                                    <span class="kpi-label"><i class="fa-solid fa-hand-holding-dollar text-fdi"></i> FDI Thực hiện</span>
+                                    <div class="kpi-value-row">
+                                        <span class="kpi-value" id="val-fdi">8.0</span>
+                                        <span class="kpi-unit">Tỷ USD</span>
+                                    </div>
+                                </div>
+                                <div class="sidebar-kpi-card" id="kpi-balance">
+                                    <span class="kpi-label"><i class="fa-solid fa-scale-balanced text-balance"></i> Cán cân TM</span>
+                                    <div class="kpi-value-row">
+                                        <span class="kpi-value" id="val-balance">-14.2</span>
+                                        <span class="kpi-unit">Tỷ USD</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid: Statistics & Impact Lists -->
+                <div class="dashboard-grid">
+                    <!-- Column 1: Full Historical Analytical Chart -->
+                    <div class="dashboard-col chart-card">
+                        <div class="card-header">
+                            <div>
+                                <h3 id="chart-title">Số liệu kinh tế: Mốc WTO (2007)</h3>
+                                <p class="card-subtitle">Xuất nhập khẩu và vốn FDI giải ngân qua các năm (Tỷ USD)</p>
+                            </div>
+                            <span class="pulse-indicator" id="year-indicator">2007</span>
+                        </div>
+                        
+                        <!-- Small Chart Area -->
+                        <div class="chart-wrapper">
+                            <canvas id="integrationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Dual Impact Panels (Positive vs Challenges) -->
+                    <div class="dashboard-col impact-container">
+                        <!-- Positive Impacts Card -->
+                        <div class="impact-card card-positive">
+                            <div class="impact-header">
+                                <i class="fa-solid fa-circle-check impact-icon green-glow"></i>
+                                <div>
+                                    <h3>Tác Động Tích Cực</h3>
+                                    <p class="impact-desc">Cơ hội phát triển và cải cách từ hội nhập</p>
+                                </div>
+                            </div>
+                            <div class="impact-list-wrapper">
+                                <ul class="impact-list" id="positive-list">
+                                    <!-- Populated by JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Challenges & Risks Card -->
+                        <div class="impact-card card-negative">
+                            <div class="impact-header">
+                                <i class="fa-solid fa-circle-exclamation impact-icon red-glow"></i>
+                                <div>
+                                    <h3>Thách Thức & Rủi Ro</h3>
+                                    <p class="impact-desc">Áp lực cạnh tranh và nguy cơ mặt trái</p>
+                                </div>
+                            </div>
+                            <div class="impact-list-wrapper">
+                                <ul class="impact-list" id="negative-list">
+                                    <!-- Populated by JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: SƠ ĐỒ TƯ DUY GIẢI PHÁP (6.2.3) -->
+            <section id="tab-solutions" class="tab-content">
+                <div class="solutions-layout">
+                    <!-- Left: Interactive Mindmap canvas representation -->
+                    <div class="mindmap-container">
+                        <div class="mindmap-info">
+                            <h3><i class="fa-solid fa-diagram-project"></i> Sơ đồ tư duy giải pháp hội nhập</h3>
+                            <p>Click vào các nhóm chủ thể để khám phá các nhóm giải pháp chi tiết:</p>
+                        </div>
+                        
+                        <div class="mindmap-viewport">
+                            <!-- SVG lines linking nodes -->
+                            <svg class="mindmap-svg" id="mindmap-lines">
+                                <path id="line-state" class="map-line line-blue" d="" />
+                                <path id="line-enterprise" class="map-line line-yellow" d="" />
+                                <path id="line-youth" class="map-line line-green" d="" />
+                            </svg>
+
+                            <!-- Nodes Grid/Flex layout -->
+                            <div class="mindmap-nodes">
+                                <!-- Center Root Node -->
+                                <div class="node-root" id="node-center">
+                                    <span class="node-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                                    <div class="node-content">
+                                        <h4>HỘI NHẬP VIỆT NAM</h4>
+                                        <p>Nâng cao hiệu quả</p>
+                                    </div>
+                                </div>
+
+                                <!-- Sub-Roots (Main Branches) -->
+                                <div class="node-branch branch-blue" id="node-state" data-branch="state">
+                                    <span class="node-icon"><i class="fa-solid fa-landmark"></i></span>
+                                    <div class="node-content">
+                                        <h4>Nhà nước</h4>
+                                        <p>Kiến tạo & Dẫn dắt</p>
+                                    </div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <div class="node-branch branch-yellow" id="node-enterprise" data-branch="enterprise">
+                                    <span class="node-icon"><i class="fa-solid fa-briefcase"></i></span>
+                                    <div class="node-content">
+                                        <h4>Doanh nghiệp</h4>
+                                        <p>Lực lượng nòng cốt</p>
+                                    </div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <div class="node-branch branch-green" id="node-youth" data-branch="youth">
+                                    <span class="node-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                    <div class="node-content">
+                                        <h4>Nhân lực trẻ</h4>
+                                        <p>Lực lượng đi đầu</p>
+                                    </div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mini instructions for UX -->
+                        <div class="mindmap-footer-tip">
+                            <i class="fa-solid fa-circle-info"></i> Bấm vào <strong>Nhà nước</strong>, <strong>Doanh nghiệp</strong> hoặc <strong>Nhân lực trẻ</strong> để xem các phương hướng giải pháp cụ thể.
+                        </div>
+                    </div>
+
+                    <!-- Right: Accordion & Detail Panel -->
+                    <div class="solutions-detail-panel">
+                        <div class="detail-header" id="solution-detail-header">
+                            <div class="detail-header-icon" id="solution-header-icon-box">
+                                <i class="fa-solid fa-circle-question" id="solution-header-icon"></i>
+                            </div>
+                            <div>
+                                <h3 id="solution-title">Chọn một nhóm giải pháp</h3>
+                                <p id="solution-subtitle">Chi tiết phương hướng nâng cao hiệu quả hội nhập</p>
+                            </div>
+                        </div>
+
+                        <!-- Solution Info Display (Default placeholder state) -->
+                        <div id="solution-placeholder" class="detail-placeholder">
+                            <i class="fa-solid fa-hand-pointer"></i>
+                            <h4>Khám phá sơ đồ tư duy</h4>
+                            <p>Chọn một nhánh chủ thể trên sơ đồ tư duy ở bên trái để hiển thị danh sách các giải pháp chi tiết được phân tích dựa trên giáo trình Kinh tế Chính trị Mác - Lênin.</p>
+                        </div>
+
+                        <!-- Active Solution List -->
+                        <div id="solution-content-area" class="solution-content-area hidden">
+                            <div class="solution-theory-box" id="solution-theory">
+                                <!-- General theoretical statement from the text -->
+                            </div>
+                            
+                            <h4 class="sub-solutions-title"><i class="fa-solid fa-list-check"></i> Các giải pháp trọng tâm:</h4>
+                            <div class="accordion-list" id="solutions-accordion">
+                                <!-- Populated dynamically by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: TRẮC NGHIỆM HỘI NHẬP (NEW - PREMIUM UX FEATURE) -->
+            <section id="tab-quiz" class="tab-content">
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <h3><i class="fa-solid fa-graduation-cap"></i> Trắc nghiệm Ôn tập Chương 6</h3>
+                        <p class="card-subtitle">Củng cố lý thuyết Công nghiệp hóa, hiện đại hóa và hội nhập kinh tế quốc tế (Mác - Lênin)</p>
+                    </div>
+                    
+                    <div class="quiz-body" id="quiz-body">
+                        <!-- Quiz Question Box -->
+                        <div id="quiz-question-box">
+                            <div class="quiz-progress-bar-container">
+                                <div class="quiz-progress-bar" id="quiz-progress-bar" style="width: 16.66%;"></div>
+                            </div>
+                            <div class="quiz-meta-info">
+                                <span id="quiz-question-number">Câu hỏi 1/6</span>
+                            </div>
+                            <h4 id="quiz-question-text">Câu hỏi đang được tải...</h4>
+                            <div class="quiz-options-list" id="quiz-options-list">
+                                <!-- Options populated dynamically by JS -->
+                            </div>
+                        </div>
+                        
+                        <!-- Quiz Result Box -->
+                        <div id="quiz-result-box" class="quiz-result-box hidden">
+                            <i class="fa-solid fa-trophy trophy-icon"></i>
+                            <h4 id="quiz-result-title">Hoàn thành thử thách!</h4>
+                            <p id="quiz-result-score">Bạn đạt 0/6 câu đúng.</p>
+                            <p id="quiz-result-feedback">Hãy củng cố thêm lý thuyết nhé!</p>
+                            <button class="quiz-restart-btn" id="quiz-restart-btn">
+                                <i class="fa-solid fa-rotate-right"></i> Làm thử thách mới
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Theoretical Dialog / Bottom Note: Relationship between Autonomy & Integration -->
+        <section class="autonomy-note-section">
+            <div class="card autonomy-card">
+                <div class="autonomy-header">
+                    <i class="fa-solid fa-scale-balanced autonomy-icon"></i>
+                    <div>
+                        <h3>Mối quan hệ biện chứng giữa Độc lập, Tự chủ và Hội nhập Quốc tế</h3>
+                        <p class="card-subtitle">Luận điểm then chốt trong xây dựng và bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa</p>
+                    </div>
+                </div>
+                <div class="autonomy-grid">
+                    <div class="autonomy-col">
+                        <span class="col-tag green-tag"><i class="fa-solid fa-arrows-left-right-to-line"></i> Tương tác hỗ trợ</span>
+                        <p><strong>Độc lập, tự chủ</strong> là nền tảng vững chắc để thực hiện hội nhập quốc tế hiệu quả. Càng giữ vững độc lập, tự chủ thì mới có thể đẩy mạnh hội nhập quốc tế, tránh nguy cơ bị "hoà tan".</p>
+                    </div>
+                    <div class="autonomy-col">
+                        <span class="col-tag blue-tag"><i class="fa-solid fa-arrow-trend-up"></i> Nâng cao năng lực</span>
+                        <p><strong>Hội nhập kinh tế hiệu quả</strong> giúp bổ sung nguồn lực bên ngoài (vốn, công nghệ, nhân lực), đan xen lợi ích với các đối tác để gia tăng tiềm lực kinh tế, từ đó củng cố vững chắc nền độc lập, tự chủ.</p>
+                    </div>
+                    <div class="autonomy-col">
+                        <span class="col-tag red-tag"><i class="fa-solid fa-shield-cat"></i> Tránh phụ thuộc</span>
+                        <p>Hội nhập quá nhanh trong khi nội lực yếu sẽ làm suy giảm chủ quyền quốc gia. Để hội nhập thành công, Nhà nước phải nắm vai trò quyết định về chiến lược, bước đi và lộ trình phù hợp.</p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <i class="fa-solid fa-quote-left quote-left-icon"></i>
+                    <p>“Xây dựng nền kinh tế tự chủ phải trên cơ sở làm chủ công nghệ và chủ động, tích cực hội nhập, đa dạng hóa thị trường, nâng cao khả năng thích ứng của nền kinh tế.” (Văn kiện Đại hội XIII của Đảng)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <span>Kinh tế Chính trị Mác - Lênin (Bộ Giáo dục và Đào tạo)</span>
+                <span class="separator">•</span>
+                <span>Chương 6: Công nghiệp hóa, hiện đại hóa và hội nhập kinh tế quốc tế</span>
+            </div>
+            <p>© 2026 Nhóm 2 - Lớp Kinh tế Chính trị. Sản phẩm sáng tạo số hóa phục vụ học tập.</p>
+        </footer>
+    </div>
+
+    <!-- Script connection -->
+    <script src="app.js?v=2"></script>
+</body>
+</html>
