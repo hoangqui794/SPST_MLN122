@@ -1986,3 +1986,86 @@ footer p {
     stroke-dasharray: 8, 8;
     animation: leafletFlow 1.2s linear infinite !important;
 }
+
+/* ==========================================
+   MOBILE & RESPONSIVE POLISH
+   ========================================== */
+@media (max-width: 768px) {
+    /* Make Navigation Tabs horizontally scrollable on mobile */
+    .tabs-nav {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        justify-content: flex-start;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
+    }
+    .tabs-nav::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+    .tab-btn {
+        flex-shrink: 0;
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    /* Make Timeline dots scrollable with clean swipe */
+    .timeline-milestones {
+        width: max-content;
+        min-width: 680px; /* Force minimum track width */
+        padding-bottom: 0.5rem;
+        scrollbar-width: none;
+    }
+    .timeline-milestones::-webkit-scrollbar {
+        display: none;
+    }
+    .timeline-wrapper {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    .timeline-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Scale maps viewports for narrow screens */
+    .world-map-viewport {
+        height: 320px; /* Slightly shorter for phone viewports */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.75rem;
+    }
+    .map-card-container, .chart-card, .solutions-detail-panel, .timeline-container {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+    .logo-text h1 {
+        font-size: 1.35rem;
+    }
+    .logo-area img, .globe-icon {
+        font-size: 2.2rem !important;
+    }
+    .map-control-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .map-mode-selector {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .map-mode-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 0.5rem;
+        font-size: 0.75rem;
+    }
+    .sidebar-badge {
+        font-size: 0.65rem;
+    }
+    #sidebar-milestone-title {
+        font-size: 1.15rem;
+    }
+}
