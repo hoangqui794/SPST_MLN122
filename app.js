@@ -718,8 +718,7 @@ function init2DMap() {
         minZoom: 2,
         maxZoom: 9,
         zoomControl: true,
-        attributionControl: false,
-        preferCanvas: true
+        attributionControl: false
     });
 
     // Add Tile layer

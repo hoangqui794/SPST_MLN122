@@ -1975,3 +1975,14 @@ footer p {
 .hidden {
     display: none !important;
 }
+
+@keyframes leafletFlow {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+.leaflet-flow-path {
+    stroke-dasharray: 8, 8;
+    animation: leafletFlow 1.2s linear infinite !important;
+}
