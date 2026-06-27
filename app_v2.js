@@ -779,7 +779,7 @@ function renderLeafletGeoJson() {
 
     leafletGeoJsonLayer = L.geoJSON(worldGeoJson, {
         style: leafletStyleCountry,
-        smoothFactor: 2.0,
+        smoothFactor: 3.0,
         onEachFeature: (feature, layer) => {
             layer.on({
                 mouseover: e => {
@@ -788,15 +788,22 @@ function renderLeafletGeoJson() {
                     tooltip.innerHTML = getCountryName(code);
                     tooltip.style.opacity = 1;
 
-                    e.target.setStyle({
-                        fillOpacity: 0.5,
-                        weight: 1.5,
-                        color: '#6366F1'
-                    });
+                    const year = getActiveYear();
+                    if (code === 'vn' || isCountryActiveInYear(code, year)) {
+                        e.target.setStyle({
+                            fillOpacity: 0.5,
+                            weight: 1.5,
+                            color: '#6366F1'
+                        });
+                    }
                 },
                 mouseout: e => {
                     document.getElementById('mapTooltip').style.opacity = 0;
-                    leafletGeoJsonLayer.resetStyle(e.target);
+                    const code = (feature.properties.iso_a2 || feature.properties.ISO_A2 || "").toLowerCase();
+                    const year = getActiveYear();
+                    if (code === 'vn' || isCountryActiveInYear(code, year)) {
+                        leafletGeoJsonLayer.resetStyle(e.target);
+                    }
                 },
                 mousemove: e => {
                     const tooltip = document.getElementById('mapTooltip');
