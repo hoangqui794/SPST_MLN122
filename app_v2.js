@@ -509,10 +509,7 @@ let worldGeoJson = null;
 let isGlobeRotating = true;
 let isGlobeSatellite = false;
 
-let leafletMapInstance = null;
-let leafletGeoJsonLayer = null;
-let leafletFlowLinesGroup = null;
-let leafletActiveTile = 'dark'; // 'dark' or 'satellite'
+
 
 let currentMapMode = '3d';
 
@@ -704,217 +701,7 @@ function updateGlobeData() {
         .arcAltitude(d => Math.min(0.5, Math.max(0.12, Math.abs(d.endLng - d.startLng) * 0.0035)));
 }
 
-// ==========================================
-// 4B. 2D GEOGRAPHIC SATELLITE ENGINE (LEAFLET.JS)
-// ==========================================
-function init2DMap() {
-    const container = document.getElementById('leafletMap');
-    if (!container || leafletMapInstance) return;
 
-    // Create Map
-    leafletMapInstance = L.map('leafletMap', {
-        center: [16.0, 108.0],
-        zoom: 2,
-        minZoom: 2,
-        maxZoom: 9,
-        zoomControl: true,
-        attributionControl: false
-    });
-
-    // Add Tile layer
-    setLeafletTileLayer(leafletActiveTile);
-
-    // Overlay groups
-    leafletFlowLinesGroup = L.layerGroup().addTo(leafletMapInstance);
-
-    if (worldGeoJson) {
-        renderLeafletGeoJson();
-        updateLeafletData();
-    } else {
-        fetchGeoJson().then(geojson => {
-            if (geojson) {
-                renderLeafletGeoJson();
-                updateLeafletData();
-            }
-        });
-    }
-}
-
-function setLeafletTileLayer(tileType) {
-    if (!leafletMapInstance) return;
-
-    // Remove existing tile layers
-    leafletMapInstance.eachLayer(layer => {
-        if (layer instanceof L.TileLayer) {
-            leafletMapInstance.removeLayer(layer);
-        }
-    });
-
-    let tileUrl = '';
-    const leafletMapContainer = document.getElementById('leafletMap');
-
-    if (tileType === 'satellite') {
-        tileUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
-        leafletMapContainer.classList.add('satellite-active');
-    } else {
-        tileUrl = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{y}/{x}{r}.png';
-        leafletMapContainer.classList.remove('satellite-active');
-    }
-
-    L.tileLayer(tileUrl, {
-        maxZoom: 18,
-        crossOrigin: true
-    }).addTo(leafletMapInstance);
-
-    leafletActiveTile = tileType;
-}
-
-function renderLeafletGeoJson() {
-    if (!leafletMapInstance || !worldGeoJson) return;
-
-    if (leafletGeoJsonLayer) {
-        leafletMapInstance.removeLayer(leafletGeoJsonLayer);
-    }
-
-    leafletGeoJsonLayer = L.geoJSON(worldGeoJson, {
-        style: leafletStyleCountry,
-        smoothFactor: 3.0,
-        onEachFeature: (feature, layer) => {
-            layer.on({
-                mouseover: e => {
-                    const code = (feature.properties.iso_a2 || feature.properties.ISO_A2 || "").toLowerCase();
-                    const tooltip = document.getElementById('mapTooltip');
-                    tooltip.innerHTML = getCountryName(code);
-                    tooltip.style.opacity = 1;
-
-                    const year = getActiveYear();
-                    if (code === 'vn' || isCountryActiveInYear(code, year)) {
-                        e.target.setStyle({
-                            fillOpacity: 0.5,
-                            weight: 1.5,
-                            color: '#6366F1'
-                        });
-                    }
-                },
-                mouseout: e => {
-                    document.getElementById('mapTooltip').style.opacity = 0;
-                    const code = (feature.properties.iso_a2 || feature.properties.ISO_A2 || "").toLowerCase();
-                    const year = getActiveYear();
-                    if (code === 'vn' || isCountryActiveInYear(code, year)) {
-                        leafletGeoJsonLayer.resetStyle(e.target);
-                    }
-                },
-                mousemove: e => {
-                    const tooltip = document.getElementById('mapTooltip');
-                    const mapContainer = document.getElementById('leafletMap');
-                    const rect = mapContainer.getBoundingClientRect();
-                    tooltip.style.left = `${e.originalEvent.clientX - rect.left}px`;
-                    tooltip.style.top = `${e.originalEvent.clientY - rect.top}px`;
-                }
-            });
-        }
-    }).addTo(leafletMapInstance);
-}
-
-function leafletStyleCountry(feature) {
-    const code = (feature.properties.iso_a2 || feature.properties.ISO_A2 || "").toLowerCase();
-    const year = getActiveYear();
-
-    if (code === 'vn') {
-        return {
-            fillColor: '#10B981',
-            fillOpacity: 0.7,
-            weight: 1.5,
-            color: '#34D399'
-        };
-    }
-
-    if (isCountryActiveInYear(code, year)) {
-        return {
-            fillColor: getMilestoneColor(year, 1),
-            fillOpacity: 0.35,
-            weight: 0.8,
-            color: getMilestoneColor(year, 0.7)
-        };
-    }
-
-    return {
-        fillColor: '#1E293B',
-        fillOpacity: 0.15,
-        weight: 0.5,
-        color: 'rgba(255,255,255,0.05)'
-    };
-}
-
-function updateLeafletData() {
-    if (!leafletMapInstance) return;
-
-    if (leafletGeoJsonLayer) {
-        leafletGeoJsonLayer.eachLayer(layer => {
-            leafletGeoJsonLayer.resetStyle(layer);
-        });
-    }
-
-    if (leafletFlowLinesGroup) {
-        leafletFlowLinesGroup.clearLayers();
-    }
-
-    const year = getActiveYear();
-    const color = getMilestoneColor(year);
-
-    const activeCountries = [];
-    if (year === '1995') {
-        aseanCodes.forEach(c => { if (c !== 'vn') activeCountries.push(c); });
-    } else if (year === '1998') {
-        ['us', 'ca', 'mx', 'pe', 'cl', 'jp', 'cn', 'ru', 'kr', 'au', 'nz', 'id'].forEach(c => activeCountries.push(c));
-    } else if (year === '2007') {
-        ['us', 'ca', 'br', 'za', 'de', 'fr', 'cn', 'ru', 'in', 'au', 'sa', 'eg'].forEach(c => activeCountries.push(c));
-    } else if (year === '2019') {
-        cptppCodes.forEach(c => { if (c !== 'vn') activeCountries.push(c); });
-    } else if (year === '2020') {
-        euCodes.forEach(c => activeCountries.push(c));
-    } else {
-        ['us', 'cn', 'kr', 'jp', 'de', 'nl', 'au', 'sg', 'in', 'br'].forEach(c => activeCountries.push(c));
-    }
-
-    const vnLatLng = countryCoords.vn;
-
-    activeCountries.forEach(code => {
-        const dest = countryCoords[code];
-        if (dest) {
-            // Draw a curved line representing the flow on the 2D map
-            const points = getLeafletBezierPoints(vnLatLng[0], vnLatLng[1], dest[0], dest[1]);
-            L.polyline(points, {
-                color: color,
-                weight: 1.6,
-                opacity: 0.7,
-                className: 'leaflet-flow-path'
-            }).addTo(leafletFlowLinesGroup);
-        }
-    });
-}
-
-function getLeafletBezierPoints(lat1, lon1, lat2, lon2, numPoints = 30) {
-    const points = [];
-    for (let i = 0; i <= numPoints; i++) {
-        const t = i / numPoints;
-        let lat = lat1 + (lat2 - lat1) * t;
-        let lon = lon1 + (lon2 - lon1) * t;
-
-        // Calculate a perpendicular curve offset
-        const dx = lat2 - lat1;
-        const dy = lon2 - lon1;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const curveHeight = Math.sin(t * Math.PI) * distance * 0.15;
-
-        // Offset lat/lon slightly to create arc curvature
-        lat += curveHeight * 0.25;
-        lon -= curveHeight * 0.15;
-
-        points.push([lat, lon]);
-    }
-    return points;
-}
 
 // ==========================================
 // 4C. MAP TAB CONTROLLER & OVERLAYS
@@ -934,7 +721,6 @@ function switchMapMode(mode) {
     // Toggle layers visibility
     const layers = {
         '3d': document.getElementById('globeMap'),
-        '2d': document.getElementById('leafletMap'),
         'svg': document.getElementById('worldMapContainer')
     };
 
@@ -957,26 +743,16 @@ function switchMapMode(mode) {
         else rotateToggle.classList.add('hidden');
     }
     if (layerToggle) {
-        if (mode === '3d' || mode === '2d') {
+        if (mode === '3d') {
             layerToggle.classList.remove('hidden');
             const tileBtn = document.getElementById('btn-toggle-tiles');
             if (tileBtn) {
-                if (mode === '3d') {
-                    if (isGlobeSatellite) {
-                        tileBtn.classList.add('active');
-                        tileBtn.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Vệ tinh`;
-                    } else {
-                        tileBtn.classList.remove('active');
-                        tileBtn.innerHTML = `<i class="fa-solid fa-layer-group"></i> Nền`;
-                    }
-                } else if (mode === '2d') {
-                    if (leafletActiveTile === 'satellite') {
-                        tileBtn.classList.add('active');
-                        tileBtn.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Vệ tinh`;
-                    } else {
-                        tileBtn.classList.remove('active');
-                        tileBtn.innerHTML = `<i class="fa-solid fa-layer-group"></i> Nền`;
-                    }
+                if (isGlobeSatellite) {
+                    tileBtn.classList.add('active');
+                    tileBtn.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Vệ tinh`;
+                } else {
+                    tileBtn.classList.remove('active');
+                    tileBtn.innerHTML = `<i class="fa-solid fa-layer-group"></i> Nền`;
                 }
             }
         }
@@ -998,15 +774,6 @@ function switchMapMode(mode) {
                 globeInstance.width(mapEl.clientWidth);
                 globeInstance.height(mapEl.clientHeight);
             }
-        }
-    } else if (mode === '2d') {
-        if (!leafletMapInstance) {
-            init2DMap();
-        } else {
-            updateLeafletData();
-            setTimeout(() => {
-                leafletMapInstance.invalidateSize();
-            }, 100);
         }
     } else if (mode === 'svg') {
         const svgEl = document.getElementById('worldMapSvg');
@@ -1045,21 +812,11 @@ function setupMapControls() {
         });
     }
 
-    // Toggle Leaflet Tile layers or 3D Globe textures
+    // Toggle 3D Globe textures
     const tileBtn = document.getElementById('btn-toggle-tiles');
     if (tileBtn) {
         tileBtn.addEventListener('click', () => {
-            if (currentMapMode === '2d') {
-                if (leafletActiveTile === 'dark') {
-                    setLeafletTileLayer('satellite');
-                    tileBtn.classList.add('active');
-                    tileBtn.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Vệ tinh`;
-                } else {
-                    setLeafletTileLayer('dark');
-                    tileBtn.classList.remove('active');
-                    tileBtn.innerHTML = `<i class="fa-solid fa-layer-group"></i> Nền`;
-                }
-            } else if (currentMapMode === '3d') {
+            if (currentMapMode === '3d') {
                 isGlobeSatellite = !isGlobeSatellite;
                 if (globeInstance) {
                     if (isGlobeSatellite) {
@@ -1338,7 +1095,6 @@ function handleMilestoneClick(element, isAutoTriggered = false) {
     // Synchronize all map updates
     updateWorldMap(year);
     updateGlobeData();
-    updateLeafletData();
 
     // Sync chart highlights, KPIs and lists
     updateChartHighlight(year);
@@ -1357,8 +1113,7 @@ function updateTimelineProgressBar() {
     if (window.innerWidth > 768) {
         const percent = (activeIndex / (dots.length - 1)) * 100;
         progressBar.style.display = 'block';
-        progressBar.style.width = `calc(${percent}% - 2rem)`;
-        progressBar.style.left = `1.5rem`;
+        progressBar.style.setProperty('--progress-width', `${percent}%`);
     } else {
         progressBar.style.display = 'none';
     }

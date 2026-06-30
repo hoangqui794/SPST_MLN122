@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Leaflet CSS & JS for 2D Map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <!-- Globe.gl for 3D Globe -->
     <script src="https://unpkg.com/globe.gl"></script>
     <link rel="stylesheet" href="style.css">
@@ -118,9 +116,7 @@
                                 <button class="map-mode-btn active" data-mode="3d">
                                     <i class="fa-solid fa-globe"></i> Quả cầu 3D
                                 </button>
-                                <button class="map-mode-btn" data-mode="2d">
-                                    <i class="fa-solid fa-map-location-dot"></i> Vệ tinh 2D
-                                </button>
+
                                 <button class="map-mode-btn" data-mode="svg">
                                     <i class="fa-solid fa-route"></i> Vector phẳng
                                 </button>
@@ -131,9 +127,7 @@
                             <!-- 3D Globe Container -->
                             <div id="globeMap" class="map-layer active-layer"></div>
                             
-                            <!-- 2D Leaflet Container -->
-                            <div id="leafletMap" class="map-layer"></div>
-                            
+
                             <!-- 2D SVG Container -->
                             <div id="worldMapContainer" class="map-layer"></div>
                             
