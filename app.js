@@ -400,6 +400,32 @@ function initChart() {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            onClick: (event, activeElements) => {
+                if (activeElements && activeElements.length > 0) {
+                    const firstPoint = activeElements[0];
+                    const label = integrationChart.data.labels[firstPoint.index];
+                    let targetYear = label;
+                    const milestoneYears = ['1995', '1998', '2007', '2019', '2020', '2025'];
+                    if (!milestoneYears.includes(targetYear)) {
+                        const yearNum = parseInt(targetYear);
+                        if (yearNum <= 2006) targetYear = 'all';
+                        else if (yearNum >= 2007 && yearNum <= 2018) targetYear = '2007';
+                        else if (yearNum === 2019) targetYear = '2019';
+                        else if (yearNum >= 2020 && yearNum <= 2024) targetYear = '2020';
+                        else if (yearNum >= 2025) targetYear = '2025';
+                    }
+                    const dot = document.querySelector(`.milestone-dot[data-year="${targetYear}"]`);
+                    if (dot) {
+                        handleMilestoneClick(dot, false);
+                        if (label !== targetYear) {
+                            updateKPIs(label);
+                            updateChartHighlight(label);
+                            document.getElementById('chart-title').textContent = `Số liệu kinh tế: Năm ${label}`;
+                            document.getElementById('year-indicator').textContent = label;
+                        }
+                    }
+                }
+            },
             plugins: {
                 legend: {
                     position: 'top',
@@ -832,7 +858,51 @@ function setupMapControls() {
             }
         });
     }
+
+    // Toggle Fullscreen cockpit mode
+    const fullscreenBtn = document.getElementById('btn-toggle-fullscreen');
+    if (fullscreenBtn) {
+        fullscreenBtn.addEventListener('click', () => {
+            toggleFullscreen();
+        });
+    }
 }
+
+function toggleFullscreen() {
+    document.body.classList.toggle('fullscreen-mode');
+    const isFullscreen = document.body.classList.contains('fullscreen-mode');
+    
+    // Update fullscreen button icon and text
+    const btn = document.getElementById('btn-toggle-fullscreen');
+    if (btn) {
+        if (isFullscreen) {
+            btn.innerHTML = `<i class="fa-solid fa-compress"></i> Thu nhỏ`;
+            btn.classList.add('active');
+        } else {
+            btn.innerHTML = `<i class="fa-solid fa-expand"></i> Toàn màn hình`;
+            btn.classList.remove('active');
+        }
+    }
+    
+    // Resize map canvases to fit the new fullscreen size
+    setTimeout(() => {
+        if (globeInstance) {
+            const mapEl = document.getElementById('globeMap');
+            if (mapEl) {
+                globeInstance.width(mapEl.clientWidth);
+                globeInstance.height(mapEl.clientHeight);
+            }
+        }
+        updateTimelineProgressBar();
+    }, 100);
+}
+
+// Global escape key to exit fullscreen mode
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('fullscreen-mode')) {
+        toggleFullscreen();
+    }
+});
 
 // 4D. GEOGRAPHICAL SVG FALLBACK MAP UPDATING
 function updateWorldMap(year) {
@@ -867,15 +937,25 @@ function updateWorldMap(year) {
         const midX = (vnX + tX) / 2;
         const midY = (vnY + tY) / 2;
         const cpX = midX;
-        const cpY = midY - Math.abs(tX - vnX) * 0.15;
+        const cpYBase = midY - Math.abs(tX - vnX) * 0.15;
 
-        const pathD = `M ${vnX} ${vnY} Q ${cpX} ${cpY}, ${tX} ${tY}`;
+        // Export lane (flowing outwards from VN to partner country)
+        const cpYExport = cpYBase - 15;
+        const pathDExport = `M ${vnX} ${vnY} Q ${cpX} ${cpYExport}, ${tX} ${tY}`;
+        const pathExport = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        pathExport.setAttribute('d', pathDExport);
+        pathExport.setAttribute('class', `flow-line active-line-export active-line-${agreementClass}`);
 
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', pathD);
-        path.setAttribute('class', `flow-line active-line-${agreementClass}`);
+        // Import lane (flowing inwards from partner country to VN)
+        const cpYImport = cpYBase + 15;
+        const pathDImport = `M ${tX} ${tY} Q ${cpX} ${cpYImport}, ${vnX} ${vnY}`;
+        const pathImport = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        pathImport.setAttribute('d', pathDImport);
+        pathImport.setAttribute('class', `flow-line active-line-import active-line-${agreementClass}`);
+
         if (flowLinesGroup) {
-            flowLinesGroup.appendChild(path);
+            flowLinesGroup.appendChild(pathExport);
+            flowLinesGroup.appendChild(pathImport);
         }
     }
 
@@ -1037,6 +1117,9 @@ function populateImpactLists(year) {
     positiveList.innerHTML = '';
     negativeList.innerHTML = '';
 
+    if (positiveList.parentElement) positiveList.parentElement.scrollTop = 0;
+    if (negativeList.parentElement) negativeList.parentElement.scrollTop = 0;
+
     data.positive.forEach((item, index) => {
         const li = document.createElement('li');
         li.style.animationDelay = `${index * 60}ms`;
@@ -1050,6 +1133,28 @@ function populateImpactLists(year) {
         li.innerHTML = `<i class="${item.icon}"></i> <span>${item.text}</span>`;
         negativeList.appendChild(li);
     });
+
+    // Populate overlay sidebar lists for fullscreen mode (3-column layout)
+    const fsPositiveList = document.getElementById('fs-positive-list');
+    const fsNegativeList = document.getElementById('fs-negative-list');
+    
+    if (fsPositiveList && fsNegativeList) {
+        fsPositiveList.innerHTML = '';
+        fsNegativeList.innerHTML = '';
+        
+        data.positive.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="${item.icon}"></i> <span>${item.text}</span>`;
+            fsPositiveList.appendChild(li);
+        });
+        
+        data.negative.forEach(item => {
+            const li = document.createElement('li');
+            li.className = 'negative-item';
+            li.innerHTML = `<i class="${item.icon}"></i> <span>${item.text}</span>`;
+            fsNegativeList.appendChild(li);
+        });
+    }
 }
 
 function handleMilestoneClick(element, isAutoTriggered = false) {
@@ -1095,6 +1200,10 @@ function handleMilestoneClick(element, isAutoTriggered = false) {
     // Synchronize all map updates
     updateWorldMap(year);
     updateGlobeData();
+
+    // Update active legend dot color
+    const activeColor = getMilestoneColor(year);
+    document.documentElement.style.setProperty('--active-milestone-color', activeColor);
 
     // Sync chart highlights, KPIs and lists
     updateChartHighlight(year);
