@@ -15,7 +15,7 @@
 
     <!-- Globe.gl for 3D Globe -->
     <script src="https://unpkg.com/globe.gl"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
     <!-- Background glow elements -->
@@ -297,17 +297,19 @@
                     <!-- Left: Interactive Mindmap canvas representation -->
                     <div class="mindmap-container">
                         <div class="mindmap-info">
-                            <h3><i class="fa-solid fa-diagram-project"></i> Sơ đồ tư duy giải pháp hội nhập</h3>
-                            <p>Click vào các nhóm chủ thể để khám phá các nhóm giải pháp chi tiết:</p>
+                            <div>
+                                <h3><i class="fa-solid fa-diagram-project"></i> Sơ đồ tư duy 6.2.3</h3>
+                                <p>5 phương hướng nâng cao hiệu quả hội nhập kinh tế quốc tế của Việt Nam:</p>
+                            </div>
+                            <button id="btn-toggle-mindmap-fullscreen" class="mindmap-present-btn" title="Trình chiếu toàn màn hình">
+                                <i class="fa-solid fa-expand"></i>
+                                Trình chiếu
+                            </button>
                         </div>
                         
                         <div class="mindmap-viewport">
                             <!-- SVG lines linking nodes -->
-                            <svg class="mindmap-svg" id="mindmap-lines">
-                                <path id="line-state" class="map-line line-blue" d="" />
-                                <path id="line-enterprise" class="map-line line-yellow" d="" />
-                                <path id="line-youth" class="map-line line-green" d="" />
-                            </svg>
+                            <svg class="mindmap-svg" id="mindmap-lines"></svg>
 
                             <!-- Nodes Grid/Flex layout -->
                             <div class="mindmap-nodes">
@@ -315,35 +317,86 @@
                                 <div class="node-root" id="node-center">
                                     <span class="node-icon"><i class="fa-solid fa-shield-halved"></i></span>
                                     <div class="node-content">
-                                        <h4>HỘI NHẬP VIỆT NAM</h4>
+                                        <h4>HỘI NHẬP KINH TẾ</h4>
                                         <p>Nâng cao hiệu quả</p>
                                     </div>
                                 </div>
 
                                 <!-- Sub-Roots (Main Branches) -->
-                                <div class="node-branch branch-blue" id="node-state" data-branch="state">
-                                    <span class="node-icon"><i class="fa-solid fa-landmark"></i></span>
+                                <div class="node-branch branch-blue branch-awareness" id="node-awareness" data-branch="awareness">
+                                    <span class="node-index">01</span>
+                                    <span class="node-icon"><i class="fa-solid fa-lightbulb"></i></span>
                                     <div class="node-content">
-                                        <h4>Nhà nước</h4>
-                                        <p>Kiến tạo & Dẫn dắt</p>
+                                        <h4>Nhận thức</h4>
+                                        <p>Thời cơ & thách thức</p>
+                                        <div class="node-keywords">
+                                            <button class="keyword-node" data-keyword-index="0">Xu thế khách quan</button>
+                                            <button class="keyword-node" data-keyword-index="1">Hai mặt tác động</button>
+                                            <button class="keyword-node" data-keyword-index="2">Toàn dân tham gia</button>
+                                        </div>
                                     </div>
                                     <div class="pulse-ring"></div>
                                 </div>
 
-                                <div class="node-branch branch-yellow" id="node-enterprise" data-branch="enterprise">
-                                    <span class="node-icon"><i class="fa-solid fa-briefcase"></i></span>
+                                <div class="node-branch branch-yellow branch-strategy" id="node-strategy" data-branch="strategy">
+                                    <span class="node-index">02</span>
+                                    <span class="node-icon"><i class="fa-solid fa-route"></i></span>
                                     <div class="node-content">
-                                        <h4>Doanh nghiệp</h4>
-                                        <p>Lực lượng nòng cốt</p>
+                                        <h4>Chiến lược</h4>
+                                        <p>Lộ trình phù hợp</p>
+                                        <div class="node-keywords">
+                                            <button class="keyword-node" data-keyword-index="0">Bối cảnh quốc tế</button>
+                                            <button class="keyword-node" data-keyword-index="1">Điều kiện trong nước</button>
+                                            <button class="keyword-node" data-keyword-index="2">Lộ trình linh hoạt</button>
+                                        </div>
                                     </div>
                                     <div class="pulse-ring"></div>
                                 </div>
 
-                                <div class="node-branch branch-green" id="node-youth" data-branch="youth">
-                                    <span class="node-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                <div class="node-branch branch-green branch-commitment" id="node-commitment" data-branch="commitment">
+                                    <span class="node-index">03</span>
+                                    <span class="node-icon"><i class="fa-solid fa-handshake"></i></span>
                                     <div class="node-content">
-                                        <h4>Nhân lực trẻ</h4>
-                                        <p>Lực lượng đi đầu</p>
+                                        <h4>Liên kết</h4>
+                                        <p>Thực hiện cam kết</p>
+                                        <div class="node-keywords">
+                                            <button class="keyword-node" data-keyword-index="0">Song phương</button>
+                                            <button class="keyword-node" data-keyword-index="1">Đa phương</button>
+                                            <button class="keyword-node" data-keyword-index="2">Thực hiện cam kết</button>
+                                            <button class="keyword-node" data-keyword-index="3">Uy tín quốc gia</button>
+                                        </div>
+                                    </div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <div class="node-branch branch-cyan branch-institution" id="node-institution" data-branch="institution">
+                                    <span class="node-index">04</span>
+                                    <span class="node-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+                                    <div class="node-content">
+                                        <h4>Thể chế</h4>
+                                        <p>Luật pháp & môi trường</p>
+                                        <div class="node-keywords">
+                                            <button class="keyword-node" data-keyword-index="0">Đồng bộ pháp luật</button>
+                                            <button class="keyword-node" data-keyword-index="1">Quản lý nhà nước</button>
+                                            <button class="keyword-node" data-keyword-index="2">Môi trường kinh doanh</button>
+                                            <button class="keyword-node" data-keyword-index="3">Hỗ trợ doanh nghiệp</button>
+                                        </div>
+                                    </div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <div class="node-branch branch-red branch-autonomy" id="node-autonomy" data-branch="autonomy">
+                                    <span class="node-index">05</span>
+                                    <span class="node-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                                    <div class="node-content">
+                                        <h4>Tự chủ</h4>
+                                        <p>Độc lập & hội nhập</p>
+                                        <div class="node-keywords">
+                                            <button class="keyword-node" data-keyword-index="0">CNH-HĐH</button>
+                                            <button class="keyword-node" data-keyword-index="1">Đa dạng hóa</button>
+                                            <button class="keyword-node" data-keyword-index="2">Làm chủ công nghệ</button>
+                                            <button class="keyword-node" data-keyword-index="3">QP-AN, đối ngoại</button>
+                                        </div>
                                     </div>
                                     <div class="pulse-ring"></div>
                                 </div>
@@ -352,7 +405,7 @@
                         
                         <!-- Mini instructions for UX -->
                         <div class="mindmap-footer-tip">
-                            <i class="fa-solid fa-circle-info"></i> Bấm vào <strong>Nhà nước</strong>, <strong>Doanh nghiệp</strong> hoặc <strong>Nhân lực trẻ</strong> để xem các phương hướng giải pháp cụ thể.
+                            <i class="fa-solid fa-circle-info"></i> Bấm vào từng nhánh để xem luận điểm chính, từ khóa ghi nhớ và các ý triển khai.
                         </div>
                     </div>
 
@@ -363,8 +416,8 @@
                                 <i class="fa-solid fa-circle-question" id="solution-header-icon"></i>
                             </div>
                             <div>
-                                <h3 id="solution-title">Chọn một nhóm giải pháp</h3>
-                                <p id="solution-subtitle">Chi tiết phương hướng nâng cao hiệu quả hội nhập</p>
+                                <h3 id="solution-title">Chọn một phương hướng</h3>
+                                <p id="solution-subtitle">Chi tiết nội dung 6.2.3</p>
                             </div>
                         </div>
 
@@ -372,7 +425,7 @@
                         <div id="solution-placeholder" class="detail-placeholder">
                             <i class="fa-solid fa-hand-pointer"></i>
                             <h4>Khám phá sơ đồ tư duy</h4>
-                            <p>Chọn một nhánh chủ thể trên sơ đồ tư duy ở bên trái để hiển thị danh sách các giải pháp chi tiết được phân tích dựa trên giáo trình Kinh tế Chính trị Mác - Lênin.</p>
+                            <p>Chọn một nhánh trong sơ đồ để xem cách triển khai ngắn gọn, đúng trọng tâm và dễ dùng khi thuyết trình.</p>
                         </div>
 
                         <!-- Active Solution List -->
@@ -381,7 +434,7 @@
                                 <!-- General theoretical statement from the text -->
                             </div>
                             
-                            <h4 class="sub-solutions-title"><i class="fa-solid fa-list-check"></i> Các giải pháp trọng tâm:</h4>
+                            <h4 class="sub-solutions-title"><i class="fa-solid fa-list-check"></i> Ý triển khai trọng tâm:</h4>
                             <div class="accordion-list" id="solutions-accordion">
                                 <!-- Populated dynamically by JavaScript -->
                             </div>

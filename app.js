@@ -129,7 +129,7 @@ const milestoneTexts = {
     }
 };
 
-const solutionsData = {
+const legacySolutionsData = {
     'state': {
         icon: "fa-solid fa-landmark",
         colorClass: "branch-blue",
@@ -203,6 +203,82 @@ const solutionsData = {
                 title: "Khơi dậy tinh thần khởi nghiệp, sáng tạo xã hội",
                 content: "Phát huy tính năng động sáng tạo của tuổi trẻ bằng cách tham gia nghiên cứu khoa học, phát triển các giải pháp khởi nghiệp công nghệ, khởi nghiệp xanh (xử lý rác thải, nông nghiệp sạch) giải quyết trực tiếp bài toán kinh tế - xã hội của đất nước."
             }
+        ]
+    }
+};
+
+const solutionBranches = ['awareness', 'strategy', 'commitment', 'institution', 'autonomy'];
+
+const solutionsData = {
+    awareness: {
+        icon: "fa-solid fa-lightbulb",
+        colorClass: "branch-blue",
+        accent: "var(--secondary)",
+        title: "Nhận thức sâu sắc thời cơ và thách thức",
+        subtitle: "Cơ sở tư duy để lựa chọn chính sách hội nhập đúng",
+        theory: "Hội nhập kinh tế quốc tế là xu thế khách quan, là phương thức tồn tại và phát triển của Việt Nam trong bối cảnh hiện nay. Nhận thức đúng giúp tận dụng thời cơ, đồng thời chủ động khắc chế mặt trái của hội nhập.",
+        keywords: ["Xu thế khách quan", "Hai mặt tác động", "Toàn dân tham gia"],
+        items: [
+            { title: "Nhìn hội nhập như một tất yếu khách quan", content: "Không quốc gia nào có thể đứng ngoài dòng chảy liên kết kinh tế toàn cầu. Việt Nam cần xem hội nhập là phương thức phát triển, không phải khẩu hiệu ngắn hạn." },
+            { title: "Đánh giá đủ hai mặt tác động", content: "Thuận lợi gồm mở rộng thị trường, tăng trưởng, khoa học - công nghệ và cơ cấu lại nền kinh tế. Thách thức gồm cạnh tranh gay gắt, biến động thị trường, rủi ro chính trị, an ninh và văn hóa." },
+            { title: "Xác định đúng chủ thể tham gia", content: "Nhà nước giữ vai trò dẫn dắt và hỗ trợ, nhưng hội nhập là sự nghiệp của toàn xã hội; doanh nghiệp, doanh nhân, trí thức và người dân là lực lượng trực tiếp tham gia." }
+        ]
+    },
+    strategy: {
+        icon: "fa-solid fa-route",
+        colorClass: "branch-yellow",
+        accent: "var(--warning)",
+        title: "Xây dựng chiến lược và lộ trình phù hợp",
+        subtitle: "Có mục tiêu, bước đi, ưu tiên và khả năng điều chỉnh",
+        theory: "Chiến lược hội nhập là kế hoạch tổng thể về phương hướng, mục tiêu và giải pháp. Lộ trình hợp lý giúp tránh cú sốc, chọn đúng ngành ưu tiên và bảo đảm hiệu quả trong từng giai đoạn.",
+        keywords: ["Bối cảnh quốc tế", "Điều kiện trong nước", "Lộ trình linh hoạt"],
+        items: [
+            { title: "Đánh giá bối cảnh quốc tế", content: "Cần nhận diện xu hướng toàn cầu hóa, cách mạng công nghiệp lần thứ tư, FTA thế hệ mới, vai trò của các trung tâm kinh tế và sự dịch chuyển tương quan sức mạnh." },
+            { title: "Đánh giá điều kiện trong nước", content: "Làm rõ năng lực thể chế, pháp lý, nguồn nhân lực, doanh nghiệp và mức độ sẵn sàng của nền kinh tế để tránh hội nhập nhanh hơn khả năng chuẩn bị." },
+            { title: "Thiết kế lộ trình linh hoạt", content: "Xác định thời gian, mức độ, bước đi và ngành ưu tiên; đồng thời giữ tính mở để điều chỉnh khi thị trường thế giới và điều kiện trong nước thay đổi." }
+        ]
+    },
+    commitment: {
+        icon: "fa-solid fa-handshake",
+        colorClass: "branch-green",
+        accent: "var(--success)",
+        title: "Chủ động tham gia liên kết và thực hiện cam kết",
+        subtitle: "Nâng uy tín, vị thế và khả năng tiếp cận thị trường",
+        theory: "Việt Nam cần tích cực tham gia các liên kết kinh tế quốc tế và khu vực, đồng thời thực hiện nghiêm túc các cam kết để tạo niềm tin, nâng tầm hội nhập và bảo đảm lợi ích quốc gia.",
+        keywords: ["Song phương", "Đa phương", "Thực hiện cam kết", "Uy tín quốc gia"],
+        items: [
+            { title: "Mở rộng quan hệ song phương và đa phương", content: "Duy trì quan hệ ngoại giao, thương mại, đầu tư với nhiều quốc gia, vùng lãnh thổ; tham gia các tổ chức và diễn đàn như ASEAN, APEC, ASEM, WTO." },
+            { title: "Thực hiện nghiêm túc các cam kết", content: "Triển khai cam kết về thuế quan, dịch vụ, đầu tư, minh bạch chính sách và cải cách thể chế theo các hiệp định đã ký." },
+            { title: "Chủ động đóng góp trong sân chơi chung", content: "Không chỉ tham gia thụ động, Việt Nam cần đề xuất sáng kiến, phối hợp đa ngành, đa phương và nâng cao vai trò trong các cơ chế hợp tác." }
+        ]
+    },
+    institution: {
+        icon: "fa-solid fa-scale-balanced",
+        colorClass: "branch-cyan",
+        accent: "var(--cptpp)",
+        title: "Hoàn thiện thể chế kinh tế và luật pháp",
+        subtitle: "Tạo môi trường minh bạch, cạnh tranh và tương thích quốc tế",
+        theory: "Sự tương thích về thể chế là điều kiện quan trọng của hội nhập. Hoàn thiện pháp luật, cải cách quản lý và hỗ trợ doanh nghiệp giúp nền kinh tế vận hành theo chuẩn mực thị trường hiện đại.",
+        keywords: ["Đồng bộ pháp luật", "Quản lý nhà nước", "Môi trường kinh doanh", "Hỗ trợ doanh nghiệp"],
+        items: [
+            { title: "Hoàn thiện hệ thống pháp luật", content: "Rà soát, bổ sung và đồng bộ hóa luật về đầu tư, thương mại, doanh nghiệp, tài chính, cạnh tranh, lao động và sở hữu trí tuệ." },
+            { title: "Đổi mới quản lý nhà nước", content: "Nhà nước tập trung vào định hướng, tạo môi trường, hỗ trợ và giám sát; giảm can thiệp hành chính trực tiếp làm méo mó cạnh tranh." },
+            { title: "Nâng năng lực doanh nghiệp", content: "Hỗ trợ doanh nghiệp tiếp cận thông tin, vốn, công nghệ, pháp lý thương mại quốc tế, logistics và đào tạo nhân lực chất lượng cao." }
+        ]
+    },
+    autonomy: {
+        icon: "fa-solid fa-shield-halved",
+        colorClass: "branch-red",
+        accent: "var(--danger)",
+        title: "Xây dựng nền kinh tế độc lập, tự chủ",
+        subtitle: "Giữ chủ quyền phát triển trong quá trình mở cửa",
+        theory: "Độc lập, tự chủ không có nghĩa là biệt lập. Hội nhập hiệu quả phải đi đôi với năng lực tự chủ, đa dạng hóa thị trường, làm chủ công nghệ và kết hợp sức mạnh dân tộc với sức mạnh thời đại.",
+        keywords: ["CNH-HĐH", "Đa dạng hóa", "Làm chủ công nghệ", "Kết hợp quốc phòng - an ninh"],
+        items: [
+            { title: "Đẩy mạnh công nghiệp hóa, hiện đại hóa", content: "Cơ cấu lại nền kinh tế, chuyển sang tăng trưởng theo chiều sâu, nâng năng suất và phát triển các ngành có giá trị gia tăng cao." },
+            { title: "Đa dạng hóa thị trường và đối tác", content: "Tránh phụ thuộc vào một thị trường, một nguồn vốn hoặc một đối tác; mở rộng thị trường mới gắn với chiến lược sản phẩm và thương hiệu." },
+            { title: "Làm chủ công nghệ và nguồn lực then chốt", content: "Tăng đầu tư nghiên cứu - triển khai, đổi mới công nghệ, phát triển nhân lực chất lượng cao và nâng khả năng thích ứng của nền kinh tế." },
+            { title: "Kết hợp kinh tế với quốc phòng, an ninh, đối ngoại", content: "Mở rộng hợp tác trên nguyên tắc bình đẳng, cùng có lợi, tôn trọng chủ quyền, giữ gìn bản sắc văn hóa và giải quyết tranh chấp bằng biện pháp hòa bình." }
         ]
     }
 };
@@ -899,6 +975,10 @@ function toggleFullscreen() {
 
 // Global escape key to exit fullscreen mode
 window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('mindmap-fullscreen-mode')) {
+        toggleMindmapFullscreen(false);
+        return;
+    }
     if (e.key === 'Escape' && document.body.classList.contains('fullscreen-mode')) {
         toggleFullscreen();
     }
@@ -1236,6 +1316,12 @@ function updateTimelineProgressBar() {
 function drawMindmapLines() {
     const viewport = document.querySelector('.mindmap-viewport');
     if (!viewport || window.innerWidth <= 600) return;
+    const svg = document.getElementById('mindmap-lines');
+    if (!svg) return;
+    svg.innerHTML = '';
+
+    // ── SVG Defs: glow filter per branch ──────────────────────────
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
 
     const viewportRect = viewport.getBoundingClientRect();
     const centerNode = document.getElementById('node-center');
@@ -1245,12 +1331,17 @@ function drawMindmapLines() {
     const cx = centerRect.left - viewportRect.left + centerRect.width / 2;
     const cy = centerRect.top - viewportRect.top + centerRect.height / 2;
 
-    const branches = ['state', 'enterprise', 'youth'];
+    const branches = typeof solutionBranches !== 'undefined' ? solutionBranches : Object.keys(solutionsData);
 
-    branches.forEach(branch => {
+    // ── Draw paths + particles for each branch ─────────────────────
+    const PARTICLE_COUNT = 0;
+    const IDLE_DUR = 3.2;    // seconds per cycle (idle)
+    const ACTIVE_DUR = 1.6;  // seconds per cycle (active)
+
+    branches.forEach((branch, branchIdx) => {
         const node = document.getElementById(`node-${branch}`);
-        const line = document.getElementById(`line-${branch}`);
-        if (!node || !line) return;
+        const branchInfo = solutionsData[branch];
+        if (!node || !branchInfo) return;
 
         const nodeRect = node.getBoundingClientRect();
         const bx = nodeRect.left - viewportRect.left + nodeRect.width / 2;
@@ -1263,9 +1354,77 @@ function drawMindmapLines() {
         const ctrlY2 = by;
 
         const pathD = `M ${cx} ${cy} C ${ctrlX1} ${ctrlY1}, ${ctrlX2} ${ctrlY2}, ${bx} ${by}`;
+        const pathId = `line-${branch}`;
+
+        // ── Connector path ──────────────────────────────────────────
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        line.setAttribute('id', pathId);
+        line.setAttribute('class', `map-line ${branchInfo.colorClass || ''}`);
         line.setAttribute('d', pathD);
+        line.style.stroke = branchInfo.accent || 'var(--primary)';
+        svg.appendChild(line);
+
+        // ── Particles ───────────────────────────────────────────────
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            const delay = (i * IDLE_DUR) / PARTICLE_COUNT;
+
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('r', i === 0 ? '4' : '2.8');
+            circle.setAttribute('fill', branchInfo.accent || '#8B5CF6');
+            circle.setAttribute('class', 'mindmap-particle particle-idle');
+            circle.setAttribute('data-branch', branch);
+            circle.setAttribute('data-particle-index', i);
+            circle.setAttribute('opacity', i === 0 ? '0.75' : '0.5');
+
+            const motion = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+            motion.setAttribute('dur', `${IDLE_DUR}s`);
+            motion.setAttribute('begin', `${delay}s`);
+            motion.setAttribute('repeatCount', 'indefinite');
+            motion.setAttribute('calcMode', 'spline');
+            motion.setAttribute('keyTimes', '0;1');
+            motion.setAttribute('keySplines', '0.42 0 0.58 1');
+
+            const mpath = document.createElementNS('http://www.w3.org/2000/svg', 'mpath');
+            mpath.setAttributeNS('http://www.w3.org/1999/xlink', 'href', `#${pathId}`);
+
+            motion.appendChild(mpath);
+            circle.appendChild(motion);
+            svg.appendChild(circle);
+        }
+
+        if (node.classList.contains('active')) {
+            node.querySelectorAll('.keyword-node').forEach((keyword, keywordIndex) => {
+                const keyRect = keyword.getBoundingClientRect();
+                const keyX = keyRect.left - viewportRect.left + keyRect.width / 2;
+                const keyY = keyRect.top - viewportRect.top + keyRect.height / 2;
+
+                const fromRightSide = keyX >= bx;
+                const startX = fromRightSide
+                    ? nodeRect.right - viewportRect.left
+                    : nodeRect.left - viewportRect.left;
+                const startY = by;
+                const endX = fromRightSide
+                    ? keyRect.left - viewportRect.left
+                    : keyRect.right - viewportRect.left;
+                const endY = keyY;
+                const bend = Math.min(145, Math.max(58, Math.abs(endX - startX) * 0.72));
+                const verticalPull = (keywordIndex - (node.querySelectorAll('.keyword-node').length - 1) / 2) * 16;
+                const ctrlX1 = startX + (fromRightSide ? bend : -bend) * 0.55;
+                const ctrlY1 = startY + verticalPull;
+                const ctrlX2 = endX + (fromRightSide ? -bend : bend) * 0.34;
+                const ctrlY2 = endY;
+
+                const subLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                subLine.setAttribute('class', 'keyword-curve-line');
+                subLine.setAttribute('d', `M ${startX} ${startY} C ${ctrlX1} ${ctrlY1}, ${ctrlX2} ${ctrlY2}, ${endX} ${endY}`);
+                subLine.style.stroke = branchInfo.accent || 'var(--primary)';
+                subLine.style.opacity = keyword.classList.contains('active-keyword') ? '0.95' : '0.44';
+                svg.appendChild(subLine);
+            });
+        }
     });
 }
+
 
 function initAccordion(accordionData) {
     const accordionContainer = document.getElementById('solutions-accordion');
@@ -1315,6 +1474,11 @@ function handleBranchClick(branchName) {
     document.querySelectorAll('.node-branch').forEach(n => {
         n.classList.remove('active');
     });
+    document.querySelectorAll('.keyword-node').forEach(keyword => {
+        keyword.classList.remove('active-keyword');
+    });
+    document.querySelectorAll('.keyword-detail-popover').forEach(detail => detail.remove());
+
     const clickedNode = document.getElementById(`node-${branchName}`);
     clickedNode.classList.add('active');
 
@@ -1325,6 +1489,44 @@ function handleBranchClick(branchName) {
     if (clickedLine) {
         clickedLine.classList.add('active-line');
     }
+
+    // ── Update particle state ────────────────────────────────────
+    const ACTIVE_DUR = 1.6;
+    const IDLE_DUR = 3.2;
+
+    document.querySelectorAll('.mindmap-particle').forEach(particle => {
+        const isActive = particle.dataset.branch === branchName;
+        const pIdx = parseInt(particle.dataset.particleIndex || 0);
+        const motion = particle.querySelector('animateMotion');
+
+        if (isActive) {
+            // Active: bright, larger, faster
+            particle.classList.remove('particle-idle');
+            particle.classList.add('particle-active');
+            particle.setAttribute('r', pIdx === 0 ? '5.5' : '3.8');
+            particle.setAttribute('opacity', '1');
+            if (motion) {
+                const delay = (pIdx * ACTIVE_DUR) / 3;
+                motion.setAttribute('dur', `${ACTIVE_DUR}s`);
+                motion.setAttribute('begin', `${delay}s`);
+                // Restart animation
+                try { motion.beginElement(); } catch(e) {}
+            }
+        } else {
+            // Idle: dim, smaller, slow
+            particle.classList.remove('particle-active');
+            particle.classList.add('particle-idle');
+            const branch = particle.dataset.branch;
+            particle.setAttribute('r', pIdx === 0 ? '4' : '2.8');
+            particle.setAttribute('opacity', pIdx === 0 ? '0.35' : '0.2');
+            if (motion) {
+                const delay = (pIdx * IDLE_DUR) / 3;
+                motion.setAttribute('dur', `${IDLE_DUR}s`);
+                motion.setAttribute('begin', `${delay}s`);
+                try { motion.beginElement(); } catch(e) {}
+            }
+        }
+    });
 
     const branchInfo = solutionsData[branchName];
     if (!branchInfo) return;
@@ -1338,27 +1540,227 @@ function handleBranchClick(branchName) {
     iconBox.className = 'detail-header-icon';
     iconEl.className = branchInfo.icon;
     
-    if (branchName === 'state') {
-        iconBox.style.boxShadow = '0 0 12px rgba(59, 130, 246, 0.3)';
-        iconBox.style.borderColor = 'rgba(59, 130, 246, 0.4)';
-        iconBox.style.color = 'var(--secondary)';
-    } else if (branchName === 'enterprise') {
-        iconBox.style.boxShadow = '0 0 12px rgba(245, 158, 11, 0.3)';
-        iconBox.style.borderColor = 'rgba(245, 158, 11, 0.4)';
-        iconBox.style.color = 'var(--warning)';
-    } else if (branchName === 'youth') {
-        iconBox.style.boxShadow = '0 0 12px rgba(16, 185, 129, 0.3)';
-        iconBox.style.borderColor = 'rgba(16, 185, 129, 0.4)';
-        iconBox.style.color = 'var(--success)';
-    }
+    iconBox.style.boxShadow = '0 0 14px rgba(255, 255, 255, 0.08)';
+    iconBox.style.borderColor = branchInfo.accent || 'var(--primary)';
+    iconBox.style.color = branchInfo.accent || 'var(--primary)';
 
-    document.getElementById('solution-theory').innerHTML = `<i class="fa-solid fa-quote-left" style="opacity:0.25; margin-right:0.5rem;"></i>${branchInfo.theory}`;
+    const keywordHtml = (branchInfo.keywords || [])
+        .map(keyword => `<span>${keyword}</span>`)
+        .join('');
+    document.getElementById('solution-theory').innerHTML = `
+        <div class="solution-keyword-strip">${keywordHtml}</div>
+        <div><i class="fa-solid fa-quote-left" style="opacity:0.25; margin-right:0.5rem;"></i>${branchInfo.theory}</div>
+    `;
 
     initAccordion(branchInfo);
 
     document.getElementById('solution-placeholder').classList.add('hidden');
     document.getElementById('solution-content-area').classList.remove('hidden');
+
+    if (document.body.classList.contains('mindmap-fullscreen-mode')) {
+        renderMindmapFocusPanel(branchName, 0);
+    }
 }
+
+function closeMindmapFocusPanel() {
+    const panel = document.querySelector('.mindmap-focus-panel');
+    const veil  = document.querySelector('.mindmap-panel-veil');
+    if (!panel) return;
+
+    panel.classList.add('closing');
+    if (veil) veil.classList.add('closing');
+
+    setTimeout(() => {
+        panel.remove();
+        if (veil) veil.remove();
+        document.body.classList.remove('has-focus-panel');
+    }, 330);
+}
+
+function updateMindmapFocusPanelContent(branchName, keywordIndex) {
+    const branchInfo = solutionsData[branchName];
+    const item = branchInfo?.items?.[keywordIndex];
+    const panel = document.querySelector(`.mindmap-focus-panel[data-branch="${branchName}"]`);
+    if (!branchInfo || !item || !panel) return false;
+
+    panel.querySelectorAll('.focus-keyword').forEach(button => {
+        const isActive = Number(button.dataset.keywordIndex) === keywordIndex;
+        button.classList.toggle('active', isActive);
+    });
+
+    document.querySelectorAll('.keyword-node').forEach(button => {
+        const branchNode = button.closest('.node-branch');
+        const isActive = branchNode?.dataset.branch === branchName &&
+            Number(button.dataset.keywordIndex) === keywordIndex;
+        button.classList.toggle('active-keyword', isActive);
+    });
+
+    const body = panel.querySelector('.focus-panel-body');
+    if (body) {
+        body.classList.remove('content-swap');
+        void body.offsetWidth;
+        body.classList.add('content-swap');
+        body.innerHTML = `
+            <div class="focus-body-label">Nội dung trình bày</div>
+            <h5>${item.title}</h5>
+            <p>${item.content}</p>
+        `;
+    }
+
+    setTimeout(drawMindmapLines, 0);
+    return true;
+}
+
+function renderMindmapFocusPanel(branchName, keywordIndex = 0) {
+    const branchInfo = solutionsData[branchName];
+    if (!branchInfo) return;
+
+    const existingPanel = document.querySelector(`.mindmap-focus-panel[data-branch="${branchName}"]`);
+    if (existingPanel) {
+        updateMindmapFocusPanelContent(branchName, keywordIndex);
+        return;
+    }
+
+    // Remove any existing panel/veil
+    document.querySelectorAll('.mindmap-focus-panel, .mindmap-panel-veil').forEach(el => el.remove());
+
+    const safeKeywordIndex = Number.isInteger(keywordIndex) && branchInfo.items[keywordIndex] ? keywordIndex : 0;
+    const activeItem = branchInfo.items[safeKeywordIndex];
+
+    document.querySelectorAll('.keyword-node').forEach(button => {
+        const branchNode = button.closest('.node-branch');
+        const isActive = branchNode?.dataset.branch === branchName &&
+            Number(button.dataset.keywordIndex) === safeKeywordIndex;
+        button.classList.toggle('active-keyword', isActive);
+    });
+
+    // ── Veil: subtle dim behind the panel ────────────────────────
+    const veil = document.createElement('div');
+    veil.className = 'mindmap-panel-veil';
+    document.body.appendChild(veil);
+
+    // ── Panel ─────────────────────────────────────────────────────
+    const panel = document.createElement('div');
+    panel.className = 'mindmap-focus-panel';
+    panel.dataset.branch = branchName;
+    panel.style.setProperty('--focus-accent', branchInfo.accent || 'var(--primary)');
+    panel.innerHTML = `
+        <div class="focus-panel-header">
+            <div class="focus-panel-icon"><i class="${branchInfo.icon}"></i></div>
+            <div>
+                <div class="focus-panel-eyebrow">Phương hướng 6.2.3</div>
+                <h4>${branchInfo.title}</h4>
+                <p>${branchInfo.subtitle}</p>
+            </div>
+            <button class="focus-panel-close" title="Đóng">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="focus-panel-scroll">
+            <div class="focus-panel-body">
+                <div class="focus-body-label">Nội dung trình bày</div>
+                <h5>${activeItem.title}</h5>
+                <p>${activeItem.content}</p>
+            </div>
+        </div>
+    `;
+
+    // Close button
+    panel.querySelector('.focus-panel-close').addEventListener('click', e => {
+        e.stopPropagation();
+        closeMindmapFocusPanel();
+    });
+
+    document.body.appendChild(panel);
+    document.body.classList.add('has-focus-panel');
+    setTimeout(drawMindmapLines, 0);
+}
+
+
+function handleKeywordClick(branchName, keywordIndex) {
+    const branchInfo = solutionsData[branchName];
+    const item = branchInfo?.items?.[keywordIndex];
+    const node = document.getElementById(`node-${branchName}`);
+    if (!branchInfo || !item || !node) return;
+
+    if (document.body.classList.contains('mindmap-fullscreen-mode')) {
+        if (updateMindmapFocusPanelContent(branchName, keywordIndex)) {
+            return;
+        }
+        handleBranchClick(branchName);
+        renderMindmapFocusPanel(branchName, keywordIndex);
+        return;
+    }
+
+    handleBranchClick(branchName);
+
+    document.querySelectorAll('.keyword-node').forEach(keyword => {
+        keyword.classList.remove('active-keyword');
+    });
+
+    const keywordButton = node.querySelector(`.keyword-node[data-keyword-index="${keywordIndex}"]`);
+    if (keywordButton) {
+        keywordButton.classList.add('active-keyword');
+    }
+
+    document.querySelectorAll('.keyword-detail-popover').forEach(detail => detail.remove());
+
+    const keywordWrap = node.querySelector('.node-keywords');
+    const viewport = document.querySelector('.mindmap-viewport');
+    if (!keywordWrap || !viewport) return;
+
+    const detail = document.createElement('div');
+    detail.className = 'keyword-detail-popover';
+    detail.style.color = branchInfo.accent || 'var(--primary)';
+    detail.innerHTML = `
+        <button class="keyword-detail-close" title="Đóng nội dung"><i class="fa-solid fa-xmark"></i></button>
+        <div class="keyword-detail-label">${branchInfo.title}</div>
+        <h5>${item.title}</h5>
+        <p>${item.content}</p>
+    `;
+
+    detail.querySelector('.keyword-detail-close').addEventListener('click', event => {
+        event.stopPropagation();
+        detail.remove();
+        keywordButton?.classList.remove('active-keyword');
+    });
+
+    if (document.body.classList.contains('mindmap-fullscreen-mode')) {
+        viewport.appendChild(detail);
+    } else {
+        keywordWrap.appendChild(detail);
+    }
+}
+
+function toggleMindmapFullscreen(forceState = null) {
+    const nextState = forceState === null
+        ? !document.body.classList.contains('mindmap-fullscreen-mode')
+        : forceState;
+
+    // Clean up panel when exiting fullscreen
+    if (!nextState) {
+        document.querySelectorAll('.mindmap-focus-panel, .mindmap-panel-veil').forEach(el => el.remove());
+        document.body.classList.remove('has-focus-panel');
+    }
+
+    document.body.classList.toggle('mindmap-fullscreen-mode', nextState);
+
+    const btn = document.getElementById('btn-toggle-mindmap-fullscreen');
+    if (btn) {
+        btn.innerHTML = nextState
+            ? `<i class="fa-solid fa-compress"></i> Thu nhỏ`
+            : `<i class="fa-solid fa-expand"></i> Trình chiếu`;
+        btn.classList.toggle('active', nextState);
+    }
+
+    setTimeout(() => {
+        drawMindmapLines();
+        if (nextState && !document.querySelector('.node-branch.active')) {
+            handleBranchClick('awareness');
+        }
+    }, 120);
+}
+
 
 
 // ==========================================
@@ -1406,6 +1808,23 @@ function setupDOMListeners() {
             handleBranchClick(branchName);
         });
     });
+
+    document.querySelectorAll('.keyword-node').forEach(keyword => {
+        keyword.addEventListener('click', event => {
+            event.stopPropagation();
+            const branchNode = keyword.closest('.node-branch');
+            const branchName = branchNode?.getAttribute('data-branch');
+            const keywordIndex = Number(keyword.getAttribute('data-keyword-index'));
+            handleKeywordClick(branchName, keywordIndex);
+        });
+    });
+
+    const mindmapFullscreenBtn = document.getElementById('btn-toggle-mindmap-fullscreen');
+    if (mindmapFullscreenBtn) {
+        mindmapFullscreenBtn.addEventListener('click', () => {
+            toggleMindmapFullscreen();
+        });
+    }
 
     // Quiz restart button listener
     const restartBtn = document.getElementById('quiz-restart-btn');
