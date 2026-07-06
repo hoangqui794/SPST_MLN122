@@ -308,27 +308,38 @@
                         </div>
                         
                         <div class="mindmap-viewport">
-                            <!-- SVG lines linking nodes -->
-                            <svg class="mindmap-svg" id="mindmap-lines"></svg>
+                            <div class="radar-grid">
+                                <svg class="mindmap-svg" id="mindmap-lines"></svg>
+                                <!-- Radar Background Effects -->
+                                <div class="radar-rings-bg">
+                                    <div class="radar-ring-circle ring-1"></div>
+                                    <div class="radar-ring-circle ring-2"></div>
+                                    <div class="radar-ring-circle ring-3"></div>
+                                </div>
+                                <div class="radar-sweep-effect"></div>
 
-                            <!-- Nodes Grid/Flex layout -->
-                            <div class="mindmap-nodes">
-                                <!-- Center Root Node -->
-                                <div class="node-root" id="node-center">
-                                    <span class="node-icon"><i class="fa-solid fa-shield-halved"></i></span>
-                                    <div class="node-content">
-                                        <h4>HỘI NHẬP KINH TẾ</h4>
-                                        <p>Nâng cao hiệu quả</p>
+                                <!-- Center Root Station -->
+                                <div class="radar-root" id="node-center">
+                                    <div class="radar-root-inner">
+                                        <span class="node-icon"><i class="fa-solid fa-earth-asia"></i></span>
+                                        <div class="node-content">
+                                            <h4>HỘI NHẬP KINH TẾ</h4>
+                                            <p>Nâng cao hiệu quả</p>
+                                        </div>
                                     </div>
+                                    <div class="radar-root-glow"></div>
                                 </div>
 
-                                <!-- Sub-Roots (Main Branches) -->
-                                <div class="node-branch branch-blue branch-awareness" id="node-awareness" data-branch="awareness">
-                                    <span class="node-index">01</span>
-                                    <span class="node-icon"><i class="fa-solid fa-lightbulb"></i></span>
-                                    <div class="node-content">
-                                        <h4>Nhận thức</h4>
-                                        <p>Thời cơ & thách thức</p>
+                                <!-- Branch 1 (Nhận thức) -->
+                                <div class="radar-node branch-blue branch-awareness" id="node-awareness" data-branch="awareness">
+                                    <div class="radar-node-inner">
+                                        <div class="radar-crosshair"></div>
+                                        <span class="node-index">01</span>
+                                        <span class="node-icon"><i class="fa-solid fa-lightbulb"></i></span>
+                                        <div class="node-content">
+                                            <h4>Nhận thức</h4>
+                                            <p>Thời cơ & thách thức</p>
+                                        </div>
                                         <div class="node-keywords">
                                             <button class="keyword-node" data-keyword-index="0">Xu thế khách quan</button>
                                             <button class="keyword-node" data-keyword-index="1">Hai mặt tác động</button>
@@ -338,12 +349,16 @@
                                     <div class="pulse-ring"></div>
                                 </div>
 
-                                <div class="node-branch branch-yellow branch-strategy" id="node-strategy" data-branch="strategy">
-                                    <span class="node-index">02</span>
-                                    <span class="node-icon"><i class="fa-solid fa-route"></i></span>
-                                    <div class="node-content">
-                                        <h4>Chiến lược</h4>
-                                        <p>Lộ trình phù hợp</p>
+                                <!-- Branch 2 (Chiến lược) -->
+                                <div class="radar-node branch-yellow branch-strategy" id="node-strategy" data-branch="strategy">
+                                    <div class="radar-node-inner">
+                                        <div class="radar-crosshair"></div>
+                                        <span class="node-index">02</span>
+                                        <span class="node-icon"><i class="fa-solid fa-route"></i></span>
+                                        <div class="node-content">
+                                            <h4>Chiến lược</h4>
+                                            <p>Lộ trình phù hợp</p>
+                                        </div>
                                         <div class="node-keywords">
                                             <button class="keyword-node" data-keyword-index="0">Bối cảnh quốc tế</button>
                                             <button class="keyword-node" data-keyword-index="1">Điều kiện trong nước</button>
@@ -353,12 +368,16 @@
                                     <div class="pulse-ring"></div>
                                 </div>
 
-                                <div class="node-branch branch-green branch-commitment" id="node-commitment" data-branch="commitment">
-                                    <span class="node-index">03</span>
-                                    <span class="node-icon"><i class="fa-solid fa-handshake"></i></span>
-                                    <div class="node-content">
-                                        <h4>Liên kết</h4>
-                                        <p>Thực hiện cam kết</p>
+                                <!-- Branch 3 (Liên kết) -->
+                                <div class="radar-node branch-green branch-commitment" id="node-commitment" data-branch="commitment">
+                                    <div class="radar-node-inner">
+                                        <div class="radar-crosshair"></div>
+                                        <span class="node-index">03</span>
+                                        <span class="node-icon"><i class="fa-solid fa-handshake"></i></span>
+                                        <div class="node-content">
+                                            <h4>Liên kết</h4>
+                                            <p>Thực hiện cam kết</p>
+                                        </div>
                                         <div class="node-keywords">
                                             <button class="keyword-node" data-keyword-index="0">Song phương</button>
                                             <button class="keyword-node" data-keyword-index="1">Đa phương</button>
@@ -369,12 +388,16 @@
                                     <div class="pulse-ring"></div>
                                 </div>
 
-                                <div class="node-branch branch-cyan branch-institution" id="node-institution" data-branch="institution">
-                                    <span class="node-index">04</span>
-                                    <span class="node-icon"><i class="fa-solid fa-scale-balanced"></i></span>
-                                    <div class="node-content">
-                                        <h4>Thể chế</h4>
-                                        <p>Luật pháp & môi trường</p>
+                                <!-- Branch 4 (Thể chế) -->
+                                <div class="radar-node branch-cyan branch-institution" id="node-institution" data-branch="institution">
+                                    <div class="radar-node-inner">
+                                        <div class="radar-crosshair"></div>
+                                        <span class="node-index">04</span>
+                                        <span class="node-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+                                        <div class="node-content">
+                                            <h4>Thể chế</h4>
+                                            <p>Luật pháp & môi trường</p>
+                                        </div>
                                         <div class="node-keywords">
                                             <button class="keyword-node" data-keyword-index="0">Đồng bộ pháp luật</button>
                                             <button class="keyword-node" data-keyword-index="1">Quản lý nhà nước</button>
@@ -385,12 +408,38 @@
                                     <div class="pulse-ring"></div>
                                 </div>
 
-                                <div class="node-branch branch-red branch-autonomy" id="node-autonomy" data-branch="autonomy">
-                                    <span class="node-index">05</span>
-                                    <span class="node-icon"><i class="fa-solid fa-shield-halved"></i></span>
-                                    <div class="node-content">
-                                        <h4>Tự chủ</h4>
-                                        <p>Độc lập & hội nhập</p>
+                                <!-- Branch 5 (Năng lực cạnh tranh) -->
+                                <div class="radar-node branch-neon branch-competitiveness" id="node-competitiveness" data-branch="competitiveness">
+                                    <div class="radar-node-inner">
+                                        <div class="radar-crosshair"></div>
+                                        <span class="node-index">05</span>
+                                        <span class="node-icon"><i class="fa-solid fa-rocket"></i></span>
+                                        <div class="node-content">
+                                            <h4>Cạnh tranh</h4>
+                                            <p>Doanh nghiệp & Nhà nước</p>
+                                        </div>
+                                        <div class="node-keywords">
+                                            <button class="keyword-node" data-keyword-index="0">Sản xuất toàn cầu</button>
+                                            <button class="keyword-node" data-keyword-index="1">Cạnh tranh - hợp tác</button>
+                                            <button class="keyword-node" data-keyword-index="2">Huy động vốn</button>
+                                            <button class="keyword-node" data-keyword-index="3">Quản trị bất định</button>
+                                            <button class="keyword-node" data-keyword-index="4">Đồng hành Chính phủ</button>
+                                            <button class="keyword-node" data-keyword-index="5">Đối thoại pháp lý</button>
+                                        </div>
+                                    </div>
+                                    <div class="pulse-ring"></div>
+                                </div>
+
+                                <!-- Branch 6 (Tự chủ) -->
+                                <div class="radar-node branch-red branch-autonomy" id="node-autonomy" data-branch="autonomy">
+                                    <div class="radar-node-inner">
+                                        <div class="radar-crosshair"></div>
+                                        <span class="node-index">06</span>
+                                        <span class="node-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                                        <div class="node-content">
+                                            <h4>Tự chủ</h4>
+                                            <p>Độc lập & hội nhập</p>
+                                        </div>
                                         <div class="node-keywords">
                                             <button class="keyword-node" data-keyword-index="0">CNH-HĐH</button>
                                             <button class="keyword-node" data-keyword-index="1">Đa dạng hóa</button>

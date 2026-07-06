@@ -207,7 +207,7 @@ const legacySolutionsData = {
     }
 };
 
-const solutionBranches = ['awareness', 'strategy', 'commitment', 'institution', 'autonomy'];
+const solutionBranches = ['awareness', 'strategy', 'commitment', 'institution', 'competitiveness', 'autonomy'];
 
 const solutionsData = {
     awareness: {
@@ -266,6 +266,108 @@ const solutionsData = {
             { title: "Nâng năng lực doanh nghiệp", content: "Hỗ trợ doanh nghiệp tiếp cận thông tin, vốn, công nghệ, pháp lý thương mại quốc tế, logistics và đào tạo nhân lực chất lượng cao." }
         ]
     },
+    competitiveness: {
+        icon: "fa-solid fa-rocket",
+        colorClass: "branch-neon",
+        accent: "#F43F5E",
+        title: "Nâng cao năng lực cạnh tranh quốc tế của nền kinh tế",
+        subtitle: "Doanh nghiệp thích ứng nhanh, Nhà nước kiến tạo điều kiện cạnh tranh",
+        theory: "Năng lực cạnh tranh là điều kiện trực tiếp để hội nhập có hiệu quả. Doanh nghiệp phải học cách vận hành theo chuẩn toàn cầu, còn Nhà nước hỗ trợ bằng nguồn nhân lực, hạ tầng, thông tin, thể chế và môi trường kinh doanh thuận lợi.",
+        quote: "Doanh nghiệp và đội ngũ doanh nhân là lực lượng nòng cốt trong tiến trình hội nhập.",
+        extraHtml: `
+            <div class="solution-action-grid">
+                <div>
+                    <strong>Doanh nghiệp phải thích ứng</strong>
+                    <span>Học luật chơi quốc tế, nâng chuẩn sản xuất, quản trị rủi ro và liên kết để tham gia chuỗi giá trị toàn cầu.</span>
+                </div>
+                <div>
+                    <strong>Nhà nước phải hỗ trợ</strong>
+                    <span>Đào tạo nhân lực, hoàn thiện hạ tầng, cung cấp thông tin, giảm chi phí và tạo môi trường cạnh tranh minh bạch.</span>
+                </div>
+            </div>
+        `,
+        keywords: ["Sản xuất toàn cầu", "Cạnh tranh - hợp tác", "Huy động vốn", "Quản trị bất định", "Đồng hành Chính phủ", "Đối thoại pháp lý"],
+        items: [
+            {
+                title: "Học cách sản xuất theo chuẩn toàn cầu",
+                content: `
+                    <p>Doanh nghiệp phải chuyển từ tư duy sản xuất cho thị trường nội địa sang sản xuất theo tiêu chuẩn khu vực và quốc tế.</p>
+                    <ul class="lesson-points">
+                        <li>Nâng chất lượng, mẫu mã, tiêu chuẩn kỹ thuật, vệ sinh an toàn, trách nhiệm xã hội và tiêu chuẩn môi trường.</li>
+                        <li>Quản trị chuỗi cung ứng, truy xuất nguồn gốc, chuẩn hóa quy trình và giảm chi phí sản xuất.</li>
+                        <li>Đổi mới công nghệ để tăng năng suất, tham gia sâu hơn vào chuỗi giá trị toàn cầu thay vì chỉ gia công giá trị thấp.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Học cách cạnh tranh và hợp tác",
+                content: `
+                    <p>Hội nhập làm cạnh tranh gay gắt hơn, nhưng cạnh tranh hiện đại luôn đi cùng liên kết và hợp tác.</p>
+                    <ul class="lesson-points">
+                        <li>Cạnh tranh bằng chất lượng, đổi mới, thương hiệu, dịch vụ hậu mãi và khả năng đáp ứng nhanh thị trường.</li>
+                        <li>Liên kết với doanh nghiệp trong nước để hình thành chuỗi cung ứng, cụm ngành và sức mạnh quy mô.</li>
+                        <li>Hợp tác với đối tác nước ngoài để học công nghệ, quản trị, tiêu chuẩn và mở rộng kênh phân phối.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Học cách huy động vốn",
+                content: `
+                    <p>Năng lực cạnh tranh phụ thuộc lớn vào khả năng tiếp cận và sử dụng hiệu quả nguồn vốn.</p>
+                    <ul class="lesson-points">
+                        <li>Minh bạch tài chính, nâng quản trị doanh nghiệp để tăng niềm tin với ngân hàng, nhà đầu tư và đối tác chiến lược.</li>
+                        <li>Đa dạng hóa nguồn vốn: tín dụng, thị trường vốn, quỹ đầu tư, liên doanh, liên kết và vốn quốc tế.</li>
+                        <li>Ưu tiên vốn cho đổi mới công nghệ, chuyển đổi số, đào tạo nhân lực và nâng cấp năng lực sản xuất.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Học cách quản trị sự bất định",
+                content: `
+                    <p>Thị trường quốc tế biến động nhanh; doanh nghiệp phải biết dự báo và phòng ngừa rủi ro.</p>
+                    <ul class="lesson-points">
+                        <li>Theo dõi biến động tỷ giá, lãi suất, giá nguyên liệu, logistics, chính sách thương mại và nhu cầu tiêu dùng.</li>
+                        <li>Xây dựng kịch bản ứng phó với đứt gãy chuỗi cung ứng, rào cản kỹ thuật, phòng vệ thương mại và khủng hoảng thị trường.</li>
+                        <li>Đa dạng hóa thị trường, nhà cung cấp, khách hàng và phương thức thanh toán để giảm phụ thuộc.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Học cách đồng hành với Chính phủ",
+                content: `
+                    <p>Doanh nghiệp không đứng ngoài tiến trình chính sách; phải chủ động cùng Nhà nước nâng năng lực hội nhập.</p>
+                    <ul class="lesson-points">
+                        <li>Cập nhật thông tin về FTA, cam kết thuế quan, quy tắc xuất xứ, tiêu chuẩn kỹ thuật và chính sách hỗ trợ.</li>
+                        <li>Tham gia đào tạo, xúc tiến thương mại, chuyển đổi số, đổi mới sáng tạo và chương trình phát triển ngành hàng.</li>
+                        <li>Phản hồi khó khăn thực tiễn để Nhà nước điều chỉnh thể chế, thủ tục, hạ tầng và dịch vụ hỗ trợ doanh nghiệp.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Học cách đối thoại pháp lý",
+                content: `
+                    <p>Trong sân chơi toàn cầu, hiểu luật là năng lực cạnh tranh cốt lõi chứ không chỉ là công việc phòng thủ.</p>
+                    <ul class="lesson-points">
+                        <li>Nắm luật thương mại quốc tế, cam kết FTA, phòng vệ thương mại, sở hữu trí tuệ, hợp đồng và giải quyết tranh chấp.</li>
+                        <li>Biết sử dụng tư vấn pháp lý, hiệp hội ngành nghề và cơ chế đối thoại để bảo vệ lợi ích chính đáng.</li>
+                        <li>Chủ động tuân thủ tiêu chuẩn lao động, môi trường, minh bạch nguồn gốc để tránh rủi ro kiện tụng và mất thị trường.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "Vai trò hỗ trợ của Nhà nước",
+                content: `
+                    <p>Nhà nước giữ vai trò kiến tạo điều kiện để doanh nghiệp nâng năng lực cạnh tranh, nhưng không làm thay doanh nghiệp.</p>
+                    <ul class="lesson-points state-support-list">
+                        <li>Phát triển nguồn nhân lực, nhất là nhân lực chất lượng cao gắn với nhu cầu của doanh nghiệp.</li>
+                        <li>Tổ chức đào tạo kỹ năng hội nhập, quản trị toàn cầu, đổi mới sáng tạo, luật kinh tế và thương mại quốc tế.</li>
+                        <li>Hoàn thiện hạ tầng sản xuất, giao thông, thông tin, logistics, dịch vụ công và nền tảng số.</li>
+                        <li>Cải thiện môi trường kinh doanh, giảm chi phí tuân thủ, hỗ trợ tiếp cận vốn, công nghệ tiên tiến và thông tin thị trường.</li>
+                    </ul>
+                `
+            }
+        ]
+    },
     autonomy: {
         icon: "fa-solid fa-shield-halved",
         colorClass: "branch-red",
@@ -273,12 +375,14 @@ const solutionsData = {
         title: "Xây dựng nền kinh tế độc lập, tự chủ",
         subtitle: "Giữ chủ quyền phát triển trong quá trình mở cửa",
         theory: "Độc lập, tự chủ không có nghĩa là biệt lập. Hội nhập hiệu quả phải đi đôi với năng lực tự chủ, đa dạng hóa thị trường, làm chủ công nghệ và kết hợp sức mạnh dân tộc với sức mạnh thời đại.",
+        quote: "Xây dựng nền kinh tế tự chủ phải trên cơ sở làm chủ công nghệ và chủ động, tích cực hội nhập, đa dạng hóa thị trường, nâng cao khả năng thích ứng của nền kinh tế.",
         keywords: ["CNH-HĐH", "Đa dạng hóa", "Làm chủ công nghệ", "Kết hợp quốc phòng - an ninh"],
         items: [
             { title: "Đẩy mạnh công nghiệp hóa, hiện đại hóa", content: "Cơ cấu lại nền kinh tế, chuyển sang tăng trưởng theo chiều sâu, nâng năng suất và phát triển các ngành có giá trị gia tăng cao." },
             { title: "Đa dạng hóa thị trường và đối tác", content: "Tránh phụ thuộc vào một thị trường, một nguồn vốn hoặc một đối tác; mở rộng thị trường mới gắn với chiến lược sản phẩm và thương hiệu." },
             { title: "Làm chủ công nghệ và nguồn lực then chốt", content: "Tăng đầu tư nghiên cứu - triển khai, đổi mới công nghệ, phát triển nhân lực chất lượng cao và nâng khả năng thích ứng của nền kinh tế." },
-            { title: "Kết hợp kinh tế với quốc phòng, an ninh, đối ngoại", content: "Mở rộng hợp tác trên nguyên tắc bình đẳng, cùng có lợi, tôn trọng chủ quyền, giữ gìn bản sắc văn hóa và giải quyết tranh chấp bằng biện pháp hòa bình." }
+            { title: "Kết hợp kinh tế với quốc phòng, an ninh, đối ngoại", content: "Mở rộng hợp tác trên nguyên tắc bình đẳng, cùng có lợi, tôn trọng chủ quyền, giữ gìn bản sắc văn hóa và giải quyết tranh chấp bằng biện pháp hòa bình." },
+            { title: "Xử lý quan hệ biện chứng giữa tự chủ và hội nhập", content: "Giữ vững độc lập, tự chủ là nền tảng để hội nhập không bị hòa tan; đồng thời hội nhập hiệu quả giúp tranh thủ nguồn lực bên ngoài, tạo đan xen lợi ích, nâng vị thế quốc gia và củng cố năng lực tự chủ." }
         ]
     }
 };
@@ -1315,118 +1419,101 @@ function updateTimelineProgressBar() {
 
 function drawMindmapLines() {
     const viewport = document.querySelector('.mindmap-viewport');
-    if (!viewport || window.innerWidth <= 600) return;
+    if (!viewport) return;
     const svg = document.getElementById('mindmap-lines');
     if (!svg) return;
     svg.innerHTML = '';
 
-    // ── SVG Defs: glow filter per branch ──────────────────────────
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-
-    const viewportRect = viewport.getBoundingClientRect();
+    const activeNode = document.querySelector('.radar-node.active');
     const centerNode = document.getElementById('node-center');
-    if (!centerNode) return;
+    if (!activeNode || !centerNode) return;
 
+    const gridContainer = document.querySelector('.radar-grid') || viewport;
+    const containerRect = gridContainer.getBoundingClientRect();
     const centerRect = centerNode.getBoundingClientRect();
-    const cx = centerRect.left - viewportRect.left + centerRect.width / 2;
-    const cy = centerRect.top - viewportRect.top + centerRect.height / 2;
+    const activeRect = activeNode.getBoundingClientRect();
 
-    const branches = typeof solutionBranches !== 'undefined' ? solutionBranches : Object.keys(solutionsData);
+    // Get center coordinates of Center Node relative to gridContainer
+    const cx = centerRect.left - containerRect.left + centerRect.width / 2;
+    const cy = centerRect.top - containerRect.top + centerRect.height / 2;
 
-    // ── Draw paths + particles for each branch ─────────────────────
-    const PARTICLE_COUNT = 0;
-    const IDLE_DUR = 3.2;    // seconds per cycle (idle)
-    const ACTIVE_DUR = 1.6;  // seconds per cycle (active)
+    // Get center coordinates of Active Branch Node relative to gridContainer
+    const ax = activeRect.left - containerRect.left + activeRect.width / 2;
+    const ay = activeRect.top - containerRect.top + activeRect.height / 2;
 
-    branches.forEach((branch, branchIdx) => {
-        const node = document.getElementById(`node-${branch}`);
-        const branchInfo = solutionsData[branch];
-        if (!node || !branchInfo) return;
+    // Get active branch theme color for laser
+    const branchName = activeNode.getAttribute('data-branch');
+    const branchInfo = solutionsData[branchName];
+    const laserColor = branchInfo ? (branchInfo.accent || 'var(--primary)') : 'var(--primary)';
 
-        const nodeRect = node.getBoundingClientRect();
-        const bx = nodeRect.left - viewportRect.left + nodeRect.width / 2;
-        const by = nodeRect.top - viewportRect.top + nodeRect.height / 2;
+    // Create SVG line (laser target lock)
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('class', 'radar-laser-line');
+    line.setAttribute('x1', cx);
+    line.setAttribute('y1', cy);
+    line.setAttribute('x2', ax);
+    line.setAttribute('y2', ay);
+    line.style.setProperty('--laser-color', laserColor);
+    line.style.stroke = laserColor;
+    
+    svg.appendChild(line);
+}
 
-        const dx = bx - cx;
-        const ctrlX1 = cx + dx * 0.5;
-        const ctrlY1 = cy;
-        const ctrlX2 = cx + dx * 0.5;
-        const ctrlY2 = by;
+function setKeywordCurveHighlight(branchName, keywordIndex, shouldHighlight) {
+    // No curves in Radar Layout
+}
 
-        const pathD = `M ${cx} ${cy} C ${ctrlX1} ${ctrlY1}, ${ctrlX2} ${ctrlY2}, ${bx} ${by}`;
-        const pathId = `line-${branch}`;
 
-        // ── Connector path ──────────────────────────────────────────
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        line.setAttribute('id', pathId);
-        line.setAttribute('class', `map-line ${branchInfo.colorClass || ''}`);
-        line.setAttribute('d', pathD);
-        line.style.stroke = branchInfo.accent || 'var(--primary)';
-        svg.appendChild(line);
+let activeSolutionBranch = null;
+let activeSolutionKeywordIndex = 0;
 
-        // ── Particles ───────────────────────────────────────────────
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
-            const delay = (i * IDLE_DUR) / PARTICLE_COUNT;
-
-            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            circle.setAttribute('r', i === 0 ? '4' : '2.8');
-            circle.setAttribute('fill', branchInfo.accent || '#8B5CF6');
-            circle.setAttribute('class', 'mindmap-particle particle-idle');
-            circle.setAttribute('data-branch', branch);
-            circle.setAttribute('data-particle-index', i);
-            circle.setAttribute('opacity', i === 0 ? '0.75' : '0.5');
-
-            const motion = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
-            motion.setAttribute('dur', `${IDLE_DUR}s`);
-            motion.setAttribute('begin', `${delay}s`);
-            motion.setAttribute('repeatCount', 'indefinite');
-            motion.setAttribute('calcMode', 'spline');
-            motion.setAttribute('keyTimes', '0;1');
-            motion.setAttribute('keySplines', '0.42 0 0.58 1');
-
-            const mpath = document.createElementNS('http://www.w3.org/2000/svg', 'mpath');
-            mpath.setAttributeNS('http://www.w3.org/1999/xlink', 'href', `#${pathId}`);
-
-            motion.appendChild(mpath);
-            circle.appendChild(motion);
-            svg.appendChild(circle);
-        }
-
-        if (node.classList.contains('active')) {
-            node.querySelectorAll('.keyword-node').forEach((keyword, keywordIndex) => {
-                const keyRect = keyword.getBoundingClientRect();
-                const keyX = keyRect.left - viewportRect.left + keyRect.width / 2;
-                const keyY = keyRect.top - viewportRect.top + keyRect.height / 2;
-
-                const fromRightSide = keyX >= bx;
-                const startX = fromRightSide
-                    ? nodeRect.right - viewportRect.left
-                    : nodeRect.left - viewportRect.left;
-                const startY = by;
-                const endX = fromRightSide
-                    ? keyRect.left - viewportRect.left
-                    : keyRect.right - viewportRect.left;
-                const endY = keyY;
-                const bend = Math.min(145, Math.max(58, Math.abs(endX - startX) * 0.72));
-                const verticalPull = (keywordIndex - (node.querySelectorAll('.keyword-node').length - 1) / 2) * 16;
-                const ctrlX1 = startX + (fromRightSide ? bend : -bend) * 0.55;
-                const ctrlY1 = startY + verticalPull;
-                const ctrlX2 = endX + (fromRightSide ? -bend : bend) * 0.34;
-                const ctrlY2 = endY;
-
-                const subLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                subLine.setAttribute('class', 'keyword-curve-line');
-                subLine.setAttribute('d', `M ${startX} ${startY} C ${ctrlX1} ${ctrlY1}, ${ctrlX2} ${ctrlY2}, ${endX} ${endY}`);
-                subLine.style.stroke = branchInfo.accent || 'var(--primary)';
-                subLine.style.opacity = keyword.classList.contains('active-keyword') ? '0.95' : '0.44';
-                svg.appendChild(subLine);
-            });
+function setActiveAccordionItem(index) {
+    document.querySelectorAll('.accordion-item').forEach((el, itemIndex) => {
+        const content = el.querySelector('.accordion-content');
+        const isActive = itemIndex === index;
+        el.classList.toggle('active-item', isActive);
+        if (content) {
+            content.style.maxHeight = isActive ? `${content.scrollHeight + 24}px` : '0';
         }
     });
 }
 
+function ensureSolutionNavControls() {
+    const contentArea = document.getElementById('solution-content-area');
+    if (!contentArea || document.getElementById('solution-step-controls')) return;
 
-function initAccordion(accordionData) {
+    const controls = document.createElement('div');
+    controls.id = 'solution-step-controls';
+    controls.className = 'solution-step-controls';
+    controls.innerHTML = `
+        <button type="button" id="solution-prev-btn"><i class="fa-solid fa-arrow-left"></i> Trước</button>
+        <span id="solution-step-indicator">1/1</span>
+        <button type="button" id="solution-next-btn">Sau <i class="fa-solid fa-arrow-right"></i></button>
+    `;
+    contentArea.appendChild(controls);
+
+    controls.querySelector('#solution-prev-btn').addEventListener('click', () => navigateSolutionKeyword(-1));
+    controls.querySelector('#solution-next-btn').addEventListener('click', () => navigateSolutionKeyword(1));
+}
+
+function updateSolutionNavControls() {
+    const branchInfo = solutionsData[activeSolutionBranch];
+    const total = branchInfo?.items?.length || 0;
+    const indicator = document.getElementById('solution-step-indicator');
+    if (indicator && total) {
+        indicator.textContent = `${activeSolutionKeywordIndex + 1}/${total}`;
+    }
+}
+
+function navigateSolutionKeyword(direction) {
+    const branchInfo = solutionsData[activeSolutionBranch];
+    const total = branchInfo?.items?.length || 0;
+    if (!branchInfo || !total) return;
+    const nextIndex = (activeSolutionKeywordIndex + direction + total) % total;
+    handleKeywordClick(activeSolutionBranch, nextIndex);
+}
+
+function initAccordion(accordionData, activeIndex = 0) {
     const accordionContainer = document.getElementById('solutions-accordion');
     accordionContainer.innerHTML = '';
 
@@ -1450,17 +1537,15 @@ function initAccordion(accordionData) {
         contentDiv.className = 'accordion-content';
         contentDiv.innerHTML = `<div class="accordion-inner-text">${item.content}</div>`;
 
-        triggerBtn.addEventListener('click', () => {
-            const isActive = itemDiv.classList.contains('active-item');
-            
-            document.querySelectorAll('.accordion-item').forEach(el => {
-                el.classList.remove('active-item');
-                el.querySelector('.accordion-content').style.maxHeight = '0';
-            });
+        triggerBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
 
-            if (!isActive) {
-                itemDiv.classList.add('active-item');
-                contentDiv.style.maxHeight = contentDiv.scrollHeight + 'px';
+            const branchName = activeSolutionBranch;
+            if (branchName) {
+                handleKeywordClick(branchName, index);
+            } else {
+                setActiveAccordionItem(index);
             }
         });
 
@@ -1468,10 +1553,15 @@ function initAccordion(accordionData) {
         itemDiv.appendChild(contentDiv);
         accordionContainer.appendChild(itemDiv);
     });
+
+    requestAnimationFrame(() => setActiveAccordionItem(activeIndex));
 }
 
-function handleBranchClick(branchName) {
-    document.querySelectorAll('.node-branch').forEach(n => {
+function handleBranchClick(branchName, keywordIndex = 0) {
+    activeSolutionBranch = branchName;
+    activeSolutionKeywordIndex = keywordIndex;
+    
+    document.querySelectorAll('.radar-node').forEach(n => {
         n.classList.remove('active');
     });
     document.querySelectorAll('.keyword-node').forEach(keyword => {
@@ -1480,53 +1570,9 @@ function handleBranchClick(branchName) {
     document.querySelectorAll('.keyword-detail-popover').forEach(detail => detail.remove());
 
     const clickedNode = document.getElementById(`node-${branchName}`);
-    clickedNode.classList.add('active');
-
-    document.querySelectorAll('.map-line').forEach(line => {
-        line.classList.remove('active-line');
-    });
-    const clickedLine = document.getElementById(`line-${branchName}`);
-    if (clickedLine) {
-        clickedLine.classList.add('active-line');
+    if (clickedNode) {
+        clickedNode.classList.add('active');
     }
-
-    // ── Update particle state ────────────────────────────────────
-    const ACTIVE_DUR = 1.6;
-    const IDLE_DUR = 3.2;
-
-    document.querySelectorAll('.mindmap-particle').forEach(particle => {
-        const isActive = particle.dataset.branch === branchName;
-        const pIdx = parseInt(particle.dataset.particleIndex || 0);
-        const motion = particle.querySelector('animateMotion');
-
-        if (isActive) {
-            // Active: bright, larger, faster
-            particle.classList.remove('particle-idle');
-            particle.classList.add('particle-active');
-            particle.setAttribute('r', pIdx === 0 ? '5.5' : '3.8');
-            particle.setAttribute('opacity', '1');
-            if (motion) {
-                const delay = (pIdx * ACTIVE_DUR) / 3;
-                motion.setAttribute('dur', `${ACTIVE_DUR}s`);
-                motion.setAttribute('begin', `${delay}s`);
-                // Restart animation
-                try { motion.beginElement(); } catch(e) {}
-            }
-        } else {
-            // Idle: dim, smaller, slow
-            particle.classList.remove('particle-active');
-            particle.classList.add('particle-idle');
-            const branch = particle.dataset.branch;
-            particle.setAttribute('r', pIdx === 0 ? '4' : '2.8');
-            particle.setAttribute('opacity', pIdx === 0 ? '0.35' : '0.2');
-            if (motion) {
-                const delay = (pIdx * IDLE_DUR) / 3;
-                motion.setAttribute('dur', `${IDLE_DUR}s`);
-                motion.setAttribute('begin', `${delay}s`);
-                try { motion.beginElement(); } catch(e) {}
-            }
-        }
-    });
 
     const branchInfo = solutionsData[branchName];
     if (!branchInfo) return;
@@ -1537,29 +1583,50 @@ function handleBranchClick(branchName) {
     const iconBox = document.getElementById('solution-header-icon-box');
     const iconEl = document.getElementById('solution-header-icon');
     
-    iconBox.className = 'detail-header-icon';
-    iconEl.className = branchInfo.icon;
-    
-    iconBox.style.boxShadow = '0 0 14px rgba(255, 255, 255, 0.08)';
-    iconBox.style.borderColor = branchInfo.accent || 'var(--primary)';
-    iconBox.style.color = branchInfo.accent || 'var(--primary)';
+    if (iconBox && iconEl) {
+        iconBox.className = 'detail-header-icon';
+        iconEl.className = branchInfo.icon;
+        
+        iconBox.style.boxShadow = '0 0 14px rgba(255, 255, 255, 0.08)';
+        iconBox.style.borderColor = branchInfo.accent || 'var(--primary)';
+        iconBox.style.color = branchInfo.accent || 'var(--primary)';
+    }
 
     const keywordHtml = (branchInfo.keywords || [])
         .map(keyword => `<span>${keyword}</span>`)
         .join('');
-    document.getElementById('solution-theory').innerHTML = `
-        <div class="solution-keyword-strip">${keywordHtml}</div>
-        <div><i class="fa-solid fa-quote-left" style="opacity:0.25; margin-right:0.5rem;"></i>${branchInfo.theory}</div>
-    `;
+    const quoteHtml = branchInfo.quote
+        ? `<blockquote class="solution-quote">${branchInfo.quote}</blockquote>`
+        : '';
+    const extraHtml = branchInfo.extraHtml || '';
+        
+    const theoryEl = document.getElementById('solution-theory');
+    if (theoryEl) {
+        theoryEl.innerHTML = `
+            <div class="solution-keyword-strip">${keywordHtml}</div>
+            <div><i class="fa-solid fa-quote-left" style="opacity:0.25; margin-right:0.5rem;"></i>${branchInfo.theory}</div>
+            ${extraHtml}
+            ${quoteHtml}
+        `;
+    }
 
-    initAccordion(branchInfo);
+    initAccordion(branchInfo, keywordIndex);
+    ensureSolutionNavControls();
+    updateSolutionNavControls();
 
-    document.getElementById('solution-placeholder').classList.add('hidden');
-    document.getElementById('solution-content-area').classList.remove('hidden');
+    const placeholder = document.getElementById('solution-placeholder');
+    const contentArea = document.getElementById('solution-content-area');
+    if (placeholder && contentArea) {
+        placeholder.classList.add('hidden');
+        contentArea.classList.remove('hidden');
+    }
 
     if (document.body.classList.contains('mindmap-fullscreen-mode')) {
-        renderMindmapFocusPanel(branchName, 0);
+        renderMindmapFocusPanel(branchName, keywordIndex);
     }
+
+    // Re-draw connection lines (active laser)
+    setTimeout(drawMindmapLines, 50);
 }
 
 function closeMindmapFocusPanel() {
@@ -1570,10 +1637,15 @@ function closeMindmapFocusPanel() {
     panel.classList.add('closing');
     if (veil) veil.classList.add('closing');
 
+    // Deselect targets when panel closes
+    document.querySelectorAll('.radar-node').forEach(n => n.classList.remove('active'));
+
     setTimeout(() => {
         panel.remove();
         if (veil) veil.remove();
         document.body.classList.remove('has-focus-panel');
+        // Clear laser beam
+        drawMindmapLines();
     }, 330);
 }
 
@@ -1582,6 +1654,10 @@ function updateMindmapFocusPanelContent(branchName, keywordIndex) {
     const item = branchInfo?.items?.[keywordIndex];
     const panel = document.querySelector(`.mindmap-focus-panel[data-branch="${branchName}"]`);
     if (!branchInfo || !item || !panel) return false;
+    activeSolutionBranch = branchName;
+    activeSolutionKeywordIndex = keywordIndex;
+    setActiveAccordionItem(keywordIndex);
+    updateSolutionNavControls();
 
     panel.querySelectorAll('.focus-keyword').forEach(button => {
         const isActive = Number(button.dataset.keywordIndex) === keywordIndex;
@@ -1589,21 +1665,20 @@ function updateMindmapFocusPanelContent(branchName, keywordIndex) {
     });
 
     document.querySelectorAll('.keyword-node').forEach(button => {
-        const branchNode = button.closest('.node-branch');
+        const branchNode = button.closest('.radar-node');
         const isActive = branchNode?.dataset.branch === branchName &&
             Number(button.dataset.keywordIndex) === keywordIndex;
         button.classList.toggle('active-keyword', isActive);
     });
 
-    const body = panel.querySelector('.focus-panel-body');
-    if (body) {
-        body.classList.remove('content-swap');
-        void body.offsetWidth;
-        body.classList.add('content-swap');
-        body.innerHTML = `
-            <div class="focus-body-label">Nội dung trình bày</div>
+    const contentArea = panel.querySelector('.focus-panel-content-text');
+    if (contentArea) {
+        contentArea.classList.remove('content-swap');
+        void contentArea.offsetWidth;
+        contentArea.classList.add('content-swap');
+        contentArea.innerHTML = `
             <h5>${item.title}</h5>
-            <p>${item.content}</p>
+            <div class="focus-rich-content">${item.content}</div>
         `;
     }
 
@@ -1626,9 +1701,11 @@ function renderMindmapFocusPanel(branchName, keywordIndex = 0) {
 
     const safeKeywordIndex = Number.isInteger(keywordIndex) && branchInfo.items[keywordIndex] ? keywordIndex : 0;
     const activeItem = branchInfo.items[safeKeywordIndex];
+    activeSolutionBranch = branchName;
+    activeSolutionKeywordIndex = safeKeywordIndex;
 
     document.querySelectorAll('.keyword-node').forEach(button => {
-        const branchNode = button.closest('.node-branch');
+        const branchNode = button.closest('.radar-node');
         const isActive = branchNode?.dataset.branch === branchName &&
             Number(button.dataset.keywordIndex) === safeKeywordIndex;
         button.classList.toggle('active-keyword', isActive);
@@ -1637,6 +1714,9 @@ function renderMindmapFocusPanel(branchName, keywordIndex = 0) {
     // ── Veil: subtle dim behind the panel ────────────────────────
     const veil = document.createElement('div');
     veil.className = 'mindmap-panel-veil';
+    veil.addEventListener('click', () => {
+        closeMindmapFocusPanel();
+    });
     document.body.appendChild(veil);
 
     // ── Panel ─────────────────────────────────────────────────────
@@ -1644,6 +1724,17 @@ function renderMindmapFocusPanel(branchName, keywordIndex = 0) {
     panel.className = 'mindmap-focus-panel';
     panel.dataset.branch = branchName;
     panel.style.setProperty('--focus-accent', branchInfo.accent || 'var(--primary)');
+    
+    const keywordsHtml = (branchInfo.keywords || []).map((keyword, index) => {
+        const isActive = index === safeKeywordIndex;
+        return `
+            <button class="focus-keyword ${isActive ? 'active' : ''}" data-keyword-index="${index}">
+                <span class="focus-keyword-radar-shape"></span>
+                <span class="focus-keyword-text">${keyword}</span>
+            </button>
+        `;
+    }).join('');
+
     panel.innerHTML = `
         <div class="focus-panel-header">
             <div class="focus-panel-icon"><i class="${branchInfo.icon}"></i></div>
@@ -1658,9 +1749,15 @@ function renderMindmapFocusPanel(branchName, keywordIndex = 0) {
         </div>
         <div class="focus-panel-scroll">
             <div class="focus-panel-body">
-                <div class="focus-body-label">Nội dung trình bày</div>
-                <h5>${activeItem.title}</h5>
-                <p>${activeItem.content}</p>
+                <div class="focus-body-label">Từ khóa chính</div>
+                <div class="focus-panel-keywords">
+                    ${keywordsHtml}
+                </div>
+                <div class="focus-body-label" style="margin-top: 1.5rem;">Nội dung triển khai</div>
+                <div class="focus-panel-content-text">
+                    <h5>${activeItem.title}</h5>
+                    <div class="focus-rich-content">${activeItem.content}</div>
+                </div>
             </div>
         </div>
     `;
@@ -1669,6 +1766,14 @@ function renderMindmapFocusPanel(branchName, keywordIndex = 0) {
     panel.querySelector('.focus-panel-close').addEventListener('click', e => {
         e.stopPropagation();
         closeMindmapFocusPanel();
+    });
+
+    // Add listeners to keyword buttons
+    panel.querySelectorAll('.focus-keyword').forEach(button => {
+        button.addEventListener('click', () => {
+            const index = parseInt(button.dataset.keywordIndex);
+            handleKeywordClick(branchName, index);
+        });
     });
 
     document.body.appendChild(panel);
@@ -1682,17 +1787,19 @@ function handleKeywordClick(branchName, keywordIndex) {
     const item = branchInfo?.items?.[keywordIndex];
     const node = document.getElementById(`node-${branchName}`);
     if (!branchInfo || !item || !node) return;
+    activeSolutionBranch = branchName;
+    activeSolutionKeywordIndex = keywordIndex;
 
     if (document.body.classList.contains('mindmap-fullscreen-mode')) {
         if (updateMindmapFocusPanelContent(branchName, keywordIndex)) {
             return;
         }
-        handleBranchClick(branchName);
+        handleBranchClick(branchName, keywordIndex);
         renderMindmapFocusPanel(branchName, keywordIndex);
         return;
     }
 
-    handleBranchClick(branchName);
+    handleBranchClick(branchName, keywordIndex);
 
     document.querySelectorAll('.keyword-node').forEach(keyword => {
         keyword.classList.remove('active-keyword');
@@ -1702,6 +1809,9 @@ function handleKeywordClick(branchName, keywordIndex) {
     if (keywordButton) {
         keywordButton.classList.add('active-keyword');
     }
+    setActiveAccordionItem(keywordIndex);
+    updateSolutionNavControls();
+    setTimeout(drawMindmapLines, 0);
 
     document.querySelectorAll('.keyword-detail-popover').forEach(detail => detail.remove());
 
@@ -1755,10 +1865,61 @@ function toggleMindmapFullscreen(forceState = null) {
 
     setTimeout(() => {
         drawMindmapLines();
-        if (nextState && !document.querySelector('.node-branch.active')) {
+        if (nextState && !document.querySelector('.radar-node.active')) {
             handleBranchClick('awareness');
         }
     }, 120);
+}
+
+function syncMindmapStaticLabels() {
+    const infoTitle = document.querySelector('.mindmap-info h3');
+    const infoDesc = document.querySelector('.mindmap-info p');
+    const presentBtn = document.getElementById('btn-toggle-mindmap-fullscreen');
+    const root = document.querySelector('#node-center .node-content');
+    const footerTip = document.querySelector('.mindmap-footer-tip');
+    const detailTitle = document.getElementById('solution-title');
+    const detailSubtitle = document.getElementById('solution-subtitle');
+    const placeholderTitle = document.querySelector('#solution-placeholder h4');
+    const placeholderText = document.querySelector('#solution-placeholder p');
+    const subTitle = document.querySelector('.sub-solutions-title');
+
+    if (infoTitle) infoTitle.innerHTML = '<i class="fa-solid fa-diagram-project"></i> Sơ đồ tư duy 6.2.3';
+    if (infoDesc) infoDesc.textContent = '6 phương hướng nâng cao hiệu quả hội nhập kinh tế quốc tế của Việt Nam:';
+    if (presentBtn && !document.body.classList.contains('mindmap-fullscreen-mode')) {
+        presentBtn.innerHTML = '<i class="fa-solid fa-expand"></i> Trình chiếu';
+        presentBtn.title = 'Trình chiếu toàn màn hình';
+    }
+    if (root) root.innerHTML = '<h4>HỘI NHẬP KINH TẾ</h4><p>Nâng cao hiệu quả</p>';
+    if (footerTip) footerTip.innerHTML = '<i class="fa-solid fa-circle-info"></i> Bấm vào từng nhánh hoặc từ khóa để xem nội dung chi tiết và trình bày theo từng bước.';
+    if (detailTitle) detailTitle.textContent = 'Chọn một phương hướng';
+    if (detailSubtitle) detailSubtitle.textContent = 'Chi tiết nội dung 6.2.3';
+    if (placeholderTitle) placeholderTitle.textContent = 'Khám phá sơ đồ tư duy';
+    if (placeholderText) placeholderText.textContent = 'Chọn một nhánh trong sơ đồ để xem luận điểm, từ khóa và ý triển khai trọng tâm.';
+    if (subTitle) subTitle.innerHTML = '<i class="fa-solid fa-list-check"></i> Ý triển khai trọng tâm:';
+
+    const compactTitles = {
+        awareness: ['Nhận thức', 'Thời cơ & thách thức'],
+        strategy: ['Chiến lược', 'Lộ trình phù hợp'],
+        commitment: ['Liên kết', 'Thực hiện cam kết'],
+        institution: ['Thể chế', 'Luật pháp & môi trường'],
+        competitiveness: ['Năng lực cạnh tranh', 'Doanh nghiệp & Nhà nước'],
+        autonomy: ['Tự chủ', 'Độc lập & hội nhập']
+    };
+
+    Object.entries(compactTitles).forEach(([branch, labels]) => {
+        const node = document.getElementById(`node-${branch}`);
+        const branchInfo = solutionsData[branch];
+        if (!node || !branchInfo) return;
+
+        const title = node.querySelector('.node-content h4');
+        const subtitle = node.querySelector('.node-content p');
+        if (title) title.textContent = labels[0];
+        if (subtitle) subtitle.textContent = labels[1];
+
+        node.querySelectorAll('.keyword-node').forEach((button, index) => {
+            if (branchInfo.keywords?.[index]) button.textContent = branchInfo.keywords[index];
+        });
+    });
 }
 
 
@@ -1802,7 +1963,7 @@ function setupDOMListeners() {
     });
 
     // Branch Clicks (Tab 2)
-    document.querySelectorAll('.node-branch').forEach(branch => {
+    document.querySelectorAll('.radar-node').forEach(branch => {
         branch.addEventListener('click', () => {
             const branchName = branch.getAttribute('data-branch');
             handleBranchClick(branchName);
@@ -1812,7 +1973,7 @@ function setupDOMListeners() {
     document.querySelectorAll('.keyword-node').forEach(keyword => {
         keyword.addEventListener('click', event => {
             event.stopPropagation();
-            const branchNode = keyword.closest('.node-branch');
+            const branchNode = keyword.closest('.radar-node');
             const branchName = branchNode?.getAttribute('data-branch');
             const keywordIndex = Number(keyword.getAttribute('data-keyword-index'));
             handleKeywordClick(branchName, keywordIndex);
@@ -1841,6 +2002,41 @@ function setupDOMListeners() {
             toggleSimulation();
         });
     }
+
+    // Click outside viewport deselects branch and closes popovers
+    document.addEventListener('click', (event) => {
+        const solutionsTab = document.getElementById('tab-solutions');
+        if (!solutionsTab || !solutionsTab.classList.contains('active-content')) return;
+        if (!event.target.isConnected) return;
+
+        const isBranch = event.target.closest('.radar-node');
+        const isKeyword = event.target.closest('.keyword-node') || event.target.closest('.focus-keyword');
+        const isPopover = event.target.closest('.keyword-detail-popover');
+        const isPresentBtn = event.target.closest('.mindmap-present-btn') || event.target.closest('#btn-toggle-mindmap-fullscreen');
+        const isDetailPanel = event.target.closest('.solutions-detail-panel') || event.target.closest('.mindmap-focus-panel');
+        const isCenterNode = event.target.closest('.radar-root');
+        const isVeil = event.target.closest('.mindmap-panel-veil');
+
+        if (!isBranch && !isKeyword && !isPopover && !isPresentBtn && !isDetailPanel && !isCenterNode && !isVeil) {
+            document.querySelectorAll('.radar-node').forEach(n => n.classList.remove('active'));
+            document.querySelectorAll('.map-line').forEach(line => line.classList.remove('active-line'));
+            document.querySelectorAll('.keyword-node').forEach(k => k.classList.remove('active-keyword'));
+            document.querySelectorAll('.keyword-detail-popover').forEach(detail => detail.remove());
+            
+            if (document.body.classList.contains('mindmap-fullscreen-mode')) {
+                closeMindmapFocusPanel();
+            } else {
+                const placeholder = document.getElementById('solution-placeholder');
+                const contentArea = document.getElementById('solution-content-area');
+                if (placeholder && contentArea) {
+                    placeholder.classList.remove('hidden');
+                    contentArea.classList.add('hidden');
+                }
+            }
+            
+            drawMindmapLines();
+        }
+    });
 
     window.addEventListener('resize', () => {
         updateTimelineProgressBar();
@@ -1911,6 +2107,7 @@ function loadMap() {
 
 // App bootstrapping
 document.addEventListener('DOMContentLoaded', () => {
+    syncMindmapStaticLabels();
     switchMapMode('3d');
     initTabNavigation();
     initChart();
