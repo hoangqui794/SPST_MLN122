@@ -725,6 +725,54 @@ main {
     background: rgba(255, 255, 255, 0.18);
 }
 
+.sidebar-reference-box {
+    background: rgba(255, 255, 255, 0.018);
+    border: 1px solid rgba(255, 255, 255, 0.045);
+    border-left: 2px solid var(--active-milestone-color, var(--secondary));
+    border-radius: 10px;
+    padding: 0.7rem 0.8rem;
+    margin-bottom: 0.65rem;
+}
+
+.sidebar-reference-box h4 {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.45rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.sidebar-reference-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.sidebar-reference-box li {
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    line-height: 1.45;
+    padding-left: 0.8rem;
+    position: relative;
+}
+
+.sidebar-reference-box li::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--active-milestone-color, var(--secondary));
+    position: absolute;
+    left: 0;
+    top: 0.52rem;
+}
+
 .sidebar-kpis-header {
     border-top: 1px solid rgba(255, 255, 255, 0.03);
     padding-top: 0.75rem;
@@ -830,6 +878,66 @@ main {
     stroke-width: 0.8px !important;
     filter: drop-shadow(0 0 3px rgba(16, 185, 129, 0.3)) !important;
 }
+
+#worldMapSvg path.active-doimoi:not(.flow-line) {
+    fill: rgba(34, 197, 94, 0.14) !important;
+    stroke: #22C55E !important;
+    stroke-width: 0.75px !important;
+    filter: drop-shadow(0 0 3px rgba(34, 197, 94, 0.3)) !important;
+}
+
+#worldMapSvg path.active-apec:not(.flow-line) {
+    fill: rgba(59, 130, 246, 0.14) !important;
+    stroke: var(--secondary) !important;
+    stroke-width: 0.8px !important;
+    filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.3)) !important;
+}
+
+#worldMapSvg path.active-bta:not(.flow-line) {
+    fill: rgba(244, 114, 182, 0.16) !important;
+    stroke: #F472B6 !important;
+    stroke-width: 0.9px !important;
+    filter: drop-shadow(0 0 4px rgba(244, 114, 182, 0.35)) !important;
+}
+
+#worldMapSvg path.active-wto:not(.flow-line) {
+    fill: rgba(139, 92, 246, 0.12) !important;
+    stroke: var(--primary) !important;
+    stroke-width: 0.55px !important;
+}
+
+#worldMapSvg path.active-cptpp:not(.flow-line) {
+    fill: rgba(6, 182, 212, 0.15) !important;
+    stroke: var(--cptpp) !important;
+    stroke-width: 0.8px !important;
+    filter: drop-shadow(0 0 3px rgba(6, 182, 212, 0.3)) !important;
+}
+
+#worldMapSvg path.active-evfta:not(.flow-line) {
+    fill: rgba(245, 158, 11, 0.16) !important;
+    stroke: var(--warning) !important;
+    stroke-width: 0.8px !important;
+    filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.32)) !important;
+}
+
+#worldMapSvg path.active-rcep:not(.flow-line) {
+    fill: rgba(14, 165, 233, 0.15) !important;
+    stroke: #0EA5E9 !important;
+    stroke-width: 0.8px !important;
+    filter: drop-shadow(0 0 3px rgba(14, 165, 233, 0.32)) !important;
+}
+
+#worldMapSvg path.active-2025:not(.flow-line) {
+    fill: rgba(16, 185, 129, 0.08) !important;
+    stroke: rgba(16, 185, 129, 0.42) !important;
+    stroke-width: 0.45px !important;
+}
+
+.active-line-doimoi {
+    stroke: #22C55E !important;
+    filter: drop-shadow(0 0 3px #22C55E);
+}
+
 .active-line-asean {
     stroke: #10B981 !important;
     filter: drop-shadow(0 0 3px #10B981);
@@ -838,6 +946,11 @@ main {
 .active-line-apec {
     stroke: #3B82F6 !important;
     filter: drop-shadow(0 0 3px #3B82F6);
+}
+
+.active-line-bta {
+    stroke: #F472B6 !important;
+    filter: drop-shadow(0 0 3px #F472B6);
 }
 
 .active-line-wto {
@@ -853,6 +966,11 @@ main {
 .active-line-evfta {
     stroke: #F59E0B !important;
     filter: drop-shadow(0 0 3px #F59E0B);
+}
+
+.active-line-rcep {
+    stroke: #0EA5E9 !important;
+    filter: drop-shadow(0 0 3px #0EA5E9);
 }
 
 .active-line-2025 {
@@ -3584,6 +3702,22 @@ body.fullscreen-mode #worldMapContainer {
     left: 0 !important;
 }
 
+body.fullscreen-mode .map-hud-overlay.top-right {
+    top: 0.75rem !important;
+    right: 2rem !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    z-index: 100000 !important;
+}
+
+body.fullscreen-mode .map-hud-overlay.top-right .hud-btn {
+    padding: 0.32rem 0.58rem !important;
+    font-size: 0.62rem !important;
+    border-radius: 7px !important;
+    gap: 0.28rem !important;
+}
+
 /* === TOP CENTER: Map Controls Bar === */
 body.fullscreen-mode .map-control-header {
     position: fixed !important;
@@ -3613,8 +3747,8 @@ body.fullscreen-mode .milestone-sidebar {
     top: 50% !important;
     left: 2rem !important;
     transform: translateY(-50%) !important;
-    width: 320px !important;
-    max-height: calc(100vh - 8rem) !important;
+    width: 400px !important;
+    max-height: calc(100vh - 4.5rem) !important;
     height: auto !important;
     z-index: 99998 !important;
     background: linear-gradient(160deg, rgba(6, 10, 22, 0.88) 0%, rgba(8, 13, 30, 0.92) 100%) !important;
@@ -3660,8 +3794,8 @@ body.fullscreen-mode .fullscreen-impacts-sidebar {
     top: 50% !important;
     right: 2rem !important;
     transform: translateY(-50%) !important;
-    width: 320px !important;
-    max-height: calc(100vh - 8rem) !important;
+    width: 400px !important;
+    max-height: calc(100vh - 4.5rem) !important;
     height: auto !important;
     z-index: 99998 !important;
     background: linear-gradient(160deg, rgba(6, 10, 22, 0.88) 0%, rgba(8, 13, 30, 0.92) 100%) !important;
@@ -3703,9 +3837,9 @@ body.fullscreen-mode .timeline-container {
     bottom: 1.75rem !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    width: auto !important;
-    min-width: 680px !important;
-    max-width: calc(100vw - 720px) !important;
+    width: 720px !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 900px) !important;
     z-index: 99999 !important;
     background: rgba(6, 10, 22, 0.78) !important;
     border: 1px solid rgba(255, 255, 255, 0.07) !important;
@@ -3714,9 +3848,61 @@ body.fullscreen-mode .timeline-container {
                 0 -4px 30px rgba(0, 0, 0, 0.6),
                 0 8px 40px rgba(0, 0, 0, 0.7) !important;
     margin: 0 !important;
-    padding: 0.75rem 1.5rem 1rem !important;
-    border-radius: 20px !important;
+    padding: 0.55rem 1rem 0.75rem !important;
+    border-radius: 16px !important;
     animation: panelSlideInBottom 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.fullscreen-mode .timeline-container > div:first-child {
+    margin-bottom: 0.45rem !important;
+}
+
+body.fullscreen-mode .timeline-container .section-title {
+    flex: 0 0 235px !important;
+    max-width: 235px !important;
+    font-size: 0.68rem !important;
+    line-height: 1.2 !important;
+    gap: 0.35rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+body.fullscreen-mode .timeline-container .sim-btn {
+    padding: 0.35rem 0.8rem !important;
+    font-size: 0.72rem !important;
+}
+
+body.fullscreen-mode .timeline-wrapper {
+    margin: 1.2rem 0 0.35rem !important;
+    padding: 0 0.4rem !important;
+}
+
+body.fullscreen-mode .timeline-progress {
+    top: 11px !important;
+    left: calc(0.4rem + 35px) !important;
+    right: calc(0.4rem + 35px) !important;
+    height: 3px !important;
+}
+
+body.fullscreen-mode .milestone-dot {
+    width: 68px !important;
+    gap: 0.45rem !important;
+}
+
+body.fullscreen-mode .dot-circle {
+    width: 26px !important;
+    height: 26px !important;
+    border-width: 4px !important;
+}
+
+body.fullscreen-mode .dot-year {
+    font-size: 0.76rem !important;
+}
+
+body.fullscreen-mode .dot-desc {
+    font-size: 0.56rem !important;
+    max-width: 72px !important;
 }
 
 /* Panel entry animations */
@@ -3851,10 +4037,14 @@ body.fullscreen-mode .sidebar-kpi-card .kpi-value {
 @media (max-width: 1400px) {
     body.fullscreen-mode .milestone-sidebar,
     body.fullscreen-mode .fullscreen-impacts-sidebar {
-        width: 280px !important;
+        width: 340px !important;
     }
     body.fullscreen-mode .timeline-container {
-        max-width: calc(100vw - 640px) !important;
+        width: 620px !important;
+        max-width: calc(100vw - 760px) !important;
+    }
+    body.fullscreen-mode .map-hud-overlay.top-right {
+        right: 2rem !important;
     }
 }
 

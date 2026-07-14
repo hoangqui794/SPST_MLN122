@@ -5,6 +5,10 @@
 // 1. DATASETS DEFINITIONS
 const yearlyData = {
     // Year-by-year economic data (in Billion USD)
+    '1986': { exports: 0.8, imports: 2.2, fdi: 0.0, balance: -1.4 },
+    '1995': { exports: 5.4, imports: 8.2, fdi: 2.6, balance: -2.8 },
+    '1998': { exports: 9.4, imports: 11.5, fdi: 2.4, balance: -2.1 },
+    '2001': { exports: 15.0, imports: 16.2, fdi: 2.5, balance: -1.2 },
     '2006': { exports: 39.8, imports: 44.8, fdi: 4.1, balance: -5.0 },
     '2007': { exports: 48.6, imports: 62.8, fdi: 8.0, balance: -14.2 },
     '2008': { exports: 62.7, imports: 80.7, fdi: 11.5, balance: -18.0 },
@@ -29,8 +33,8 @@ const yearlyData = {
 
 const milestoneTexts = {
     'all': {
-        title: "Toàn cảnh Hội nhập Kinh tế (2006 - 2025)",
-        desc: "Hành trình 20 năm hội nhập kinh tế quốc tế sâu rộng của Việt Nam. Từ khi gia nhập WTO năm 2007, nước ta đã ký kết 16+ FTA, đưa kim ngạch thương mại đạt kỷ lục lịch sử hơn 930 tỷ USD năm 2025, liên tục xuất siêu 10 năm liền, khẳng định vị thế một trong những nền kinh tế mở năng động hàng đầu thế giới.",
+        title: "Toàn cảnh Hội nhập Kinh tế (1986 - 2025)",
+        desc: "Hành trình hội nhập kinh tế của Việt Nam đi từ Đổi mới năm 1986, kết nối khu vực qua ASEAN - AFTA, mở rộng ra APEC, BTA Việt - Mỹ và WTO, rồi tiến tới các FTA thế hệ mới như CPTPP, EVFTA, RCEP. Tiến trình này thể hiện tác động hai mặt của hội nhập: mở rộng thị trường, thu hút vốn, tiếp thu công nghệ, nhưng cũng làm tăng sức ép cạnh tranh và độ nhạy cảm trước biến động bên ngoài.",
         positive: [
             { icon: "fa-solid fa-chart-line", text: "<strong>Tăng trưởng vượt bậc:</strong> Kim ngạch xuất nhập khẩu tăng hơn 11 lần, đạt kỷ lục hơn 930 tỷ USD năm 2025, liên tục xuất siêu 10 năm liền." },
             { icon: "fa-solid fa-hand-holding-dollar", text: "<strong>Động lực FDI vững chắc:</strong> Dòng vốn đầu tư nước ngoài giải ngân thực tế tăng trưởng ổn định qua các năm, chiếm trên 70% tổng kim ngạch xuất khẩu." },
@@ -42,6 +46,20 @@ const milestoneTexts = {
             { icon: "fa-solid fa-arrows-spin", text: "<strong>Mức độ phụ thuộc cao:</strong> Nền kinh tế hướng xuất khẩu nên cực kỳ nhạy cảm và dễ tổn thương trước biến động thị trường và địa chính trị thế giới." },
             { icon: "fa-solid fa-network-wired", text: "<strong>Bẫy gia công giá trị thấp:</strong> Nguy cơ mắc kẹt ở phân khúc gia công thô (dệt may, lắp ráp điện tử), tỉ lệ nội địa hóa và giá trị gia tăng nội địa thấp." },
             { icon: "fa-solid fa-dumpster-fire", text: "<strong>Rủi ro môi trường:</strong> Nguy cơ trở thành 'bãi thải công nghiệp' của các công nghệ lỗi thời và cạn kiệt tài nguyên thiên nhiên." }
+        ]
+    },
+    '1986': {
+        title: "Đổi mới và mở cửa nền kinh tế (1986)",
+        desc: "Đại hội VI của Đảng tháng 12/1986 khởi xướng đường lối Đổi mới, chuyển nền kinh tế từ cơ chế kế hoạch hóa tập trung, bao cấp sang kinh tế thị trường định hướng xã hội chủ nghĩa. Đây là điểm khởi đầu tư duy mở cửa, tạo tiền đề cho Việt Nam thu hút nguồn lực xã hội, phát triển kinh tế tư nhân và chuẩn bị hội nhập quốc tế sâu rộng hơn.",
+        positive: [
+            { icon: "fa-solid fa-door-open", text: "<strong>Mở đường cho cải cách:</strong> Giải phóng sức sản xuất, thừa nhận các thành phần kinh tế và đặt nền móng cho tư duy kinh tế thị trường." },
+            { icon: "fa-solid fa-seedling", text: "<strong>Ổn định nền tảng phát triển:</strong> Góp phần thoát khỏi khủng hoảng kinh tế, từng bước kiềm chế lạm phát và khắc phục tình trạng khan hiếm hàng hóa." },
+            { icon: "fa-solid fa-handshake", text: "<strong>Chuẩn bị hội nhập:</strong> Tạo cơ sở thể chế ban đầu để mở cửa thu hút đầu tư, thương mại và nguồn lực từ bên ngoài." }
+        ],
+        negative: [
+            { icon: "fa-solid fa-scale-unbalanced", text: "<strong>Quản lý chuyển đổi còn lúng túng:</strong> Giai đoạn đầu thiếu kinh nghiệm vận hành cơ chế thị trường và quản lý các thành phần kinh tế mới." },
+            { icon: "fa-solid fa-people-arrows", text: "<strong>Phân hóa xã hội manh nha:</strong> Chênh lệch thu nhập bắt đầu xuất hiện khi các cơ hội kinh tế mở ra không đồng đều." },
+            { icon: "fa-solid fa-road-barrier", text: "<strong>Hạ tầng còn yếu:</strong> Cơ sở vật chất, logistics và năng lực doanh nghiệp chưa theo kịp tốc độ đổi mới." }
         ]
     },
     '1995': {
@@ -68,6 +86,19 @@ const milestoneTexts = {
         negative: [
             { icon: "fa-solid fa-hourglass-half", text: "<strong>Áp lực tự nguyện hóa:</strong> APEC hoạt động trên nguyên tắc tự nguyện, không ràng buộc pháp lý, đòi hỏi sự chủ động cực lớn của doanh nghiệp để nắm lấy cơ hội." },
             { icon: "fa-solid fa-gauge-simple-high", text: "<strong>Khoảng cách công nghệ lớn:</strong> Chênh lệch trình độ quá lớn với các nước phát triển trong khối tạo ra vị thế bất lợi trong việc tiếp cận các dự án lớn." }
+        ]
+    },
+    '2001': {
+        title: "Hiệp định Thương mại Việt Nam - Hoa Kỳ BTA (2001)",
+        desc: "Hiệp định Thương mại song phương Việt Nam - Hoa Kỳ có hiệu lực từ ngày 10/12/2001, bình thường hóa sâu hơn quan hệ kinh tế giữa hai nước và mở ra cánh cửa lớn vào thị trường Hoa Kỳ. Đây là bước chạy đà quan trọng giúp Việt Nam cải cách thể chế, mở rộng xuất khẩu và tích lũy kinh nghiệm trước khi gia nhập WTO.",
+        positive: [
+            { icon: "fa-solid fa-arrow-up-right-dots", text: "<strong>Cú hích xuất khẩu:</strong> Mở rộng mạnh thị trường cho dệt may, da giày, nông sản và thủy sản Việt Nam." },
+            { icon: "fa-solid fa-scroll", text: "<strong>Cải cách pháp luật kinh tế:</strong> Thúc đẩy Việt Nam điều chỉnh khung pháp lý theo chuẩn mực thương mại hiện đại." },
+            { icon: "fa-solid fa-briefcase", text: "<strong>Tạo việc làm và thu hút FDI:</strong> Dòng vốn đầu tư tìm đến Việt Nam để tận dụng lợi thế sản xuất và xuất khẩu sang Hoa Kỳ." }
+        ],
+        negative: [
+            { icon: "fa-solid fa-gavel", text: "<strong>Rủi ro phòng vệ thương mại:</strong> Doanh nghiệp bắt đầu đối mặt với các vụ kiện chống bán phá giá và rào cản kỹ thuật phức tạp." },
+            { icon: "fa-solid fa-triangle-exclamation", text: "<strong>Áp lực tiêu chuẩn cao:</strong> Thị trường Hoa Kỳ đòi hỏi năng lực quản trị, chất lượng và tuân thủ pháp lý chặt chẽ hơn." }
         ]
     },
     '2007': {
@@ -113,11 +144,25 @@ const milestoneTexts = {
             { icon: "fa-solid fa-leaf", text: "<strong>Rào cản xanh mới:</strong> Áp lực từ các tiêu chuẩn mới của EU như cơ chế CBAM (đánh thuế carbon) và quy định truy xuất nguồn gốc chống phá rừng." }
         ]
     },
-    '2025': {
-        title: "Mốc kỷ lục mới & Tương lai hội nhập (2025)",
-        desc: "Năm 2025 đánh dấu quy mô thương mại của Việt Nam tiệm cận cột mốc lịch sử 930 tỷ USD, đưa nước ta vững vàng trong nhóm 20 nền kinh tế hàng đầu về giao thương quốc tế. Cơ cấu dòng vốn FDI dịch chuyển mạnh mẽ sang các lĩnh vực công nghệ cao, chíp bán dẫn, AI, năng lượng xanh và phát triển bền vững.",
+    '2022': {
+        title: "Hiệp định RCEP có hiệu lực (2022)",
+        desc: "Hiệp định Đối tác Kinh tế Toàn diện Khu vực (RCEP) có hiệu lực với Việt Nam từ ngày 01/01/2022, kết nối ASEAN với Trung Quốc, Nhật Bản, Hàn Quốc, Australia và New Zealand. RCEP giúp hài hòa quy tắc xuất xứ, củng cố chuỗi cung ứng Đông Á và tạo điều kiện thuận lợi hơn cho doanh nghiệp Việt Nam trong thương mại khu vực.",
         positive: [
-            { icon: "fa-solid fa-ranking-star", text: "<strong>Quy mô thương mại khổng lồ:</strong> Tổng kim ngạch tiệm cận 930 tỷ USD đưa Việt Nam vào nhóm 20 nền kinh tế hàng đầu về thương mại quốc tế." },
+            { icon: "fa-solid fa-network-wired", text: "<strong>Hài hòa chuỗi cung ứng:</strong> Quy tắc xuất xứ thống nhất giúp doanh nghiệp dễ kết hợp nguyên liệu, linh kiện và thị trường trong cùng khu vực." },
+            { icon: "fa-solid fa-truck-fast", text: "<strong>Giảm chi phí giao dịch:</strong> Thủ tục thương mại thuận lợi hơn, hỗ trợ ngành điện tử, dệt may, nông sản và logistics." },
+            { icon: "fa-solid fa-map-location-dot", text: "<strong>Củng cố vị trí khu vực:</strong> Việt Nam tham gia sâu hơn vào mạng sản xuất Đông Á, nơi tập trung nhiều đối tác thương mại lớn." }
+        ],
+        negative: [
+            { icon: "fa-solid fa-scale-unbalanced-flip", text: "<strong>Áp lực nhập siêu:</strong> Nguy cơ phụ thuộc lớn hơn vào nguyên liệu, máy móc và hàng hóa từ các đối tác trong khối." },
+            { icon: "fa-solid fa-industry", text: "<strong>Cạnh tranh ngay trên sân nhà:</strong> Doanh nghiệp nội địa chịu sức ép từ hàng công nghiệp và tiêu dùng giá cạnh tranh trong khu vực." },
+            { icon: "fa-solid fa-layer-group", text: "<strong>Nguy cơ kẹt ở phân khúc thấp:</strong> Nếu không nâng công nghệ, Việt Nam dễ chỉ tham gia khâu gia công, lắp ráp giá trị gia tăng thấp." }
+        ]
+    },
+    '2025': {
+        title: "Thành quả tăng trưởng và độ mở nền kinh tế (2025)",
+        desc: "Năm 2025 được dùng như lát cắt tổng hợp để nhìn lại thành quả gần bốn thập kỷ Đổi mới và hội nhập: Việt Nam duy trì triển vọng tăng trưởng tương đối cao trong khu vực, có độ mở kinh tế rất lớn và ngày càng gắn chặt với chuỗi cung ứng toàn cầu. Đây cũng là mốc nhấn mạnh yêu cầu chuyển từ tăng trưởng dựa vào lao động giá rẻ, gia công và tài nguyên sang tăng trưởng dựa trên khoa học - công nghệ, đổi mới sáng tạo và năng lực tự chủ.",
+        positive: [
+            { icon: "fa-solid fa-ranking-star", text: "<strong>Độ mở kinh tế rất cao:</strong> Tổng kim ngạch xuất nhập khẩu/GDP duy trì ở mức lớn, cho thấy Việt Nam gắn sâu với thương mại và chuỗi cung ứng quốc tế." },
             { icon: "fa-solid fa-bolt", text: "<strong>Dịch chuyển sang công nghệ cao:</strong> Dòng vốn FDI tập trung mạnh vào các dự án bán dẫn, trí tuệ nhân tạo (AI), năng lượng tái tạo và kinh tế tuần hoàn." },
             { icon: "fa-solid fa-medal", text: "<strong>Thương hiệu Việt vươn tầm:</strong> Xuất khẩu chuyển dịch mạnh từ hàng thô sang các sản phẩm công nghệ cao tự chủ thiết kế và nông sản chế biến sâu." }
         ],
@@ -127,6 +172,51 @@ const milestoneTexts = {
             { icon: "fa-solid fa-earth-americas", text: "<strong>Địa chính trị bất ổn:</strong> Căng thẳng thương mại toàn cầu và xu hướng phi toàn cầu hóa gây gián đoạn chuỗi cung ứng logistics." }
         ]
     }
+};
+
+const milestoneReferences = {
+    all: [
+        "Giáo trình Kinh tế chính trị Mác - Lênin, mục 6.2.2, tr. 238 - 241.",
+        "World Bank Open Data - Viet Nam profile.",
+        "Tổng cục Thống kê Việt Nam - số liệu kinh tế - xã hội và thương mại."
+    ],
+    '1986': [
+        "Đảng Cộng sản Việt Nam - Văn kiện Đại hội đại biểu toàn quốc lần thứ VI (1986).",
+        "World Bank - Viet Nam overview: development history."
+    ],
+    '1995': [
+        "ASEAN Secretariat - Viet Nam in ASEAN: integration milestones.",
+        "Bộ Công Thương Việt Nam - tiến trình tham gia AFTA của Việt Nam."
+    ],
+    '1998': [
+        "APEC Secretariat - Member Economies: Viet Nam.",
+        "Bộ Ngoại giao Việt Nam - Việt Nam và Diễn đàn Hợp tác Kinh tế châu Á - Thái Bình Dương."
+    ],
+    '2001': [
+        "U.S. State Department - U.S.-Vietnam Bilateral Trade Agreement.",
+        "Bộ Công Thương Việt Nam - đánh giá quá trình thực hiện BTA Việt Nam - Hoa Kỳ."
+    ],
+    '2007': [
+        "World Trade Organization - Viet Nam and the WTO.",
+        "Bộ Kế hoạch và Đầu tư Việt Nam - báo cáo/đánh giá tác động sau khi gia nhập WTO."
+    ],
+    '2019': [
+        "Bộ Công Thương Việt Nam - Cổng thông tin Hiệp định CPTPP.",
+        "World Bank - Economic and Distributional Impacts of CPTPP: The Case of Vietnam."
+    ],
+    '2020': [
+        "European Commission - EU-Vietnam Trade Agreement.",
+        "EuroCham - Whitebook on EVFTA implementation."
+    ],
+    '2022': [
+        "ASEAN Secretariat - Regional Comprehensive Economic Partnership Agreement.",
+        "Bộ Công Thương Việt Nam - Cẩm nang/RCEP và chính sách thương mại đa phương."
+    ],
+    '2025': [
+        "World Bank - Vietnam economic update/Taking Stock.",
+        "Tổng cục Thống kê Việt Nam - báo cáo tình hình kinh tế - xã hội.",
+        "World Bank Open Data - trade, GDP and FDI indicators for Viet Nam."
+    ]
 };
 
 const legacySolutionsData = {
@@ -392,6 +482,7 @@ const euCodes = ['at', 'be', 'bg', 'hr', 'cy', 'cz', 'dk', 'ee', 'fi', 'fr', 'de
 const cptppCodes = ['jp', 'ca', 'au', 'nz', 'mx', 'pe', 'cl', 'sg', 'my', 'bn'];
 const aseanCodes = ['th', 'id', 'my', 'sg', 'ph', 'kh', 'la', 'mm', 'bn'];
 const apecCodes = ['us', 'ca', 'mx', 'pe', 'cl', 'jp', 'cn', 'ru', 'kr', 'au', 'nz', 'sg', 'my', 'bn', 'th', 'id', 'ph', 'vn'];
+const rcepCodes = [...new Set([...aseanCodes, 'cn', 'jp', 'kr', 'au', 'nz'])];
 
 // Capital coordinates for mapping trade flows from Hanoi, Vietnam
 const countryCoords = {
@@ -585,13 +676,17 @@ function initChart() {
                     const firstPoint = activeElements[0];
                     const label = integrationChart.data.labels[firstPoint.index];
                     let targetYear = label;
-                    const milestoneYears = ['1995', '1998', '2007', '2019', '2020', '2025'];
+                    const milestoneYears = ['1986', '1995', '1998', '2001', '2007', '2019', '2020', '2022', '2025'];
                     if (!milestoneYears.includes(targetYear)) {
                         const yearNum = parseInt(targetYear);
-                        if (yearNum <= 2006) targetYear = 'all';
+                        if (yearNum <= 1994) targetYear = '1986';
+                        else if (yearNum >= 1995 && yearNum <= 1997) targetYear = '1995';
+                        else if (yearNum >= 1998 && yearNum <= 2000) targetYear = '1998';
+                        else if (yearNum >= 2001 && yearNum <= 2006) targetYear = '2001';
                         else if (yearNum >= 2007 && yearNum <= 2018) targetYear = '2007';
                         else if (yearNum === 2019) targetYear = '2019';
-                        else if (yearNum >= 2020 && yearNum <= 2024) targetYear = '2020';
+                        else if (yearNum >= 2020 && yearNum <= 2021) targetYear = '2020';
+                        else if (yearNum >= 2022 && yearNum <= 2024) targetYear = '2022';
                         else if (yearNum >= 2025) targetYear = '2025';
                     }
                     const dot = document.querySelector(`.milestone-dot[data-year="${targetYear}"]`);
@@ -747,11 +842,14 @@ function fetchGeoJson() {
 
 // Get standard theme colors based on the active milestone
 function getMilestoneColor(year, alpha = 1) {
+    if (year === '1986') return `rgba(34, 197, 94, ${alpha})`; // Đổi mới - Green
     if (year === '1995') return `rgba(16, 185, 129, ${alpha})`; // ASEAN - Green
     if (year === '1998') return `rgba(59, 130, 246, ${alpha})`; // APEC - Blue
+    if (year === '2001') return `rgba(244, 114, 182, ${alpha})`; // BTA - Pink
     if (year === '2007') return `rgba(139, 92, 246, ${alpha})`; // WTO - Purple
     if (year === '2019') return `rgba(6, 182, 212, ${alpha})`;  // CPTPP - Cyan
     if (year === '2020') return `rgba(245, 158, 11, ${alpha})`;  // EVFTA - Orange
+    if (year === '2022') return `rgba(14, 165, 233, ${alpha})`;  // RCEP - Sky
     return `rgba(16, 185, 129, ${alpha})`; // 2025/All
 }
 
@@ -760,13 +858,16 @@ function isCountryActiveInYear(code, year) {
     if (!code || code === 'vn') return false;
     
     if (year === 'all' || year === '2025') {
-        return euCodes.includes(code) || cptppCodes.includes(code) || aseanCodes.includes(code) || apecCodes.includes(code);
+        return euCodes.includes(code) || cptppCodes.includes(code) || aseanCodes.includes(code) || apecCodes.includes(code) || rcepCodes.includes(code);
     }
+    if (year === '1986') return ['sg', 'jp', 'ru'].includes(code);
     if (year === '1995') return aseanCodes.includes(code);
     if (year === '1998') return apecCodes.includes(code);
+    if (year === '2001') return code === 'us';
     if (year === '2007') return true; // WTO covers all countries in our database
     if (year === '2019') return cptppCodes.includes(code);
     if (year === '2020') return euCodes.includes(code);
+    if (year === '2022') return rcepCodes.includes(code);
     return false;
 }
 
@@ -867,16 +968,22 @@ function updateGlobeData() {
 
     // 2. Generate arcs (trade flow streams) from Hanoi to active nodes
     const activeCountries = [];
-    if (year === '1995') {
+    if (year === '1986') {
+        ['sg', 'jp', 'ru'].forEach(c => activeCountries.push(c));
+    } else if (year === '1995') {
         aseanCodes.forEach(c => { if (c !== 'vn') activeCountries.push(c); });
     } else if (year === '1998') {
         ['us', 'ca', 'mx', 'pe', 'cl', 'jp', 'cn', 'ru', 'kr', 'au', 'nz', 'id'].forEach(c => activeCountries.push(c));
+    } else if (year === '2001') {
+        ['us'].forEach(c => activeCountries.push(c));
     } else if (year === '2007') {
         ['us', 'ca', 'br', 'za', 'de', 'fr', 'cn', 'ru', 'in', 'au', 'sa', 'eg'].forEach(c => activeCountries.push(c));
     } else if (year === '2019') {
         cptppCodes.forEach(c => { if (c !== 'vn') activeCountries.push(c); });
     } else if (year === '2020') {
         euCodes.forEach(c => activeCountries.push(c));
+    } else if (year === '2022') {
+        rcepCodes.forEach(c => { if (c !== 'vn') activeCountries.push(c); });
     } else {
         ['us', 'cn', 'kr', 'jp', 'de', 'nl', 'au', 'sg', 'in', 'br'].forEach(c => activeCountries.push(c));
     }
@@ -1143,7 +1250,17 @@ function updateWorldMap(year) {
         }
     }
 
-    if (year === '1995') {
+    if (year === '1986') {
+        const earlyHubs = ['sg', 'jp', 'ru'];
+        earlyHubs.forEach(code => {
+            const el = document.getElementById(code);
+            if (el) {
+                el.setAttribute('class', 'active-doimoi');
+            }
+            drawFlowCurve(code, 'doimoi');
+        });
+    }
+    else if (year === '1995') {
         aseanCodes.forEach(code => {
             const el = document.getElementById(code);
             if (el) {
@@ -1161,6 +1278,13 @@ function updateWorldMap(year) {
         });
         const apecHubs = ['us', 'ca', 'mx', 'pe', 'cl', 'jp', 'cn', 'ru', 'kr', 'au', 'nz', 'id'];
         apecHubs.forEach(code => drawFlowCurve(code, 'apec'));
+    }
+    else if (year === '2001') {
+        const usEl = document.getElementById('us');
+        if (usEl) {
+            usEl.setAttribute('class', 'active-bta');
+        }
+        drawFlowCurve('us', 'bta');
     }
     else if (year === '2007') {
         document.querySelectorAll('#worldMapSvg path').forEach(path => {
@@ -1189,6 +1313,15 @@ function updateWorldMap(year) {
         });
         const euHubs = ['fr', 'de', 'it', 'es', 'nl', 'pl', 'se', 'gr', 'fi'];
         euHubs.forEach(code => drawFlowCurve(code, 'evfta'));
+    }
+    else if (year === '2022') {
+        rcepCodes.forEach(code => {
+            const el = document.getElementById(code);
+            if (el) {
+                el.setAttribute('class', 'active-rcep');
+                if (code !== 'vn') drawFlowCurve(code, 'rcep');
+            }
+        });
     }
     else if (year === '2025' || year === 'all') {
         document.querySelectorAll('#worldMapSvg path').forEach(path => {
@@ -1380,6 +1513,17 @@ function handleMilestoneClick(element, isAutoTriggered = false) {
     
     const sidebarDesc = document.getElementById('sidebar-milestone-desc');
     if (sidebarDesc) sidebarDesc.innerHTML = mData.desc || '';
+
+    const referenceList = document.getElementById('sidebar-reference-list');
+    if (referenceList) {
+        referenceList.innerHTML = '';
+        const references = milestoneReferences[year] || milestoneReferences.all;
+        references.forEach(ref => {
+            const li = document.createElement('li');
+            li.textContent = ref;
+            referenceList.appendChild(li);
+        });
+    }
 
     // Synchronize all map updates
     updateWorldMap(year);
@@ -2285,7 +2429,7 @@ function showQuizResult() {
 // 9. AUTOMATIC PRESENTATION / SIMULATION PLAYBACK (UX ENHANCEMENT)
 // ==========================================
 let simulationInterval = null;
-const milestoneYears = ['1995', '1998', '2007', '2019', '2020', '2025', 'all'];
+const milestoneYears = ['1986', '1995', '1998', '2001', '2007', '2019', '2020', '2022', '2025', 'all'];
 
 function toggleSimulation() {
     const btn = document.getElementById('simBtn');
