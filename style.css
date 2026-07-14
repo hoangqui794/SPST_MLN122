@@ -725,6 +725,137 @@ main {
     background: rgba(255, 255, 255, 0.18);
 }
 
+.sidebar-illustration {
+    margin: 0 0 0.65rem;
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 12px;
+    overflow: hidden;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.045), rgba(4, 7, 17, 0.92));
+    cursor: zoom-in;
+    position: relative;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sidebar-illustration:hover,
+.sidebar-illustration:focus-visible {
+    border-color: rgba(139, 92, 246, 0.35);
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.16);
+    outline: none;
+}
+
+.sidebar-illustration img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    object-position: center;
+    filter: saturate(0.92) contrast(1.03);
+}
+
+.sidebar-illustration figcaption {
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    line-height: 1.45;
+    padding: 0.58rem 0.7rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.illustration-zoom-btn {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.55rem;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: rgba(4, 7, 17, 0.72);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-in;
+    backdrop-filter: blur(10px);
+}
+
+.illustration-zoom-btn:hover {
+    border-color: rgba(139, 92, 246, 0.55);
+    color: #C4B5FD;
+}
+
+.image-lightbox.hidden {
+    display: none;
+}
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.image-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(10px);
+}
+
+.image-lightbox-content {
+    position: relative;
+    z-index: 1;
+    width: min(92vw, 980px);
+    max-height: 92vh;
+    background: rgba(8, 13, 30, 0.94);
+    border: 1px solid rgba(139, 92, 246, 0.28);
+    border-radius: 18px;
+    padding: 1rem;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.72), 0 0 80px rgba(139, 92, 246, 0.12);
+}
+
+.image-lightbox-content img {
+    display: block;
+    width: 100%;
+    max-height: calc(92vh - 110px);
+    object-fit: contain;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.image-lightbox-content figcaption {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    padding: 0.8rem 0.35rem 0.15rem;
+}
+
+.image-lightbox-close {
+    position: absolute;
+    top: -0.75rem;
+    right: -0.75rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(8, 13, 30, 0.95);
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-lightbox-close:hover {
+    border-color: rgba(239, 68, 68, 0.55);
+    color: #FCA5A5;
+}
+
+body.image-lightbox-open {
+    overflow: hidden;
+}
+
 .sidebar-reference-box {
     background: rgba(255, 255, 255, 0.018);
     border: 1px solid rgba(255, 255, 255, 0.045);
@@ -4018,6 +4149,16 @@ body.fullscreen-mode #sidebar-milestone-title {
 body.fullscreen-mode #sidebar-milestone-desc {
     font-size: 0.75rem !important;
     line-height: 1.5 !important;
+}
+
+body.fullscreen-mode .sidebar-illustration img {
+    height: 118px !important;
+}
+
+body.fullscreen-mode .sidebar-illustration figcaption {
+    font-size: 0.66rem !important;
+    line-height: 1.35 !important;
+    padding: 0.45rem 0.58rem !important;
 }
 
 body.fullscreen-mode .sidebar-kpi-grid {

@@ -44,9 +44,6 @@
                 <button class="tab-btn" data-tab="tab-solutions">
                     <i class="fa-solid fa-sitemap"></i> Sơ đồ Tư duy Giải pháp (6.2.3)
                 </button>
-                <button class="tab-btn" data-tab="tab-quiz">
-                    <i class="fa-solid fa-circle-question"></i> Trắc nghiệm vui (Chương 6)
-                </button>
             </nav>
         </header>
 
@@ -193,6 +190,13 @@
                             <p id="sidebar-milestone-desc" class="sidebar-desc">
                                 Đang tải thông tin mô tả chi tiết...
                             </p>
+                            <figure class="sidebar-illustration" id="sidebar-illustration">
+                                <img id="sidebar-illustration-img" src="image/webp/2007-wto.webp" alt="Minh họa mốc hội nhập kinh tế quốc tế năm 2007" loading="lazy">
+                                <button class="illustration-zoom-btn" id="illustration-zoom-btn" type="button" title="Xem ảnh chi tiết">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </button>
+                                <figcaption id="sidebar-illustration-caption">WTO 2007 - minh họa quá trình Việt Nam hội nhập sâu vào thương mại toàn cầu.</figcaption>
+                            </figure>
                             <div class="sidebar-reference-box">
                                 <h4><i class="fa-solid fa-book-open"></i> Reference</h4>
                                 <ul id="sidebar-reference-list"></ul>
@@ -511,42 +515,6 @@
                 </div>
             </section>
 
-            <!-- TAB 3: TRẮC NGHIỆM HỘI NHẬP (NEW - PREMIUM UX FEATURE) -->
-            <section id="tab-quiz" class="tab-content">
-                <div class="quiz-container">
-                    <div class="quiz-header">
-                        <h3><i class="fa-solid fa-graduation-cap"></i> Trắc nghiệm Ôn tập Chương 6</h3>
-                        <p class="card-subtitle">Củng cố lý thuyết Công nghiệp hóa, hiện đại hóa và hội nhập kinh tế quốc tế (Mác - Lênin)</p>
-                    </div>
-                    
-                    <div class="quiz-body" id="quiz-body">
-                        <!-- Quiz Question Box -->
-                        <div id="quiz-question-box">
-                            <div class="quiz-progress-bar-container">
-                                <div class="quiz-progress-bar" id="quiz-progress-bar" style="width: 16.66%;"></div>
-                            </div>
-                            <div class="quiz-meta-info">
-                                <span id="quiz-question-number">Câu hỏi 1/6</span>
-                            </div>
-                            <h4 id="quiz-question-text">Câu hỏi đang được tải...</h4>
-                            <div class="quiz-options-list" id="quiz-options-list">
-                                <!-- Options populated dynamically by JS -->
-                            </div>
-                        </div>
-                        
-                        <!-- Quiz Result Box -->
-                        <div id="quiz-result-box" class="quiz-result-box hidden">
-                            <i class="fa-solid fa-trophy trophy-icon"></i>
-                            <h4 id="quiz-result-title">Hoàn thành thử thách!</h4>
-                            <p id="quiz-result-score">Bạn đạt 0/6 câu đúng.</p>
-                            <p id="quiz-result-feedback">Hãy củng cố thêm lý thuyết nhé!</p>
-                            <button class="quiz-restart-btn" id="quiz-restart-btn">
-                                <i class="fa-solid fa-rotate-right"></i> Làm thử thách mới
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <!-- Theoretical Dialog / Bottom Note: Relationship between Autonomy & Integration -->
@@ -589,6 +557,18 @@
             </div>
             <p>© 2026 Nhóm 2 - Lớp Kinh tế Chính trị. Sản phẩm sáng tạo số hóa phục vụ học tập.</p>
         </footer>
+    </div>
+
+    <!-- Image detail lightbox -->
+    <div class="image-lightbox hidden" id="image-lightbox" aria-hidden="true">
+        <div class="image-lightbox-backdrop" id="image-lightbox-backdrop"></div>
+        <figure class="image-lightbox-content" role="dialog" aria-modal="true" aria-labelledby="image-lightbox-caption">
+            <button class="image-lightbox-close" id="image-lightbox-close" type="button" title="Đóng ảnh">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="image-lightbox-img" src="image/webp/2007-wto.webp" alt="Minh họa mốc hội nhập kinh tế quốc tế năm 2007">
+            <figcaption id="image-lightbox-caption">WTO 2007 - minh họa quá trình Việt Nam hội nhập sâu vào thương mại toàn cầu.</figcaption>
+        </figure>
     </div>
 
     <!-- Script connection -->

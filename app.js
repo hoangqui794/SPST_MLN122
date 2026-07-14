@@ -219,6 +219,59 @@ const milestoneReferences = {
     ]
 };
 
+const milestoneIllustrations = {
+    all: {
+        src: "image/webp/2007-wto.webp",
+        alt: "Minh họa toàn cảnh tiến trình hội nhập kinh tế quốc tế của Việt Nam",
+        caption: "Toàn cảnh hội nhập - các mốc mở cửa đưa Việt Nam vào mạng thương mại khu vực và toàn cầu."
+    },
+    '1986': {
+        src: "image/webp/1986.webp",
+        alt: "Minh họa công cuộc Đổi mới năm 1986 của Việt Nam",
+        caption: "Đổi mới 1986 - điểm khởi đầu chuyển đổi tư duy kinh tế và mở đường cho hội nhập."
+    },
+    '1995': {
+        src: "image/webp/1995-asean.webp",
+        alt: "Minh họa Việt Nam gia nhập ASEAN và tham gia AFTA năm 1995",
+        caption: "ASEAN/AFTA 1995 - minh họa bước hội nhập khu vực và mở rộng thị trường Đông Nam Á."
+    },
+    '1998': {
+        src: "image/webp/1998-apec.webp",
+        alt: "Minh họa Việt Nam gia nhập APEC năm 1998",
+        caption: "APEC 1998 - minh họa kết nối Việt Nam với các trung tâm kinh tế châu Á - Thái Bình Dương."
+    },
+    '2001': {
+        src: "image/webp/2001-bta-viet-my.webp",
+        alt: "Minh họa Hiệp định Thương mại Việt Nam - Hoa Kỳ năm 2001",
+        caption: "BTA Việt Nam - Hoa Kỳ 2001 - minh họa cú hích xuất khẩu và cải cách thể chế thương mại."
+    },
+    '2007': {
+        src: "image/webp/2007-wto.webp",
+        alt: "Minh họa Việt Nam gia nhập WTO năm 2007",
+        caption: "WTO 2007 - minh họa quá trình Việt Nam hội nhập sâu vào thương mại toàn cầu."
+    },
+    '2019': {
+        src: "image/webp/2019-cptpp.webp",
+        alt: "Minh họa Hiệp định CPTPP có hiệu lực với Việt Nam năm 2019",
+        caption: "CPTPP 2019 - minh họa FTA thế hệ mới với tiêu chuẩn cao về thị trường, lao động và thể chế."
+    },
+    '2020': {
+        src: "image/webp/2020-evfta.webp",
+        alt: "Minh họa Hiệp định EVFTA có hiệu lực năm 2020",
+        caption: "EVFTA 2020 - minh họa kết nối thương mại Việt Nam với thị trường Liên minh châu Âu."
+    },
+    '2022': {
+        src: "image/webp/2022-rcep.webp",
+        alt: "Minh họa Hiệp định RCEP có hiệu lực năm 2022",
+        caption: "RCEP 2022 - minh họa liên kết chuỗi cung ứng khu vực Đông Á và ASEAN."
+    },
+    '2025': {
+        src: "image/webp/2022-rcep.webp",
+        alt: "Minh họa thành quả hội nhập và độ mở kinh tế của Việt Nam đến năm 2025",
+        caption: "Thành quả hội nhập 2025 - minh họa độ mở lớn và vị trí của Việt Nam trong chuỗi cung ứng khu vực."
+    }
+};
+
 const legacySolutionsData = {
     'state': {
         icon: "fa-solid fa-landmark",
@@ -1186,6 +1239,10 @@ function toggleFullscreen() {
 
 // Global escape key to exit fullscreen mode
 window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !document.getElementById('image-lightbox')?.classList.contains('hidden')) {
+        closeImageLightbox();
+        return;
+    }
     if (e.key === 'Escape' && document.body.classList.contains('mindmap-fullscreen-mode')) {
         toggleMindmapFullscreen(false);
         return;
@@ -1513,6 +1570,17 @@ function handleMilestoneClick(element, isAutoTriggered = false) {
     
     const sidebarDesc = document.getElementById('sidebar-milestone-desc');
     if (sidebarDesc) sidebarDesc.innerHTML = mData.desc || '';
+
+    const illustration = milestoneIllustrations[year] || milestoneIllustrations.all;
+    const illustrationImg = document.getElementById('sidebar-illustration-img');
+    const illustrationCaption = document.getElementById('sidebar-illustration-caption');
+    if (illustrationImg) {
+        illustrationImg.src = illustration.src;
+        illustrationImg.alt = illustration.alt;
+    }
+    if (illustrationCaption) {
+        illustrationCaption.textContent = illustration.caption;
+    }
 
     const referenceList = document.getElementById('sidebar-reference-list');
     if (referenceList) {
@@ -2015,6 +2083,31 @@ function toggleMindmapFullscreen(forceState = null) {
     }, 120);
 }
 
+function openImageLightbox() {
+    const sourceImg = document.getElementById('sidebar-illustration-img');
+    const sourceCaption = document.getElementById('sidebar-illustration-caption');
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImg = document.getElementById('image-lightbox-img');
+    const lightboxCaption = document.getElementById('image-lightbox-caption');
+
+    if (!sourceImg || !lightbox || !lightboxImg || !lightboxCaption) return;
+
+    lightboxImg.src = sourceImg.src;
+    lightboxImg.alt = sourceImg.alt;
+    lightboxCaption.textContent = sourceCaption?.textContent || sourceImg.alt;
+    lightbox.classList.remove('hidden');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('image-lightbox-open');
+}
+
+function closeImageLightbox() {
+    const lightbox = document.getElementById('image-lightbox');
+    if (!lightbox) return;
+    lightbox.classList.add('hidden');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('image-lightbox-open');
+}
+
 function syncMindmapStaticLabels() {
     const infoTitle = document.querySelector('.mindmap-info h3');
     const infoDesc = document.querySelector('.mindmap-info p');
@@ -2129,6 +2222,39 @@ function setupDOMListeners() {
         mindmapFullscreenBtn.addEventListener('click', () => {
             toggleMindmapFullscreen();
         });
+    }
+
+    const illustration = document.getElementById('sidebar-illustration');
+    const illustrationZoomBtn = document.getElementById('illustration-zoom-btn');
+    const lightboxClose = document.getElementById('image-lightbox-close');
+    const lightboxBackdrop = document.getElementById('image-lightbox-backdrop');
+
+    if (illustration) {
+        illustration.setAttribute('tabindex', '0');
+        illustration.setAttribute('role', 'button');
+        illustration.setAttribute('aria-label', 'Xem ảnh minh họa chi tiết');
+        illustration.addEventListener('click', () => openImageLightbox());
+        illustration.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openImageLightbox();
+            }
+        });
+    }
+
+    if (illustrationZoomBtn) {
+        illustrationZoomBtn.addEventListener('click', event => {
+            event.stopPropagation();
+            openImageLightbox();
+        });
+    }
+
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeImageLightbox);
+    }
+
+    if (lightboxBackdrop) {
+        lightboxBackdrop.addEventListener('click', closeImageLightbox);
     }
 
     // Quiz restart button listener
