@@ -374,11 +374,12 @@ const solutionsData = {
         title: "Xây dựng chiến lược và lộ trình phù hợp",
         subtitle: "Có mục tiêu, bước đi, ưu tiên và khả năng điều chỉnh",
         theory: "Chiến lược hội nhập là kế hoạch tổng thể về phương hướng, mục tiêu và giải pháp. Lộ trình hợp lý giúp tránh cú sốc, chọn đúng ngành ưu tiên và bảo đảm hiệu quả trong từng giai đoạn.",
-        keywords: ["Bối cảnh quốc tế", "Điều kiện trong nước", "Lộ trình linh hoạt"],
+        keywords: ["Bối cảnh quốc tế", "Điều kiện trong nước", "Kinh nghiệm quốc tế", "Lộ trình linh hoạt"],
         items: [
-            { title: "Đánh giá bối cảnh quốc tế", content: "Cần nhận diện xu hướng toàn cầu hóa, cách mạng công nghiệp lần thứ tư, FTA thế hệ mới, vai trò của các trung tâm kinh tế và sự dịch chuyển tương quan sức mạnh." },
-            { title: "Đánh giá điều kiện trong nước", content: "Làm rõ năng lực thể chế, pháp lý, nguồn nhân lực, doanh nghiệp và mức độ sẵn sàng của nền kinh tế để tránh hội nhập nhanh hơn khả năng chuẩn bị." },
-            { title: "Thiết kế lộ trình linh hoạt", content: "Xác định thời gian, mức độ, bước đi và ngành ưu tiên; đồng thời giữ tính mở để điều chỉnh khi thị trường thế giới và điều kiện trong nước thay đổi." }
+            { title: "Đánh giá bối cảnh quốc tế", content: "Cần nhận diện xu hướng toàn cầu hóa, cách mạng công nghiệp lần thứ tư, các FTA thế hệ mới, vai trò của các trung tâm kinh tế và sự dịch chuyển tương quan sức mạnh quốc tế." },
+            { title: "Đánh giá điều kiện trong nước", content: "Làm rõ năng lực thể chế, khung pháp lý, chất lượng nguồn nhân lực và mức độ sẵn sàng của các doanh nghiệp nội địa để tránh hội nhập vượt quá khả năng chuẩn bị." },
+            { title: "Nghiên cứu kinh nghiệm của các nước", content: "Đúc rút các bài học thành công và thất bại từ kinh nghiệm hội nhập của các nước đi trước nhằm chủ động phòng ngừa và hạn chế các sai lầm." },
+            { title: "Thiết kế lộ trình linh hoạt", content: "Xác định thời gian, mức độ, bước đi phù hợp cho từng giai đoạn và các ngành cần ưu tiên; đồng thời giữ tính mở để điều chỉnh kịp thời với biến động bên ngoài." }
         ]
     },
     commitment: {
@@ -401,12 +402,13 @@ const solutionsData = {
         accent: "var(--cptpp)",
         title: "Hoàn thiện thể chế kinh tế và luật pháp",
         subtitle: "Tạo môi trường minh bạch, cạnh tranh và tương thích quốc tế",
-        theory: "Sự tương thích về thể chế là điều kiện quan trọng của hội nhập. Hoàn thiện pháp luật, cải cách quản lý và hỗ trợ doanh nghiệp giúp nền kinh tế vận hành theo chuẩn mực thị trường hiện đại.",
-        keywords: ["Đồng bộ pháp luật", "Quản lý nhà nước", "Môi trường kinh doanh", "Hỗ trợ doanh nghiệp"],
+        theory: "Sự tương thích về thể chế là điều kiện quan trọng của hội nhập. Hoàn thiện cơ chế thị trường, đổi mới quản lý nhà nước và rà soát hệ thống pháp luật giúp nền kinh tế vận hành hiệu quả theo chuẩn mực quốc tế.",
+        keywords: ["Hệ thống pháp luật", "Quản lý nhà nước", "Thể chế thị trường", "Tranh chấp quốc tế"],
         items: [
-            { title: "Hoàn thiện hệ thống pháp luật", content: "Rà soát, bổ sung và đồng bộ hóa luật về đầu tư, thương mại, doanh nghiệp, tài chính, cạnh tranh, lao động và sở hữu trí tuệ." },
-            { title: "Đổi mới quản lý nhà nước", content: "Nhà nước tập trung vào định hướng, tạo môi trường, hỗ trợ và giám sát; giảm can thiệp hành chính trực tiếp làm méo mó cạnh tranh." },
-            { title: "Nâng năng lực doanh nghiệp", content: "Hỗ trợ doanh nghiệp tiếp cận thông tin, vốn, công nghệ, pháp lý thương mại quốc tế, logistics và đào tạo nhân lực chất lượng cao." }
+            { title: "Rà soát, đồng bộ hệ thống pháp luật", content: "Rà soát, bổ sung và hoàn thiện các luật liên quan đến đầu tư, thương mại, doanh nghiệp, đất đai, thuế, tài chính tín dụng... bảo đảm tính tương thích với luật pháp quốc tế." },
+            { title: "Đổi mới cơ chế quản lý của Nhà nước", content: "Nhà nước tập trung làm tốt chức năng định hướng, tạo môi trường thuận lợi, hỗ trợ và giám sát hoạt động; cải cách hành chính và minh bạch hóa chính sách kinh tế." },
+            { title: "Hoàn thiện thể chế kinh tế thị trường", content: "Đổi mới mạnh mẽ về sở hữu, coi trọng phát triển cả khu vực kinh tế tư nhân và kinh tế nhà nước; hình thành đồng bộ các loại thị trường; bảo đảm môi trường cạnh tranh bình đẳng." },
+            { title: "Tương trợ tư pháp và xử lý tranh chấp", content: "Hoàn thiện pháp luật về tương trợ tư pháp phù hợp với luật pháp quốc tế; chủ động phòng ngừa, giảm thiểu các thách thức và xử lý có hiệu quả các tranh chấp thương mại, đầu tư quốc tế." }
         ]
     },
     competitiveness: {
@@ -421,35 +423,35 @@ const solutionsData = {
             <div class="solution-action-grid">
                 <div>
                     <strong>Doanh nghiệp phải thích ứng</strong>
-                    <span>Học luật chơi quốc tế, nâng chuẩn sản xuất, quản trị rủi ro và liên kết để tham gia chuỗi giá trị toàn cầu.</span>
+                    <span>Chủ động học hỏi các kỹ năng kinh doanh mới, cải tiến công nghệ và liên kết để tham gia sâu vào chuỗi giá trị toàn cầu.</span>
                 </div>
                 <div>
                     <strong>Nhà nước phải hỗ trợ</strong>
-                    <span>Đào tạo nhân lực, hoàn thiện hạ tầng, cung cấp thông tin, giảm chi phí và tạo môi trường cạnh tranh minh bạch.</span>
+                    <span>Đào tạo nguồn nhân lực chất lượng cao, hoàn thiện hạ tầng, logistics và cải thiện môi trường sản xuất kinh doanh.</span>
                 </div>
             </div>
         `,
-        keywords: ["Sản xuất toàn cầu", "Cạnh tranh - hợp tác", "Huy động vốn", "Quản trị bất định", "Đồng hành Chính phủ", "Đối thoại pháp lý"],
+        keywords: ["Cơ hội kinh doanh", "Chấp nhận cạnh tranh", "Huy động vốn", "Quản trị bất định", "Đồng hành Chính phủ", "Đối thoại pháp lý"],
         items: [
             {
-                title: "Học cách sản xuất theo chuẩn toàn cầu",
+                title: "Học cách tìm kiếm cơ hội kinh doanh",
                 content: `
-                    <p>Doanh nghiệp phải chuyển từ tư duy sản xuất cho thị trường nội địa sang sản xuất theo tiêu chuẩn khu vực và quốc tế.</p>
+                    <p>Doanh nghiệp phải chủ động tìm kiếm và khai thác các cơ hội kinh doanh mới trên thị trường quốc tế.</p>
                     <ul class="lesson-points">
-                        <li>Nâng chất lượng, mẫu mã, tiêu chuẩn kỹ thuật, vệ sinh an toàn, trách nhiệm xã hội và tiêu chuẩn môi trường.</li>
-                        <li>Quản trị chuỗi cung ứng, truy xuất nguồn gốc, chuẩn hóa quy trình và giảm chi phí sản xuất.</li>
-                        <li>Đổi mới công nghệ để tăng năng suất, tham gia sâu hơn vào chuỗi giá trị toàn cầu thay vì chỉ gia công giá trị thấp.</li>
+                        <li>Khai thác triệt để các ưu đãi thuế quan từ các hiệp định thương mại tự do (FTA) đã ký kết.</li>
+                        <li>Nghiên cứu nhu cầu, tiêu chuẩn kỹ thuật, tiêu chuẩn môi trường và vệ sinh an toàn thực phẩm của các thị trường mục tiêu.</li>
+                        <li>Chuyển dịch sản xuất theo hướng nâng cao chất lượng sản phẩm để đáp ứng tiêu chuẩn của chuỗi cung ứng toàn cầu.</li>
                     </ul>
                 `
             },
             {
-                title: "Học cách cạnh tranh và hợp tác",
+                title: "Học cách kết nối cùng chấp nhận cạnh tranh",
                 content: `
-                    <p>Hội nhập làm cạnh tranh gay gắt hơn, nhưng cạnh tranh hiện đại luôn đi cùng liên kết và hợp tác.</p>
+                    <p>Doanh nghiệp phải chủ động liên kết, kết nối với nhau để cùng đứng vững trước sức ép cạnh tranh gay gắt.</p>
                     <ul class="lesson-points">
-                        <li>Cạnh tranh bằng chất lượng, đổi mới, thương hiệu, dịch vụ hậu mãi và khả năng đáp ứng nhanh thị trường.</li>
-                        <li>Liên kết với doanh nghiệp trong nước để hình thành chuỗi cung ứng, cụm ngành và sức mạnh quy mô.</li>
-                        <li>Hợp tác với đối tác nước ngoài để học công nghệ, quản trị, tiêu chuẩn và mở rộng kênh phân phối.</li>
+                        <li>Hợp tác với các doanh nghiệp trong nước để tạo sức mạnh quy mô, giảm chi phí đầu vào và hình thành chuỗi giá trị nội địa.</li>
+                        <li>Kết nối với đối tác nước ngoài để tiếp thu công nghệ tiên tiến, học hỏi năng lực quản trị hiện đại.</li>
+                        <li>Chấp nhận cạnh tranh bình đẳng, dùng đổi mới sáng tạo và uy tín thương hiệu làm vũ khí cạnh tranh cốt lõi.</li>
                     </ul>
                 `
             },
@@ -502,10 +504,10 @@ const solutionsData = {
                 content: `
                     <p>Nhà nước giữ vai trò kiến tạo điều kiện để doanh nghiệp nâng năng lực cạnh tranh, nhưng không làm thay doanh nghiệp.</p>
                     <ul class="lesson-points state-support-list">
-                        <li>Phát triển nguồn nhân lực, nhất là nhân lực chất lượng cao gắn với nhu cầu của doanh nghiệp.</li>
-                        <li>Tổ chức đào tạo kỹ năng hội nhập, quản trị toàn cầu, đổi mới sáng tạo, luật kinh tế và thương mại quốc tế.</li>
-                        <li>Hoàn thiện hạ tầng sản xuất, giao thông, thông tin, logistics, dịch vụ công và nền tảng số.</li>
-                        <li>Cải thiện môi trường kinh doanh, giảm chi phí tuân thủ, hỗ trợ tiếp cận vốn, công nghệ tiên tiến và thông tin thị trường.</li>
+                        <li>Phát triển nguồn nhân lực, nhất là nhân lực chất lượng cao gắn với nhu cầu thực tiễn của doanh nghiệp.</li>
+                        <li>Tổ chức các khóa đào tạo, trao đổi kinh nghiệm về kỹ năng hội nhập, luật kinh tế và thương mại quốc tế.</li>
+                        <li>Hoàn thiện hạ tầng sản xuất, giao thông, thông tin, logistics, dịch vụ công nhằm giảm chi phí sản xuất cho doanh nghiệp.</li>
+                        <li>Cải thiện môi trường đầu tư kinh doanh, hỗ trợ tiếp cận vốn, chuyển giao công nghệ mới và cung cấp thông tin thị trường.</li>
                     </ul>
                 `
             }
@@ -517,15 +519,15 @@ const solutionsData = {
         accent: "var(--danger)",
         title: "Xây dựng nền kinh tế độc lập, tự chủ",
         subtitle: "Giữ chủ quyền phát triển trong quá trình mở cửa",
-        theory: "Độc lập, tự chủ không có nghĩa là biệt lập. Hội nhập hiệu quả phải đi đôi với năng lực tự chủ, đa dạng hóa thị trường, làm chủ công nghệ và kết hợp sức mạnh dân tộc với sức mạnh thời đại.",
+        theory: "Độc lập, tự chủ không có nghĩa là biệt lập. Hội nhập hiệu quả phải đi đôi với tự chủ về đường lối phát triển, làm chủ công nghệ, đa dạng hóa thị trường và củng cố vững chắc tiềm lực kinh tế quốc gia.",
         quote: "Xây dựng nền kinh tế tự chủ phải trên cơ sở làm chủ công nghệ và chủ động, tích cực hội nhập, đa dạng hóa thị trường, nâng cao khả năng thích ứng của nền kinh tế.",
-        keywords: ["CNH-HĐH", "Đa dạng hóa", "Làm chủ công nghệ", "Kết hợp quốc phòng - an ninh"],
+        keywords: ["Đường lối kinh tế", "Đẩy mạnh CNH-HĐH", "Đột phá chiến lược", "QP-AN, đối ngoại", "Tự chủ & Hội nhập"],
         items: [
-            { title: "Đẩy mạnh công nghiệp hóa, hiện đại hóa", content: "Cơ cấu lại nền kinh tế, chuyển sang tăng trưởng theo chiều sâu, nâng năng suất và phát triển các ngành có giá trị gia tăng cao." },
-            { title: "Đa dạng hóa thị trường và đối tác", content: "Tránh phụ thuộc vào một thị trường, một nguồn vốn hoặc một đối tác; mở rộng thị trường mới gắn với chiến lược sản phẩm và thương hiệu." },
-            { title: "Làm chủ công nghệ và nguồn lực then chốt", content: "Tăng đầu tư nghiên cứu - triển khai, đổi mới công nghệ, phát triển nhân lực chất lượng cao và nâng khả năng thích ứng của nền kinh tế." },
-            { title: "Kết hợp kinh tế với quốc phòng, an ninh, đối ngoại", content: "Mở rộng hợp tác trên nguyên tắc bình đẳng, cùng có lợi, tôn trọng chủ quyền, giữ gìn bản sắc văn hóa và giải quyết tranh chấp bằng biện pháp hòa bình." },
-            { title: "Xử lý quan hệ biện chứng giữa tự chủ và hội nhập", content: "Giữ vững độc lập, tự chủ là nền tảng để hội nhập không bị hòa tan; đồng thời hội nhập hiệu quả giúp tranh thủ nguồn lực bên ngoài, tạo đan xen lợi ích, nâng vị thế quốc gia và củng cố năng lực tự chủ." }
+            { title: "Hoàn thiện đường lối kinh tế phát triển", content: "Không ngừng hoàn thiện, bổ sung đường lối chung và đường lối xây dựng nền kinh tế độc lập, tự chủ phù hợp với thực tiễn từng giai đoạn phát triển của đất nước." },
+            { title: "Đẩy mạnh công nghiệp hóa, hiện đại hóa", content: "Cơ cấu lại nền kinh tế theo chiều sâu; đa dạng hóa thị trường, nguồn vốn và đối tác để tránh lệ thuộc; tăng đầu tư R&D để tự chủ dần về công nghệ." },
+            { title: "Thực hiện ba đột phá chiến lược", content: "Tập trung huy động các nguồn lực để thực hiện thắng lợi ba đột phá: hoàn thiện thể chế kinh tế, phát triển hạ tầng cơ sở và phát triển nguồn nhân lực chất lượng cao." },
+            { title: "Kết hợp kinh tế với quốc phòng, an ninh, đối ngoại", content: "Hợp tác trên nguyên tắc bình đẳng, cùng có lợi, tôn trọng chủ quyền; củng cố thế trận quốc phòng an ninh để bảo vệ Tổ quốc; giải quyết tranh chấp bằng biện pháp hòa bình." },
+            { title: "Xử lý quan hệ biện chứng giữa tự chủ và hội nhập", content: "Giữ vững tự chủ làm nền tảng vững chắc để thực hiện hội nhập hiệu quả mà không bị 'hòa tan'; hội nhập tốt giúp thu hút các nguồn lực bên ngoài để củng cố tự chủ." }
         ]
     }
 };
