@@ -702,13 +702,10 @@ main {
 }
 
 .sidebar-desc {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
     line-height: 1.6;
-    max-height: 135px;
-    overflow-y: auto;
-    padding-right: 0.4rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .sidebar-desc::-webkit-scrollbar {
@@ -856,6 +853,39 @@ body.image-lightbox-open {
     overflow: hidden;
 }
 
+.sidebar-conclusion-box {
+    background: rgba(16, 185, 129, 0.03); /* subtle green background for conclusion */
+    border: 1px solid rgba(16, 185, 129, 0.12);
+    border-left: 3px solid var(--active-milestone-color, var(--success));
+    border-radius: 10px;
+    padding: 0.75rem 0.85rem;
+    margin-bottom: 0.65rem;
+    transition: border-left-color 0.3s ease;
+}
+
+.sidebar-conclusion-box h4 {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.45rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.sidebar-conclusion-box p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.sidebar-conclusion-box.hidden {
+    display: none;
+}
+
 .sidebar-reference-box {
     background: rgba(255, 255, 255, 0.018);
     border: 1px solid rgba(255, 255, 255, 0.045);
@@ -887,7 +917,7 @@ body.image-lightbox-open {
 
 .sidebar-reference-box li {
     color: var(--text-secondary);
-    font-size: 0.72rem;
+    font-size: 0.82rem;
     line-height: 1.45;
     padding-left: 0.8rem;
     position: relative;
@@ -3878,9 +3908,9 @@ body.fullscreen-mode .milestone-sidebar {
     top: 50% !important;
     left: 2rem !important;
     transform: translateY(-50%) !important;
-    width: 400px !important;
-    max-height: calc(100vh - 4.5rem) !important;
-    height: auto !important;
+    width: 460px !important;
+    max-height: calc(100vh - 8rem) !important;
+    height: calc(100vh - 8rem) !important;
     z-index: 99998 !important;
     background: linear-gradient(160deg, rgba(6, 10, 22, 0.88) 0%, rgba(8, 13, 30, 0.92) 100%) !important;
     border: 1px solid rgba(139, 92, 246, 0.18) !important;
@@ -3925,9 +3955,9 @@ body.fullscreen-mode .fullscreen-impacts-sidebar {
     top: 50% !important;
     right: 2rem !important;
     transform: translateY(-50%) !important;
-    width: 400px !important;
-    max-height: calc(100vh - 4.5rem) !important;
-    height: auto !important;
+    width: 460px !important;
+    max-height: calc(100vh - 8rem) !important;
+    height: calc(100vh - 8rem) !important;
     z-index: 99998 !important;
     background: linear-gradient(160deg, rgba(6, 10, 22, 0.88) 0%, rgba(8, 13, 30, 0.92) 100%) !important;
     border: 1px solid rgba(59, 130, 246, 0.18) !important;
@@ -4065,6 +4095,8 @@ body.fullscreen-mode .dot-desc {
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
+    flex: 1;
+    min-height: 0;
 }
 
 .fullscreen-impact-card.card-positive {
@@ -4105,7 +4137,7 @@ body.fullscreen-mode .dot-desc {
 }
 
 .fullscreen-impact-list li {
-    font-size: 0.73rem;
+    font-size: 0.84rem;
     color: rgba(203, 213, 225, 0.8);
     padding: 0.4rem 0.6rem;
     border-radius: 6px;
@@ -4142,13 +4174,13 @@ body.fullscreen-mode .sidebar-badge {
 }
 
 body.fullscreen-mode #sidebar-milestone-title {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
     line-height: 1.3 !important;
 }
 
 body.fullscreen-mode #sidebar-milestone-desc {
-    font-size: 0.75rem !important;
-    line-height: 1.5 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
 }
 
 body.fullscreen-mode .sidebar-illustration img {

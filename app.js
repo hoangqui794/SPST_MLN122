@@ -46,131 +46,125 @@ const milestoneTexts = {
             { icon: "fa-solid fa-arrows-spin", text: "<strong>Mức độ phụ thuộc cao:</strong> Nền kinh tế hướng xuất khẩu nên cực kỳ nhạy cảm và dễ tổn thương trước biến động thị trường và địa chính trị thế giới." },
             { icon: "fa-solid fa-network-wired", text: "<strong>Bẫy gia công giá trị thấp:</strong> Nguy cơ mắc kẹt ở phân khúc gia công thô (dệt may, lắp ráp điện tử), tỉ lệ nội địa hóa và giá trị gia tăng nội địa thấp." },
             { icon: "fa-solid fa-dumpster-fire", text: "<strong>Rủi ro môi trường:</strong> Nguy cơ trở thành 'bãi thải công nghiệp' của các công nghệ lỗi thời và cạn kiệt tài nguyên thiên nhiên." }
-        ]
+        ],
+        conclusion: "Hành trình gần 4 thập kỷ hội nhập kinh tế quốc tế của Việt Nam từ Đổi mới 1986 đến nay chứng minh tính đúng đắn và hiệu quả trong đường lối mở cửa, khẳng định Việt Nam là mắt xích quan trọng trong kinh tế toàn cầu, đồng thời đòi hỏi nâng cao tự chủ để củng cố nền độc lập vững chắc."
     },
     '1986': {
-        title: "Đổi mới và mở cửa nền kinh tế (1986)",
-        desc: "Đại hội VI của Đảng tháng 12/1986 khởi xướng đường lối Đổi mới, chuyển nền kinh tế từ cơ chế kế hoạch hóa tập trung, bao cấp sang kinh tế thị trường định hướng xã hội chủ nghĩa. Đây là điểm khởi đầu tư duy mở cửa, tạo tiền đề cho Việt Nam thu hút nguồn lực xã hội, phát triển kinh tế tư nhân và chuẩn bị hội nhập quốc tế sâu rộng hơn.",
+        title: "Đại hội Đảng lần thứ VI đề ra đường lối Đổi mới",
+        desc: "<strong>Tổng quan:</strong> Tháng 12/1986, Đại hội VI của Đảng Cộng sản Việt Nam chính thức khởi xướng đường lối Đổi mới toàn diện. Đây là bước ngoặt lịch sử chuyển đổi nền kinh tế từ cơ chế kế hoạch hóa tập trung, bao cấp sang nền kinh tế thị trường định hướng xã hội chủ nghĩa. Trước đó, Việt Nam rơi vào khủng hoảng kinh tế nghiêm trọng, lạm phát phi mã và khan hiếm hàng hóa.<br><br><strong>Sức ảnh hưởng đến kinh tế:</strong> Đổi mới giúp khơi thông các nguồn lực xã hội, thừa nhận sự tồn tại của kinh tế tư nhân và xóa bỏ ngăn sông cấm chợ. Sự kiện này đặt nền móng pháp lý và tư duy đầu tiên để Việt Nam từ bỏ chính sách tự cung tự cấp, bắt đầu mở cửa thu hút dòng vốn nước ngoài.",
         positive: [
-            { icon: "fa-solid fa-door-open", text: "<strong>Mở đường cho cải cách:</strong> Giải phóng sức sản xuất, thừa nhận các thành phần kinh tế và đặt nền móng cho tư duy kinh tế thị trường." },
-            { icon: "fa-solid fa-seedling", text: "<strong>Ổn định nền tảng phát triển:</strong> Góp phần thoát khỏi khủng hoảng kinh tế, từng bước kiềm chế lạm phát và khắc phục tình trạng khan hiếm hàng hóa." },
-            { icon: "fa-solid fa-handshake", text: "<strong>Chuẩn bị hội nhập:</strong> Tạo cơ sở thể chế ban đầu để mở cửa thu hút đầu tư, thương mại và nguồn lực từ bên ngoài." }
+            { icon: "fa-solid fa-door-open", text: "<strong>Giải phóng sản xuất:</strong> Đưa Việt Nam thoát khỏi khủng hoảng, kiềm chế lạm phát phi mã và giải quyết nạn đói." },
+            { icon: "fa-solid fa-chart-line", text: "<strong>Động lực tăng trưởng:</strong> Khơi thông các nguồn lực xã hội và tạo đà cho tăng trưởng GDP bền vững." }
         ],
         negative: [
-            { icon: "fa-solid fa-scale-unbalanced", text: "<strong>Quản lý chuyển đổi còn lúng túng:</strong> Giai đoạn đầu thiếu kinh nghiệm vận hành cơ chế thị trường và quản lý các thành phần kinh tế mới." },
-            { icon: "fa-solid fa-people-arrows", text: "<strong>Phân hóa xã hội manh nha:</strong> Chênh lệch thu nhập bắt đầu xuất hiện khi các cơ hội kinh tế mở ra không đồng đều." },
-            { icon: "fa-solid fa-road-barrier", text: "<strong>Hạ tầng còn yếu:</strong> Cơ sở vật chất, logistics và năng lực doanh nghiệp chưa theo kịp tốc độ đổi mới." }
-        ]
+            { icon: "fa-solid fa-scale-unbalanced", text: "<strong>Phân hóa xã hội:</strong> Giai đoạn đầu đối mặt với sự phân hóa giàu nghèo manh nha xuất hiện." },
+            { icon: "fa-solid fa-triangle-exclamation", text: "<strong>Lúng túng quản lý & hạ tầng:</strong> Quản lý nhà nước đối với các thành phần kinh tế mới còn lúng túng; hạ tầng chưa đáp ứng kịp." }
+        ],
+        conclusion: "Đổi mới 1986 là \"vạch xuất phát\" định hình diện mạo kinh tế Việt Nam hiện đại, mở đường cho mọi quyết định hội nhập quốc tế sau này."
     },
     '1995': {
-        title: "Mốc ASEAN & AFTA (1995)",
-        desc: "Dấu mốc lịch sử khi Việt Nam chính thức gia nhập Hiệp hội các quốc gia Đông Nam Á (ASEAN) và tham gia Khu vực Mậu dịch Tự do AFTA. Sự kiện này chính thức phá vỡ thế bị bao vây cấm vận, mở đầu cho tiến trình hội nhập đa phương và đa dạng hóa quan hệ kinh tế đối ngoại của đất nước.",
+        title: "Việt Nam gia nhập ASEAN và tham gia AFTA",
+        desc: "<strong>Tổng quan:</strong> Ngày 28/7/1995, Việt Nam trở thành thành viên thứ 7 của Hiệp hội các quốc gia Đông Nam Á (ASEAN). Ngay sau đó, Việt Nam cam kết thực hiện lộ trình giảm thuế trong khuôn khổ AFTA, đánh dấu bước đi hội nhập đa phương đầu tiên.<br><br><strong>Sức ảnh hưởng đến kinh tế:</strong> Giúp Việt Nam phá vỡ thế bị bao vây, cô lập về kinh tế và ngoại giao. Sự kiện này đưa dòng hàng hóa Việt Nam kết nối trực tiếp với thị trường tiêu dùng năng động hơn 500 triệu dân lúc bấy giờ tại Đông Nam Á.",
         positive: [
-            { icon: "fa-solid fa-door-open", text: "<strong>Bắt đầu mở cửa:</strong> Đặt dấu mốc chính thức cho tiến trình mở cửa, phá vỡ thế bị bao vây cấm vận, hội nhập sâu rộng vào khu vực Đông Nam Á." },
-            { icon: "fa-solid fa-users-viewfinder", text: "<strong>Làm quen luật chơi:</strong> Giúp các doanh nghiệp Việt Nam bước đầu cọ xát với môi trường cạnh tranh khu vực thông qua Khu vực Mậu dịch Tự do AFTA." },
-            { icon: "fa-solid fa-handshake-angle", text: "<strong>Hòa bình & Hợp tác:</strong> Tạo điều kiện chính trị ổn định để củng cố an ninh quốc phòng và phát triển kinh tế vĩ mô." }
+            { icon: "fa-solid fa-cart-shopping", text: "<strong>Thương mại nội khối:</strong> Kim ngạch thương mại nội khối ASEAN tăng trưởng nhanh chóng." },
+            { icon: "fa-solid fa-hand-holding-dollar", text: "<strong>Làn sóng FDI đầu tiên:</strong> Thu hút nguồn lực từ các nước láng giềng năng động như Singapore, Thái Lan." },
+            { icon: "fa-solid fa-users-gear", text: "<strong>Nâng cao năng lực:</strong> Doanh nghiệp và cơ quan quản lý bắt đầu cọ xát và làm quen với các tiêu chuẩn quốc tế." }
         ],
         negative: [
-            { icon: "fa-solid fa-person-falling-burst", text: "<strong>Cạnh tranh trực diện:</strong> Sức ép cạnh tranh gay gắt từ hàng tiêu dùng Thái Lan, Indonesia khi thuế suất nội khối bị cắt giảm." },
-            { icon: "fa-solid fa-puzzle-piece", text: "<strong>Thiếu hụt kinh nghiệm:</strong> Hệ thống pháp luật, cơ chế thị trường và năng lực hành chính của Nhà nước lúc này còn thô sơ, chưa tương thích hoàn toàn." }
-        ]
+            { icon: "fa-solid fa-person-falling-burst", text: "<strong>Sức ép cạnh tranh:</strong> Đối mặt với luồng hàng hóa giá rẻ, chất lượng cao từ các nước ASEAN đi trước." },
+            { icon: "fa-solid fa-industry", text: "<strong>Thử thách nội địa:</strong> Nhiều ngành sản xuất non trẻ gặp khó khăn lớn khi thuế quan bắt đầu cắt giảm." }
+        ],
+        conclusion: "Mốc 1995 đánh dấu bước chuyển từ \"đóng cửa\" sang \"kết nối khu vực\", là trường học thực tiễn giúp Việt Nam tập dượt chuẩn bị cho sân chơi toàn cầu lớn hơn."
     },
     '1998': {
-        title: "Mốc Diễn đàn APEC (1998)",
-        desc: "Việt Nam gia nhập Diễn đàn Hợp tác Kinh tế Châu Á - Thái Bình Dương (APEC). Dấu mốc này thiết lập cầu nối thương mại trực tiếp đầu tiên giữa nước ta với các siêu cường kinh tế hàng đầu (Mỹ, Trung Quốc, Nhật Bản, Nga), mở ra những cơ hội đột phá về thu hút đầu tư, chuyển giao công nghệ và hợp tác kỹ thuật.",
+        title: "Việt Nam gia nhập Diễn đàn APEC",
+        desc: "<strong>Tổng quan:</strong> Tháng 11/1998, tại Hội nghị Bộ trưởng APEC lần thứ 10 tại Malaysia, Việt Nam được kết nạp vào APEC. Đây là diễn đàn quy tụ các siêu cường kinh tế lớn nhất thế giới như Mỹ, Trung Quốc, Nhật Bản.<br><br><strong>Sức ảnh hưởng đến kinh tế:</strong> Mở rộng không gian kinh tế từ Đông Nam Á ra toàn bộ vành đai Thái Bình Dương. APEC tạo kênh đối thoại mở, không ràng buộc pháp lý nhưng định hình dòng chảy đầu tư và thương mại khổng lồ vào Việt Nam.",
         positive: [
-            { icon: "fa-solid fa-bridge", text: "<strong>Cầu nối với các siêu cường:</strong> Mở rộng quan hệ hợp tác trực tiếp với các nền kinh tế hàng đầu chiếm 60% GDP thế giới như Mỹ, Trung Quốc, Nhật Bản, Nga." },
-            { icon: "fa-solid fa-passport", text: "<strong>Đơn giản hóa thương mại:</strong> Thúc đẩy tự do hóa và thuận lợi hóa thương mại, đơn giản hóa thủ tục xuất nhập khẩu và cấp visa doanh nhân." },
-            { icon: "fa-solid fa-database", text: "<strong>Chia sẻ tri thức:</strong> Tiếp cận các chương trình đào tạo quản lý, phát triển công nghệ thông tin và chính sách hỗ trợ phát triển vùng sâu vùng xa từ APEC." }
+            { icon: "fa-solid fa-microchip", text: "<strong>Tiếp thu công nghệ:</strong> Tạo cơ hội tiếp cận nguồn hỗ trợ kỹ thuật, chuyển giao công nghệ và xây dựng năng lực quản lý." },
+            { icon: "fa-solid fa-globe", text: "<strong>Nâng cao uy tín:</strong> Đăng cai thành công các hội nghị cấp cao APEC (2006, 2017) giúp nâng tầm vị thế quốc tế." }
         ],
         negative: [
-            { icon: "fa-solid fa-hourglass-half", text: "<strong>Áp lực tự nguyện hóa:</strong> APEC hoạt động trên nguyên tắc tự nguyện, không ràng buộc pháp lý, đòi hỏi sự chủ động cực lớn của doanh nghiệp để nắm lấy cơ hội." },
-            { icon: "fa-solid fa-gauge-simple-high", text: "<strong>Khoảng cách công nghệ lớn:</strong> Chênh lệch trình độ quá lớn với các nước phát triển trong khối tạo ra vị thế bất lợi trong việc tiếp cận các dự án lớn." }
-        ]
+            { icon: "fa-solid fa-hourglass-half", text: "<strong>Nguyên tắc tự nguyện:</strong> Do cơ chế không ràng buộc pháp lý, dễ rơi vào thế bị động nếu thiếu chiến lược khai thác rõ ràng." }
+        ],
+        conclusion: "Gia nhập APEC 1998 đưa Việt Nam tiếp cận trực tiếp với các trung tâm quyền lực kinh tế thế giới, tạo tiền đề ngoại giao thuận lợi cho các hiệp định song phương lớn."
     },
     '2001': {
-        title: "Hiệp định Thương mại Việt Nam - Hoa Kỳ BTA (2001)",
-        desc: "Hiệp định Thương mại song phương Việt Nam - Hoa Kỳ có hiệu lực từ ngày 10/12/2001, bình thường hóa sâu hơn quan hệ kinh tế giữa hai nước và mở ra cánh cửa lớn vào thị trường Hoa Kỳ. Đây là bước chạy đà quan trọng giúp Việt Nam cải cách thể chế, mở rộng xuất khẩu và tích lũy kinh nghiệm trước khi gia nhập WTO.",
+        title: "Hiệp định Thương mại Việt Nam - Hoa Kỳ (BTA) có hiệu lực",
+        desc: "<strong>Tổng quan:</strong> Ký kết năm 2000 và chính thức có hiệu lực từ ngày 10/12/2001, hiệp định này bình thường hóa hoàn toàn quan hệ kinh tế giữa hai cựu thù, mở toang cánh cửa vào thị trường tiêu dùng lớn nhất thế giới.<br><br><strong>Sức ảnh hưởng đến kinh tế:</strong> Tạo nên một cú hích cực đại cho xuất khẩu của Việt Nam, đặc biệt là dệt may, da giày, nông thủy sản. Dòng vốn đầu tư nước ngoài dịch chuyển mạnh mẽ đến Việt Nam để tận dụng lợi thế xuất khẩu sang Mỹ.",
         positive: [
-            { icon: "fa-solid fa-arrow-up-right-dots", text: "<strong>Cú hích xuất khẩu:</strong> Mở rộng mạnh thị trường cho dệt may, da giày, nông sản và thủy sản Việt Nam." },
-            { icon: "fa-solid fa-scroll", text: "<strong>Cải cách pháp luật kinh tế:</strong> Thúc đẩy Việt Nam điều chỉnh khung pháp lý theo chuẩn mực thương mại hiện đại." },
-            { icon: "fa-solid fa-briefcase", text: "<strong>Tạo việc làm và thu hút FDI:</strong> Dòng vốn đầu tư tìm đến Việt Nam để tận dụng lợi thế sản xuất và xuất khẩu sang Hoa Kỳ." }
+            { icon: "fa-solid fa-arrow-up-right-dots", text: "<strong>Bùng nổ xuất khẩu:</strong> Kim ngạch xuất khẩu sang Hoa Kỳ tăng vọt theo cấp số nhân, tạo ra hàng triệu việc làm." },
+            { icon: "fa-solid fa-scroll", text: "<strong>Cải cách thể chế:</strong> Cải cách hệ thống pháp luật kinh tế trong nước tương thích với chuẩn mực phương Tây." }
         ],
         negative: [
-            { icon: "fa-solid fa-gavel", text: "<strong>Rủi ro phòng vệ thương mại:</strong> Doanh nghiệp bắt đầu đối mặt với các vụ kiện chống bán phá giá và rào cản kỹ thuật phức tạp." },
-            { icon: "fa-solid fa-triangle-exclamation", text: "<strong>Áp lực tiêu chuẩn cao:</strong> Thị trường Hoa Kỳ đòi hỏi năng lực quản trị, chất lượng và tuân thủ pháp lý chặt chẽ hơn." }
-        ]
+            { icon: "fa-solid fa-gavel", text: "<strong>Phòng vệ thương mại:</strong> Doanh nghiệp bắt đầu đối diện các vụ kiện chống bán phá giá phức tạp (cá tra, tôm...)." },
+            { icon: "fa-solid fa-triangle-exclamation", text: "<strong>Rào cản kỹ thuật:</strong> Sức ép lớn từ các tiêu chuẩn chất lượng và kỹ thuật khắt khe của thị trường Mỹ." }
+        ],
+        conclusion: "BTA 2001 là bước chạy đà quan trọng nhất, giúp Việt Nam hoàn thiện thể chế và tích lũy kinh nghiệm thực tế để gia nhập WTO."
     },
     '2007': {
-        title: "Gia nhập Tổ chức Thương mại Thế giới WTO (2007)",
-        desc: "Mốc son chói lọi khi Việt Nam chính thức trở thành thành viên thứ 150 của WTO. Sự kiện này đưa Việt Nam bước vào sân chơi toàn cầu bình đẳng với 149 quốc gia khác, mở ra làn sóng đầu tư FDI bùng nổ chưa từng có, buộc hệ thống luật pháp và thể chế kinh tế trong nước phải cải cách mạnh mẽ theo chuẩn mực quốc tế.",
+        title: "Việt Nam chính thức gia nhập WTO",
+        desc: "<strong>Tổng quan:</strong> Ngày 11/1/2007, sau 11 năm đàm phán kiên trì, Việt Nam chính thức gia nhập WTO, đánh dấu sự hội nhập toàn diện vào hệ thống thương mại đa phương toàn cầu.<br><br><strong>Sức ảnh hưởng đến kinh tế:</strong> Việt Nam được hưởng quy chế tối huệ quốc (MFN) vô điều kiện từ tất cả các thành viên khác. Dòng vốn đầu tư trực tiếp nước ngoài (FDI) đổ vào Việt Nam đạt mức kỷ lục ngay sau khi gia nhập.",
         positive: [
-            { icon: "fa-solid fa-globe", text: "<strong>Bình đẳng thương mại:</strong> Việt Nam được hưởng đối xử MFN (Tối huệ quốc) không điều kiện từ 150 thành viên, chấm dứt phân biệt đối xử về thuế quan." },
-            { icon: "fa-solid fa-scroll", text: "<strong>Đột phá cải cách luật pháp:</strong> Thay đổi căn bản hệ thống pháp luật kinh tế theo chuẩn quốc tế, nâng cao độ minh bạch và an toàn đầu tư." },
-            { icon: "fa-solid fa-money-bill-trend-up", text: "<strong>Bùng nổ dòng vốn ngoại:</strong> Vốn đầu tư FDI đổ vào kỷ lục (đạt 8 tỷ USD giải ngân năm 2007 và tăng mạnh sau đó), tạo hàng triệu việc làm mới." },
-            { icon: "fa-solid fa-bag-shopping", text: "<strong>Lợi ích cho người dân:</strong> Người tiêu dùng được tiếp cận hàng ngoại nhập, dịch vụ tài chính, y tế, giáo dục chất lượng cao với giá cạnh tranh." }
+            { icon: "fa-solid fa-globe", text: "<strong>Xuất khẩu bùng nổ:</strong> Tiếp cận thị trường toàn cầu bình đẳng, thúc đẩy kim ngạch xuất khẩu tăng trưởng vượt bậc." },
+            { icon: "fa-solid fa-scroll", text: "<strong>Minh bạch thể chế:</strong> Cải cách môi trường pháp lý trong nước đồng bộ, minh bạch hơn theo chuẩn WTO." },
+            { icon: "fa-solid fa-bag-shopping", text: "<strong>Lợi ích người tiêu dùng:</strong> Tiếp cận hàng hóa và dịch vụ ngoại nhập chất lượng cao với giá cả cạnh tranh." }
         ],
         negative: [
-            { icon: "fa-solid fa-burst", text: "<strong>Áp lực đào thải cực mạnh:</strong> Làn sóng hàng ngoại giá rẻ tràn vào khiến các doanh nghiệp nhà nước yếu kém và doanh nghiệp nhỏ trong nước lâm vào cảnh phá sản." },
-            { icon: "fa-solid fa-arrow-right-arrow-left", text: "<strong>Khủng hoảng nhập siêu:</strong> Giai đoạn đầu nhập siêu lớn (năm 2007, 2008 thâm hụt tới 14-18 tỷ USD) gây áp lực lên tỷ giá và cán cân thanh toán." },
-            { icon: "fa-solid fa-people-arrows", text: "<strong>Phân hóa giàu nghèo:</strong> Sự phát triển tập trung ở khu vực đô thị và FDI làm giãn cách thu nhập với khu vực nông thôn và nông nghiệp truyền thống." }
-        ]
+            { icon: "fa-solid fa-burst", text: "<strong>Cạnh tranh khốc liệt:</strong> Nhiều doanh nghiệp nhà nước và doanh nghiệp nội địa yếu kém bị đẩy vào vòng xoáy đào thải." },
+            { icon: "fa-solid fa-arrows-spin", text: "<strong>Nhập siêu & Nhạy cảm vĩ mô:</strong> Áp lực nhập siêu tăng cao trong những năm đầu; nền kinh tế nhạy cảm hơn trước khủng hoảng toàn cầu." }
+        ],
+        conclusion: "Gia nhập WTO 2007 là mốc lịch sử đưa Việt Nam chính thức \"chơi chung luật chơi toàn cầu\" một cách bình đẳng."
     },
     '2019': {
-        title: "Hiệp định đối tác toàn diện CPTPP (2019)",
-        desc: "Kỷ nguyên FTA thế hệ mới bắt đầu khi Việt Nam thực thi Hiệp định CPTPP. Đây là FTA chuẩn mực cao nhất châu Á - Thái Bình Dương, đòi hỏi cam kết thuế quan tiệm cận 0%, mở toang cánh cửa xuất khẩu sang châu Mỹ, đồng thời thúc đẩy cải cách các tiêu chuẩn cao về lao động, môi trường và bảo vệ quyền sở hữu trí tuệ.",
+        title: "Hiệp định CPTPP chính thức có hiệu lực",
+        desc: "<strong>Tổng quan:</strong> Hiệp định có hiệu lực với Việt Nam từ ngày 14/1/2019. Đây là một trong những FTA thế hệ mới đầu tiên trên thế giới, bao gồm 11 nước thành viên với các tiêu chuẩn cực kỳ cao.<br><br><strong>Sức ảnh hưởng đến kinh tế:</strong> Giúp Việt Nam mở rộng thị trường sang các nước thuộc khu vực châu Mỹ (như Canada, Mexico, Peru) - những nơi trước đây Việt Nam chưa từng có FTA. Nó cũng thúc đẩy tái cơ cấu chuỗi cung ứng công nghiệp và nông nghiệp trong nước.",
         positive: [
-            { icon: "fa-solid fa-map-location-dot", text: "<strong>Chinh phục châu Mỹ:</strong> Mở rộng xuất khẩu sang các thị trường hoàn toàn mới có cam kết thuế quan bằng 0% như Canada, Mexico, Peru." },
-            { icon: "fa-solid fa-shield-cat", text: "<strong>Đa dạng đối tác chống lệ thuộc:</strong> Giảm sự phụ thuộc quá mức vào các thị trường nhập khẩu nguyên liệu truyền thống, phân tán rủi ro chuỗi cung ứng." },
-            { icon: "fa-solid fa-gavel", text: "<strong>Thúc đẩy cải cách thể chế thế hệ mới:</strong> Cam kết bảo vệ quyền sở hữu trí tuệ, môi trường sạch, minh bạch trong mua sắm công và tạo lập công đoàn độc lập." }
+            { icon: "fa-solid fa-tags", text: "<strong>Thuế quan tiệm cận 0%:</strong> Các dòng thuế xuất khẩu được cắt giảm sâu về gần bằng 0% theo lộ trình." },
+            { icon: "fa-solid fa-gavel", text: "<strong>Cải cách sâu rộng:</strong> Thúc đẩy cải cách thể chế trong nước về lao động, sở hữu trí tuệ, mua sắm công và doanh nghiệp nhà nước." }
         ],
         negative: [
-            { icon: "fa-solid fa-scissors", text: "<strong>Quy tắc xuất xứ ngặt nghèo:</strong> Yêu cầu 'quy tắc từ sợi trở đi' đối với dệt may làm khó các doanh nghiệp vốn quen nhập khẩu vải thô từ nước ngoài." },
-            { icon: "fa-solid fa-scale-unbalanced-flip", text: "<strong>Cạnh tranh nông nghiệp gay gắt:</strong> Ngành chăn nuôi và chế biến thịt phải đối đầu với các nước thành viên có thế mạnh nông nghiệp quy mô lớn." },
-            { icon: "fa-solid fa-file-contract", text: "<strong>Chi phí tuân thủ lớn:</strong> Sức ép chi phí pháp lý và tuân thủ các quy định môi trường, lao động chuẩn quốc tế." }
-        ]
+            { icon: "fa-solid fa-scissors", text: "<strong>Quy tắc xuất xứ khắt khe:</strong> Quy tắc 'từ sợi trở đi' gây khó khăn cho dệt may do phụ thuộc nguyên liệu ngoài khối." }
+        ],
+        conclusion: "CPTPP mở ra chương mới cho hội nhập \"chất lượng cao\", buộc Việt Nam cải cách sâu rộng từ bên trong chứ không chỉ đơn thuần là cắt giảm thuế ở biên giới."
     },
     '2020': {
-        title: "Hiệp định EVFTA (2020)",
-        desc: "Thực thi Hiệp định EVFTA ký kết với Liên minh Châu Âu (EU). Được mệnh danh là 'tuyến đường cao tốc thương mại' kết nối Việt Nam với khối kinh tế phát triển hàng đầu thế giới, EVFTA mở ra cơ hội xuất khẩu bứt phá cho nông sản, giày dép, dệt may Việt Nam, đồng thời thu hút FDI công nghệ cao, công nghệ xanh từ EU.",
+        title: "Hiệp định EVFTA chính thức có hiệu lực",
+        desc: "<strong>Tổng quan:</strong> Có hiệu lực từ ngày 1/8/2020, EVFTA là hiệp định thương mại tự do đầy tham vọng nhất mà EU từng ký kết với một quốc gia đang phát triển.<br><br><strong>Sức ảnh hưởng đến kinh tế:</strong> Mang lại lợi thế cạnh tranh khổng lồ cho hàng hóa Việt Nam so với các đối thủ ở châu Á khi tiếp cận thị trường EU rộng lớn và có sức mua cực cao.",
         positive: [
-            { icon: "fa-solid fa-euro-sign", text: "<strong>Cửa ngõ sang thị trường EU:</strong> Lộ trình xóa bỏ gần 100% thuế quan giúp hàng thủy hải sản, da giày, nông sản Việt Nam bứt phá chiếm lĩnh thị trường châu Âu." },
-            { icon: "fa-solid fa-microchip", text: "<strong>Hút FDI chất lượng cao từ EU:</strong> Thu hút các dự án FDI công nghệ sạch, thân thiện môi trường và có trình độ quản lý hiện đại từ các tập đoàn đa quốc gia châu Âu." },
-            { icon: "fa-solid fa-certificate", text: "<strong>Chuẩn hóa chất lượng sản phẩm:</strong> Thúc đẩy doanh nghiệp Việt Nam tự cải tiến tiêu chuẩn kỹ thuật để vượt qua hàng rào xuất khẩu của EU." }
+            { icon: "fa-solid fa-euro-sign", text: "<strong>Xóa bỏ 100% dòng thuế:</strong> Lộ trình cắt giảm thuế giúp hàng Việt Nam gia tăng lợi thế cạnh tranh vượt trội tại EU." },
+            { icon: "fa-solid fa-leaf", text: "<strong>Hút FDI xanh và công nghệ:</strong> Thu hút dòng vốn chất lượng cao vào công nghiệp xanh, dược phẩm và logistics." }
         ],
         negative: [
-            { icon: "fa-solid fa-shield-virus", text: "<strong>Hàng rào phi thuế quan khắt khe:</strong> Tiêu chuẩn SPS (kiểm dịch động thực vật) và TBT (rào cản kỹ thuật) cực kỳ ngặt nghèo của châu Âu." },
-            { icon: "fa-solid fa-triangle-exclamation", text: "<strong>Phòng vệ thương mại:</strong> Nguy cơ đối mặt với các vụ kiện chống bán phá giá, chống trợ cấp và rào cản 'Thẻ vàng IUU' về đánh bắt thủy sản." },
-            { icon: "fa-solid fa-leaf", text: "<strong>Rào cản xanh mới:</strong> Áp lực từ các tiêu chuẩn mới của EU như cơ chế CBAM (đánh thuế carbon) và quy định truy xuất nguồn gốc chống phá rừng." }
-        ]
+            { icon: "fa-solid fa-shield-virus", text: "<strong>Tiêu chuẩn khắt khe:</strong> Các rào cản kỹ thuật (TBT), kiểm dịch (SPS) và phát triển bền vững cực kỳ nghiêm ngặt." },
+            { icon: "fa-solid fa-triangle-exclamation", text: "<strong>Thẻ vàng thủy hải sản:</strong> Sức ép từ các cam kết chống đánh bắt cá bất hợp pháp (IUU) của Liên minh Châu Âu." }
+        ],
+        conclusion: "EVFTA là chiếc chìa khóa vàng giúp Việt Nam thâm nhập sâu vào chuỗi giá trị cao cấp của châu Âu, đồng thời nâng tầm tiêu chuẩn sản xuất nội địa."
     },
     '2022': {
-        title: "Hiệp định RCEP có hiệu lực (2022)",
-        desc: "Hiệp định Đối tác Kinh tế Toàn diện Khu vực (RCEP) có hiệu lực với Việt Nam từ ngày 01/01/2022, kết nối ASEAN với Trung Quốc, Nhật Bản, Hàn Quốc, Australia và New Zealand. RCEP giúp hài hòa quy tắc xuất xứ, củng cố chuỗi cung ứng Đông Á và tạo điều kiện thuận lợi hơn cho doanh nghiệp Việt Nam trong thương mại khu vực.",
+        title: "Hiệp định RCEP chính thức có hiệu lực",
+        desc: "<strong>Tổng quan:</strong> Có hiệu lực từ ngày 1/1/2022, RCEP là khối thương mại tự do lớn nhất thế giới, bao gồm 10 nước ASEAN và 5 nước đối tác (Trung Quốc, Nhật Bản, Hàn Quốc, Úc, New Zealand), bao phủ 30% GDP toàn cầu.<br><br><strong>Sức ảnh hưởng đến kinh tế:</strong> RCEP giúp hài hòa hóa quy tắc xuất xứ trong toàn khu vực Đông Á, tạo điều kiện thuận lợi nhất để Việt Nam nhập khẩu nguyên liệu đầu vào và xuất khẩu thành phẩm trong cùng một chuỗi cung ứng châu Á.",
         positive: [
-            { icon: "fa-solid fa-network-wired", text: "<strong>Hài hòa chuỗi cung ứng:</strong> Quy tắc xuất xứ thống nhất giúp doanh nghiệp dễ kết hợp nguyên liệu, linh kiện và thị trường trong cùng khu vực." },
-            { icon: "fa-solid fa-truck-fast", text: "<strong>Giảm chi phí giao dịch:</strong> Thủ tục thương mại thuận lợi hơn, hỗ trợ ngành điện tử, dệt may, nông sản và logistics." },
-            { icon: "fa-solid fa-map-location-dot", text: "<strong>Củng cố vị trí khu vực:</strong> Việt Nam tham gia sâu hơn vào mạng sản xuất Đông Á, nơi tập trung nhiều đối tác thương mại lớn." }
+            { icon: "fa-solid fa-truck-fast", text: "<strong>Tối ưu hóa chuỗi cung ứng:</strong> Đồng nhất quy tắc xuất xứ, giảm chi phí giao dịch thương mại cho doanh nghiệp." },
+            { icon: "fa-solid fa-seedling", text: "<strong>Xuất khẩu nông sản:</strong> Đẩy mạnh xuất khẩu nông sản chủ lực sang các thị trường lớn lân cận (Trung Quốc, Nhật Bản, Hàn Quốc)." }
         ],
         negative: [
-            { icon: "fa-solid fa-scale-unbalanced-flip", text: "<strong>Áp lực nhập siêu:</strong> Nguy cơ phụ thuộc lớn hơn vào nguyên liệu, máy móc và hàng hóa từ các đối tác trong khối." },
-            { icon: "fa-solid fa-industry", text: "<strong>Cạnh tranh ngay trên sân nhà:</strong> Doanh nghiệp nội địa chịu sức ép từ hàng công nghiệp và tiêu dùng giá cạnh tranh trong khu vực." },
-            { icon: "fa-solid fa-layer-group", text: "<strong>Nguy cơ kẹt ở phân khúc thấp:</strong> Nếu không nâng công nghệ, Việt Nam dễ chỉ tham gia khâu gia công, lắp ráp giá trị gia tăng thấp." }
-        ]
+            { icon: "fa-solid fa-scale-unbalanced-flip", text: "<strong>Thâm hụt thương mại:</strong> Nguy cơ thâm hụt thương mại lớn hơn với các đối tác cung ứng nguyên liệu lớn như Trung Quốc, Hàn Quốc." },
+            { icon: "fa-solid fa-industry", text: "<strong>Cạnh tranh sân nhà:</strong> Áp lực lớn từ hàng hóa công nghiệp và tiêu dùng giá rẻ, chất lượng cao tràn vào nội địa." }
+        ],
+        conclusion: "RCEP giúp Việt Nam củng cố vị thế vững chắc trong \"nhà máy của thế giới\" tại Đông Á, nhưng cũng đòi hỏi doanh nghiệp phải tự chủ hơn về công nghệ để không bị kẹt ở phân khúc gia công giá trị thấp."
     },
     '2025': {
-        title: "Thành quả tăng trưởng và độ mở nền kinh tế (2025)",
-        desc: "Năm 2025 được dùng như lát cắt tổng hợp để nhìn lại thành quả gần bốn thập kỷ Đổi mới và hội nhập: Việt Nam duy trì triển vọng tăng trưởng tương đối cao trong khu vực, có độ mở kinh tế rất lớn và ngày càng gắn chặt với chuỗi cung ứng toàn cầu. Đây cũng là mốc nhấn mạnh yêu cầu chuyển từ tăng trưởng dựa vào lao động giá rẻ, gia công và tài nguyên sang tăng trưởng dựa trên khoa học - công nghệ, đổi mới sáng tạo và năng lực tự chủ.",
+        title: "Việt Nam duy trì đà tăng trưởng và khẳng định độ mở kinh tế",
+        desc: "<strong>Tổng quan:</strong> Năm 2025 là cột mốc phản ánh rõ nét thành quả tích lũy từ gần 4 thập kỷ đổi mới và hội nhập. Bất chấp những biến động địa chính trị phức tạp trên thế giới, nền kinh tế Việt Nam đạt tốc độ tăng trưởng ấn tượng khoảng 6.5% (theo báo cáo của World Bank), được dẫn dắt bởi sự phục hồi mạnh mẽ của xuất khẩu công nghiệp chế biến, chế tạo và FDI.<br><br><strong>Sức ảnh hưởng đến kinh tế:</strong> Việt Nam củng cố vị trí mắt xích không thể thiếu trong chuỗi cung ứng toàn cầu (đặc biệt trong ngành bán dẫn, điện tử). Độ mở của nền kinh tế đạt mức cực cao khi tỷ lệ tổng kim ngạch xuất nhập khẩu trên GDP đạt khoảng 180% - 200%.",
         positive: [
-            { icon: "fa-solid fa-ranking-star", text: "<strong>Độ mở kinh tế rất cao:</strong> Tổng kim ngạch xuất nhập khẩu/GDP duy trì ở mức lớn, cho thấy Việt Nam gắn sâu với thương mại và chuỗi cung ứng quốc tế." },
-            { icon: "fa-solid fa-bolt", text: "<strong>Dịch chuyển sang công nghệ cao:</strong> Dòng vốn FDI tập trung mạnh vào các dự án bán dẫn, trí tuệ nhân tạo (AI), năng lượng tái tạo và kinh tế tuần hoàn." },
-            { icon: "fa-solid fa-medal", text: "<strong>Thương hiệu Việt vươn tầm:</strong> Xuất khẩu chuyển dịch mạnh từ hàng thô sang các sản phẩm công nghệ cao tự chủ thiết kế và nông sản chế biến sâu." }
+            { icon: "fa-solid fa-microchip", text: "<strong>Hút FDI công nghệ cao:</strong> Thu hút thành công dòng vốn đầu tư vào ngành bán dẫn, trí tuệ nhân tạo (AI) và công nghệ cao." },
+            { icon: "fa-solid fa-ranking-star", text: "<strong>Vị thế quốc tế:</strong> Đời sống nhân dân cải thiện rõ rệt; vị thế địa chính trị và địa kinh tế của Việt Nam nâng tầm toàn cầu." }
         ],
         negative: [
-            { icon: "fa-solid fa-link-slash", text: "<strong>Thách thức bẫy lắp ráp:</strong> Vẫn đối mặt với áp lực gia tăng nhanh tỷ lệ giá trị nội địa, tránh nguy cơ trở thành nơi lắp ráp hộ cho nước khác để tránh thuế." },
-            { icon: "fa-solid fa-wind", text: "<strong>Chậm chân trong chuyển đổi ESG:</strong> Các doanh nghiệp chậm xanh hóa quy trình sản xuất sẽ bị loại khỏi chuỗi cung ứng của các thương hiệu quốc tế lớn." },
-            { icon: "fa-solid fa-earth-americas", text: "<strong>Địa chính trị bất ổn:</strong> Căng thẳng thương mại toàn cầu và xu hướng phi toàn cầu hóa gây gián đoạn chuỗi cung ứng logistics." }
-        ]
+            { icon: "fa-solid fa-wind", text: "<strong>Nhạy cảm trước cú sốc:</strong> Độ mở kinh tế cực lớn khiến Việt Nam dễ tổn thương trước lạm phát toàn cầu và xung đột địa chính trị." },
+            { icon: "fa-solid fa-link-slash", text: "<strong>Khoảng cách FDI - nội địa:</strong> Doanh nghiệp nội địa còn khoảng cách lớn so với khối FDI về công nghệ và năng suất lao động." }
+        ],
+        conclusion: "Cột mốc 2025 chứng minh hội nhập đã mang lại quả ngọt lớn, nhưng cũng đặt ra yêu cầu cấp bách: Việt Nam phải chuyển đổi mô hình từ \"tăng trưởng dựa vào lao động giá rẻ, thâm dụng tài nguyên\" sang \"tăng trưởng dựa vào khoa học công nghệ, đổi mới sáng tạo và nâng cao năng lực tự chủ\"."
     }
 };
 
@@ -182,40 +176,39 @@ const milestoneReferences = {
     ],
     '1986': [
         "Đảng Cộng sản Việt Nam - Văn kiện Đại hội đại biểu toàn quốc lần thứ VI (1986).",
-        "World Bank - Viet Nam overview: development history."
+        "World Bank - \"Viet Nam Overview: Development History\"."
     ],
     '1995': [
-        "ASEAN Secretariat - Viet Nam in ASEAN: integration milestones.",
-        "Bộ Công Thương Việt Nam - tiến trình tham gia AFTA của Việt Nam."
+        "ASEAN Secretariat - \"Viet Nam in ASEAN: 25 Years of Integration\".",
+        "Bộ Công Thương Việt Nam - \"Tiến trình tham gia Hiệp định AFTA của Việt Nam\"."
     ],
     '1998': [
-        "APEC Secretariat - Member Economies: Viet Nam.",
-        "Bộ Ngoại giao Việt Nam - Việt Nam và Diễn đàn Hợp tác Kinh tế châu Á - Thái Bình Dương."
+        "APEC Secretariat - \"Member Economies: Viet Nam\".",
+        "Bộ Ngoại giao Việt Nam - \"Việt Nam và Diễn đàn Hợp tác Kinh tế châu Á - Thái Bình Dương\"."
     ],
     '2001': [
-        "U.S. State Department - U.S.-Vietnam Bilateral Trade Agreement.",
-        "Bộ Công Thương Việt Nam - đánh giá quá trình thực hiện BTA Việt Nam - Hoa Kỳ."
+        "U.S. State Department - \"U.S.-Vietnam Bilateral Trade Agreement (BTA)\".",
+        "Bộ Công Thương Việt Nam - \"Đánh giá 20 năm thực hiện Hiệp định Thương mại song phương Việt Nam - Hoa Kỳ\"."
     ],
     '2007': [
-        "World Trade Organization - Viet Nam and the WTO.",
-        "Bộ Kế hoạch và Đầu tư Việt Nam - báo cáo/đánh giá tác động sau khi gia nhập WTO."
+        "World Trade Organization (WTO) - \"Viet Nam and the WTO\".",
+        "Bộ Kế hoạch và Đầu tư Việt Nam - \"Báo cáo đánh giá tác động sau khi gia nhập WTO\"."
     ],
     '2019': [
-        "Bộ Công Thương Việt Nam - Cổng thông tin Hiệp định CPTPP.",
-        "World Bank - Economic and Distributional Impacts of CPTPP: The Case of Vietnam."
+        "Bộ Công Thương Việt Nam - \"Cổng thông tin Hiệp định CPTPP\".",
+        "World Bank - \"Economic and Distributional Impacts of CPTPP: The Case of Vietnam\"."
     ],
     '2020': [
-        "European Commission - EU-Vietnam Trade Agreement.",
-        "EuroCham - Whitebook on EVFTA implementation."
+        "European Commission - \"EU-Vietnam Trade Agreement\".",
+        "Hiệp hội Doanh nghiệp châu Âu tại Việt Nam (EuroCham) - \"Whitebook on EVFTA Implementation\"."
     ],
     '2022': [
-        "ASEAN Secretariat - Regional Comprehensive Economic Partnership Agreement.",
-        "Bộ Công Thương Việt Nam - Cẩm nang/RCEP và chính sách thương mại đa phương."
+        "ASEAN Secretariat - \"Regional Comprehensive Economic Partnership (RCEP) Agreement\".",
+        "Bộ Công Thương Việt Nam - \"Vụ Chính sách thương mại đa phương: Cẩm nang RCEP\"."
     ],
     '2025': [
-        "World Bank - Vietnam economic update/Taking Stock.",
-        "Tổng cục Thống kê Việt Nam - báo cáo tình hình kinh tế - xã hội.",
-        "World Bank Open Data - trade, GDP and FDI indicators for Viet Nam."
+        "World Bank - \"Taking Stock: Vietnam Economic Update (2025)\".",
+        "Tổng cục Thống kê Việt Nam (GSO) - \"Báo cáo tình hình kinh tế - xã hội năm 2025\"."
     ]
 };
 
@@ -1572,6 +1565,19 @@ function handleMilestoneClick(element, isAutoTriggered = false) {
     
     const sidebarDesc = document.getElementById('sidebar-milestone-desc');
     if (sidebarDesc) sidebarDesc.innerHTML = mData.desc || '';
+
+    const sidebarConclusionText = document.getElementById('sidebar-conclusion-text');
+    const sidebarConclusionBox = document.getElementById('sidebar-conclusion-box');
+    if (sidebarConclusionText && sidebarConclusionBox) {
+        if (mData.conclusion) {
+            sidebarConclusionText.innerHTML = mData.conclusion;
+            sidebarConclusionBox.classList.remove('hidden');
+            sidebarConclusionBox.style.borderLeftColor = getMilestoneColor(year);
+        } else {
+            sidebarConclusionText.innerHTML = '';
+            sidebarConclusionBox.classList.add('hidden');
+        }
+    }
 
     const illustration = milestoneIllustrations[year] || milestoneIllustrations.all;
     const illustrationImg = document.getElementById('sidebar-illustration-img');
