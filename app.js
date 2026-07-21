@@ -2399,6 +2399,150 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
+// 7. MLN122 CHATBOT
+// ==========================================
+const CHAT_API_URL = 'https://mln-chatbot-backend.vercel.app/api/v1/chat';
+const CHAT_HISTORY_LIMIT = 6;
+
+function initMlnChatbot() {
+    const launcher = document.getElementById('mln-chat-launcher');
+    const panel = document.getElementById('mln-chat-panel');
+    const closeButton = document.getElementById('mln-chat-close');
+    const form = document.getElementById('mln-chat-form');
+    const input = document.getElementById('mln-chat-input');
+    const sendButton = document.getElementById('mln-chat-send');
+    const messages = document.getElementById('mln-chat-messages');
+
+    if (!launcher || !panel || !closeButton || !form || !input || !sendButton || !messages) return;
+
+    const history = [];
+
+    function setPanelOpen(isOpen) {
+        panel.classList.toggle('is-open', isOpen);
+        panel.setAttribute('aria-hidden', String(!isOpen));
+        launcher.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) input.focus();
+    }
+
+    function scrollToLatest() {
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    function addMessage(role, content, citations = []) {
+        const message = document.createElement('article');
+        message.className = `mln-chat-message mln-chat-message--${role}`;
+
+        const paragraph = document.createElement('p');
+        paragraph.textContent = content;
+        message.appendChild(paragraph);
+
+        if (role === 'assistant' && citations.length) {
+            const citationList = document.createElement('ul');
+            citationList.className = 'mln-chat-citations';
+
+            citations.forEach((citation) => {
+                const item = document.createElement('li');
+                item.className = 'mln-chat-citation';
+
+                const source = document.createElement('strong');
+                source.textContent = `${citation.document || 'Giáo trình'}${citation.page ? ` · trang ${citation.page}` : ''}`;
+                item.appendChild(source);
+
+                if (citation.quote) {
+                    const quote = document.createElement('q');
+                    quote.textContent = citation.quote;
+                    item.appendChild(quote);
+                }
+                citationList.appendChild(item);
+            });
+            message.appendChild(citationList);
+        }
+
+        messages.appendChild(message);
+        scrollToLatest();
+    }
+
+    function addTypingIndicator() {
+        const typing = document.createElement('div');
+        typing.className = 'mln-chat-typing';
+        typing.id = 'mln-chat-typing';
+        typing.textContent = 'Đang tìm trong tài liệu…';
+        messages.appendChild(typing);
+        scrollToLatest();
+    }
+
+    function removeTypingIndicator() {
+        document.getElementById('mln-chat-typing')?.remove();
+    }
+
+    function requestErrorMessage(responseStatus) {
+        if (responseStatus === 429) return 'Bạn gửi câu hỏi hơi nhanh. Hãy chờ một lát rồi thử lại nhé.';
+        if (responseStatus >= 500) return 'Dịch vụ đang tạm thời gặp sự cố. Bạn hãy thử lại sau ít phút.';
+        return 'Không thể gửi câu hỏi lúc này. Bạn hãy kiểm tra kết nối và thử lại nhé.';
+    }
+
+    async function sendMessage(text) {
+        addMessage('user', text);
+        addTypingIndicator();
+        sendButton.disabled = true;
+        input.disabled = true;
+
+        try {
+            const response = await fetch(CHAT_API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({ message: text, history: history.slice(-CHAT_HISTORY_LIMIT) })
+            });
+
+            let result = null;
+            try {
+                result = await response.json();
+            } catch (_) {
+                // A non-JSON upstream error is handled from the HTTP status below.
+            }
+
+            if (!response.ok || !result?.answer) {
+                throw new Error(requestErrorMessage(response.status));
+            }
+
+            history.push({ role: 'user', content: text });
+            history.push({ role: 'assistant', content: result.answer });
+            addMessage('assistant', result.answer, Array.isArray(result.citations) ? result.citations : []);
+        } catch (error) {
+            addMessage('error', error.message || 'Không thể kết nối với trợ lý học tập.');
+        } finally {
+            removeTypingIndicator();
+            sendButton.disabled = false;
+            input.disabled = false;
+            input.focus();
+        }
+    }
+
+    launcher.addEventListener('click', () => setPanelOpen(!panel.classList.contains('is-open')));
+    closeButton.addEventListener('click', () => setPanelOpen(false));
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && panel.classList.contains('is-open')) setPanelOpen(false);
+    });
+
+    input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault();
+            form.requestSubmit();
+        }
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const text = input.value.trim();
+        if (!text || input.disabled) return;
+        input.value = '';
+        sendMessage(text);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initMlnChatbot);
+
+// ==========================================
 // 8. INTERACTIVE QUIZ LOGIC (NEW PREMIUM FEATURE)
 // ==========================================
 const quizQuestions = [
