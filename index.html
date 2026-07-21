@@ -566,6 +566,41 @@
         </footer>
     </div>
 
+    <!-- MLN122 chatbot -->
+    <button class="mln-chat-launcher" id="mln-chat-launcher" type="button" aria-label="Mở trợ lý học tập MLN122" aria-expanded="false" aria-controls="mln-chat-panel">
+        <i class="fa-solid fa-comments"></i>
+        <span>Hỏi trợ lý</span>
+    </button>
+
+    <aside class="mln-chat-panel" id="mln-chat-panel" aria-label="Trợ lý học tập MLN122" aria-hidden="true">
+        <header class="mln-chat-header">
+            <div>
+                <p class="mln-chat-eyebrow">TRỢ LÝ HỌC TẬP</p>
+                <h2>Hỏi về mục 6.2.2 &amp; 6.2.3</h2>
+            </div>
+            <button class="mln-chat-close" id="mln-chat-close" type="button" aria-label="Đóng trợ lý học tập">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+
+        <div class="mln-chat-messages" id="mln-chat-messages" role="log" aria-live="polite" aria-label="Nội dung cuộc trò chuyện">
+            <article class="mln-chat-message mln-chat-message--assistant">
+                <p>Chào bạn! Mình trả lời ngắn gọn dựa trên giáo trình ở phần 6.2.2 và 6.2.3. Nếu tài liệu không có đủ thông tin, mình sẽ nói rõ.</p>
+            </article>
+        </div>
+
+        <form class="mln-chat-form" id="mln-chat-form">
+            <label class="sr-only" for="mln-chat-input">Câu hỏi của bạn</label>
+            <textarea id="mln-chat-input" rows="2" maxlength="1000" placeholder="Ví dụ: Hội nhập tạo cơ hội gì cho Việt Nam?"></textarea>
+            <div class="mln-chat-form-footer">
+                <span>Enter để gửi · Shift + Enter xuống dòng</span>
+                <button id="mln-chat-send" type="submit">
+                    Gửi <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </form>
+    </aside>
+
     <!-- Image detail lightbox -->
     <div class="image-lightbox hidden" id="image-lightbox" aria-hidden="true">
         <div class="image-lightbox-backdrop" id="image-lightbox-backdrop"></div>
