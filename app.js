@@ -2548,35 +2548,13 @@ function initMlnChatbot() {
         messages.scrollTop = messages.scrollHeight;
     }
 
-    function addMessage(role, content, citations = []) {
+    function addMessage(role, content) {
         const message = document.createElement('article');
         message.className = `mln-chat-message mln-chat-message--${role}`;
 
         const paragraph = document.createElement('p');
         paragraph.textContent = content;
         message.appendChild(paragraph);
-
-        if (role === 'assistant' && citations.length) {
-            const citationList = document.createElement('ul');
-            citationList.className = 'mln-chat-citations';
-
-            citations.forEach((citation) => {
-                const item = document.createElement('li');
-                item.className = 'mln-chat-citation';
-
-                const source = document.createElement('strong');
-                source.textContent = `${citation.document || 'Giáo trình'}${citation.page ? ` · trang ${citation.page}` : ''}`;
-                item.appendChild(source);
-
-                if (citation.quote) {
-                    const quote = document.createElement('q');
-                    quote.textContent = citation.quote;
-                    item.appendChild(quote);
-                }
-                citationList.appendChild(item);
-            });
-            message.appendChild(citationList);
-        }
 
         messages.appendChild(message);
         scrollToLatest();
@@ -2627,7 +2605,7 @@ function initMlnChatbot() {
 
             history.push({ role: 'user', content: text });
             history.push({ role: 'assistant', content: result.answer });
-            addMessage('assistant', result.answer, Array.isArray(result.citations) ? result.citations : []);
+            addMessage('assistant', result.answer);
         } catch (error) {
             addMessage('error', error.message || 'Không thể kết nối với trợ lý học tập.');
         } finally {
