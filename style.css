@@ -556,6 +556,7 @@ main {
     height: 100%;
     opacity: 0;
     pointer-events: none;
+    display: none; /* Turn off WebGL rendering completely when inactive to free GPU/CPU */
     transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
 }
@@ -563,6 +564,7 @@ main {
 .map-layer.active-layer {
     opacity: 1;
     pointer-events: auto;
+    display: block;
     z-index: 2;
 }
 
@@ -1028,70 +1030,72 @@ body.image-lightbox-open {
     fill: none !important;
     stroke-linecap: round;
     transition: all 0.5s ease;
-    stroke-width: 1.5px;
+    stroke-width: 2.2px;
 }
 
 /* Color codes per active agreement milestone */
 /* 1995: ASEAN (Green) */
 #worldMapSvg path.active-asean:not(.flow-line) {
-    fill: rgba(16, 185, 129, 0.15) !important;
+    fill: rgba(16, 185, 129, 0.32) !important;
     stroke: var(--success) !important;
-    stroke-width: 0.8px !important;
-    filter: drop-shadow(0 0 3px rgba(16, 185, 129, 0.3)) !important;
+    stroke-width: 1px !important;
+    filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.4)) !important;
 }
 
 #worldMapSvg path.active-doimoi:not(.flow-line) {
-    fill: rgba(34, 197, 94, 0.14) !important;
+    fill: rgba(34, 197, 94, 0.32) !important;
     stroke: #22C55E !important;
-    stroke-width: 0.75px !important;
-    filter: drop-shadow(0 0 3px rgba(34, 197, 94, 0.3)) !important;
+    stroke-width: 1px !important;
+    filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.4)) !important;
 }
 
 #worldMapSvg path.active-apec:not(.flow-line) {
-    fill: rgba(59, 130, 246, 0.14) !important;
+    fill: rgba(59, 130, 246, 0.32) !important;
     stroke: var(--secondary) !important;
-    stroke-width: 0.8px !important;
-    filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.3)) !important;
+    stroke-width: 1px !important;
+    filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.4)) !important;
 }
 
 #worldMapSvg path.active-bta:not(.flow-line) {
-    fill: rgba(244, 114, 182, 0.16) !important;
+    fill: rgba(244, 114, 182, 0.35) !important;
     stroke: #F472B6 !important;
-    stroke-width: 0.9px !important;
-    filter: drop-shadow(0 0 4px rgba(244, 114, 182, 0.35)) !important;
+    stroke-width: 1.1px !important;
+    filter: drop-shadow(0 0 5px rgba(244, 114, 182, 0.45)) !important;
 }
 
 #worldMapSvg path.active-wto:not(.flow-line) {
-    fill: rgba(139, 92, 246, 0.12) !important;
+    fill: rgba(139, 92, 246, 0.28) !important;
     stroke: var(--primary) !important;
-    stroke-width: 0.55px !important;
+    stroke-width: 0.9px !important;
+    filter: drop-shadow(0 0 4px rgba(139, 92, 246, 0.35)) !important;
 }
 
 #worldMapSvg path.active-cptpp:not(.flow-line) {
-    fill: rgba(6, 182, 212, 0.15) !important;
+    fill: rgba(6, 182, 212, 0.32) !important;
     stroke: var(--cptpp) !important;
-    stroke-width: 0.8px !important;
-    filter: drop-shadow(0 0 3px rgba(6, 182, 212, 0.3)) !important;
+    stroke-width: 1px !important;
+    filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.4)) !important;
 }
 
 #worldMapSvg path.active-evfta:not(.flow-line) {
-    fill: rgba(245, 158, 11, 0.16) !important;
+    fill: rgba(245, 158, 11, 0.32) !important;
     stroke: var(--warning) !important;
-    stroke-width: 0.8px !important;
-    filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.32)) !important;
+    stroke-width: 1px !important;
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4)) !important;
 }
 
 #worldMapSvg path.active-rcep:not(.flow-line) {
-    fill: rgba(14, 165, 233, 0.15) !important;
+    fill: rgba(14, 165, 233, 0.35) !important;
     stroke: #0EA5E9 !important;
-    stroke-width: 0.8px !important;
-    filter: drop-shadow(0 0 3px rgba(14, 165, 233, 0.32)) !important;
+    stroke-width: 1px !important;
+    filter: drop-shadow(0 0 4px rgba(14, 165, 233, 0.4)) !important;
 }
 
 #worldMapSvg path.active-2025:not(.flow-line) {
-    fill: rgba(16, 185, 129, 0.08) !important;
-    stroke: rgba(16, 185, 129, 0.42) !important;
-    stroke-width: 0.45px !important;
+    fill: rgba(16, 185, 129, 0.30) !important;
+    stroke: #10B981 !important;
+    stroke-width: 1px !important;
+    filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.4)) !important;
 }
 
 .active-line-doimoi {
@@ -1140,15 +1144,15 @@ body.image-lightbox-open {
 }
 
 .active-line-export {
-    stroke-dasharray: 8 60;
-    animation: flowMarchExport 6s linear infinite;
+    stroke-dasharray: 10 20;
+    animation: flowMarchExport 4s linear infinite;
     opacity: 0.95;
 }
 
 .active-line-import {
-    stroke-dasharray: 3 30;
-    animation: flowMarchImport 4s linear infinite;
-    opacity: 0.6;
+    stroke-dasharray: 6 15;
+    animation: flowMarchImport 3s linear infinite;
+    opacity: 0.75;
 }
 
 @keyframes flowMarchExport {
@@ -1575,6 +1579,13 @@ body.image-lightbox-open {
 @media (min-width: 1024px) {
     .solutions-layout {
         grid-template-columns: 1.1fr 0.9fr;
+        align-items: start;
+    }
+
+    .mindmap-container {
+        position: sticky;
+        top: 1.5rem;
+        align-self: start;
     }
 }
 
@@ -1584,10 +1595,10 @@ body.image-lightbox-open {
     border-radius: 16px;
     padding: 1.5rem;
     box-shadow: var(--glass-shadow);
-    backdrop-filter: blur(12px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1rem;
     min-height: 480px;
 }
 
@@ -3463,8 +3474,7 @@ body.mindmap-fullscreen-mode .map-line.active-line {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    max-height: min(58vh, 560px);
-    overflow-y: auto;
+    margin-bottom: 1.25rem;
     padding-right: 0.25rem;
 }
 
@@ -4188,6 +4198,17 @@ body.fullscreen-mode #worldMapContainer {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+body.fullscreen-mode #worldMapSvg {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
 }
 
 body.fullscreen-mode .map-hud-overlay.top-right {
@@ -4215,14 +4236,12 @@ body.fullscreen-mode .map-control-header {
     width: auto !important;
     min-width: 480px !important;
     z-index: 99999 !important;
-    background: rgba(6, 10, 22, 0.78) !important;
+    background: rgba(6, 10, 22, 0.94) !important;
     border: 1px solid rgba(139, 92, 246, 0.2) !important;
     padding: 0.6rem 1.75rem !important;
     border-radius: 40px !important;
-    backdrop-filter: blur(20px) saturate(180%) !important;
     box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.08),
-                0 8px 32px rgba(0, 0, 0, 0.7),
-                0 0 60px rgba(139, 92, 246, 0.08) !important;
+                0 8px 32px rgba(0, 0, 0, 0.7) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -4239,16 +4258,14 @@ body.fullscreen-mode .milestone-sidebar {
     max-height: calc(100vh - 8rem) !important;
     height: calc(100vh - 8rem) !important;
     z-index: 99998 !important;
-    background: linear-gradient(160deg, rgba(6, 10, 22, 0.88) 0%, rgba(8, 13, 30, 0.92) 100%) !important;
+    background: rgba(6, 10, 22, 0.95) !important;
     border: 1px solid rgba(139, 92, 246, 0.18) !important;
     border-top: 1px solid rgba(139, 92, 246, 0.35) !important;
     border-radius: 20px !important;
     padding: 1.5rem !important;
-    backdrop-filter: blur(24px) saturate(160%) !important;
     box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.06),
                 0 20px 60px rgba(0, 0, 0, 0.8),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05),
-                0 0 80px rgba(139, 92, 246, 0.06) !important;
+                inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
     overflow-y: auto !important;
     display: flex !important;
     flex-direction: column !important;
@@ -4286,16 +4303,14 @@ body.fullscreen-mode .fullscreen-impacts-sidebar {
     max-height: calc(100vh - 8rem) !important;
     height: calc(100vh - 8rem) !important;
     z-index: 99998 !important;
-    background: linear-gradient(160deg, rgba(6, 10, 22, 0.88) 0%, rgba(8, 13, 30, 0.92) 100%) !important;
+    background: rgba(6, 10, 22, 0.95) !important;
     border: 1px solid rgba(59, 130, 246, 0.18) !important;
     border-top: 1px solid rgba(59, 130, 246, 0.35) !important;
     border-radius: 20px !important;
     padding: 1.5rem !important;
-    backdrop-filter: blur(24px) saturate(160%) !important;
     box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.06),
                 0 20px 60px rgba(0, 0, 0, 0.8),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05),
-                0 0 80px rgba(59, 130, 246, 0.06) !important;
+                inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
     overflow-y: auto !important;
     animation: panelSlideInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
