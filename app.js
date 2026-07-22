@@ -425,7 +425,7 @@ const solutionsData = {
                 </div>
             </div>
         `,
-        keywords: ["Cơ hội kinh doanh", "Chấp nhận cạnh tranh", "Huy động vốn", "Quản trị bất định", "Đồng hành Chính phủ", "Đối thoại pháp lý"],
+        keywords: ["Cơ hội kinh doanh", "Chấp nhận cạnh tranh", "Huy động vốn", "Quản trị bất định", "Đồng hành Chính phủ", "Đối thoại pháp lý", "Hỗ trợ của Nhà nước"],
         items: [
             {
                 title: "Học cách tìm kiếm cơ hội kinh doanh",
@@ -860,14 +860,39 @@ let isGlobeRotating = window.innerWidth >= 768; // Default off on mobile to prev
 let isGlobeSatellite = false;
 let currentMapMode = '3d';
 
-// Page Visibility API: Pause 3D animation loop when tab is hidden to save GPU/CPU
-document.addEventListener('visibilitychange', () => {
-    if (globeInstance && globeInstance.controls()) {
-        if (document.hidden) {
+function pauseGlobeEngine() {
+    if (!globeInstance) return;
+    try {
+        if (typeof globeInstance.pauseAnimation === 'function') {
+            globeInstance.pauseAnimation();
+        }
+        if (globeInstance.controls()) {
             globeInstance.controls().autoRotate = false;
-        } else if (currentMapMode === '3d' && document.querySelector('#tab-impact.active-content')) {
+        }
+    } catch (err) {
+        // Fallback pause handling
+    }
+}
+
+function resumeGlobeEngine() {
+    if (!globeInstance) return;
+    try {
+        if (typeof globeInstance.resumeAnimation === 'function') {
+            globeInstance.resumeAnimation();
+        }
+        if (globeInstance.controls()) {
             globeInstance.controls().autoRotate = isGlobeRotating;
         }
+    } catch (err) {
+        // Fallback resume handling
+    }
+}
+
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        pauseGlobeEngine();
+    } else if (document.querySelector('#tab-impact.active-content')) {
+        resumeGlobeEngine();
     }
 });
 
@@ -1136,9 +1161,7 @@ function switchMapMode(mode) {
             init3DGlobe();
         } else {
             updateGlobeData();
-            if (globeInstance.controls()) {
-                globeInstance.controls().autoRotate = isGlobeRotating;
-            }
+            resumeGlobeEngine();
         }
         // Force size refresh to ensure WebGL canvas matches container clientWidth/clientHeight
         if (globeInstance) {
@@ -1149,9 +1172,7 @@ function switchMapMode(mode) {
             }
         }
     } else {
-        if (globeInstance && globeInstance.controls()) {
-            globeInstance.controls().autoRotate = false;
-        }
+        pauseGlobeEngine();
         if (mode === 'svg') {
             const svgEl = document.getElementById('worldMapSvg');
             if (!svgEl) {
@@ -1245,6 +1266,9 @@ function toggleFullscreen() {
                 globeInstance.height(mapEl.clientHeight);
             }
         }
+        if (currentMapMode === 'svg') {
+            updateWorldMap(getActiveYear());
+        }
         updateTimelineProgressBar();
     }, 100);
 }
@@ -1264,19 +1288,30 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
+function getCountrySvgElement(code) {
+    if (!code) return null;
+    const lower = String(code).toLowerCase();
+    const upper = String(code).toUpperCase();
+    return document.getElementById(lower) ||
+           document.getElementById(upper) ||
+           document.querySelector(`#worldMapSvg path[id="${lower}"]`) ||
+           document.querySelector(`#worldMapSvg path[id="${upper}"]`);
+}
+
 // 4D. GEOGRAPHICAL SVG FALLBACK MAP UPDATING
 function updateWorldMap(year) {
     const mapSvg = document.getElementById('worldMapSvg');
     if (!mapSvg) return;
 
-    const vnEl = document.getElementById('vn');
+    const vnEl = getCountrySvgElement('vn');
     if (!vnEl) return;
     const vnBBox = vnEl.getBBox();
     const vnX = vnBBox.x + vnBBox.width / 2;
     const vnY = vnBBox.y + vnBBox.height / 2;
 
     document.querySelectorAll('#worldMapSvg path').forEach(path => {
-        if (path.id !== 'vn') {
+        const idLower = (path.id || '').toLowerCase();
+        if (idLower !== 'vn') {
             path.setAttribute('class', '');
         }
     });
@@ -1287,7 +1322,7 @@ function updateWorldMap(year) {
     }
 
     function drawFlowCurve(targetId, agreementClass) {
-        const targetEl = document.getElementById(targetId);
+        const targetEl = getCountrySvgElement(targetId);
         if (!targetEl) return;
         
         const targetBBox = targetEl.getBBox();
@@ -1322,7 +1357,7 @@ function updateWorldMap(year) {
     if (year === '1986') {
         const earlyHubs = ['sg', 'jp', 'ru'];
         earlyHubs.forEach(code => {
-            const el = document.getElementById(code);
+            const el = getCountrySvgElement(code);
             if (el) {
                 el.setAttribute('class', 'active-doimoi');
             }
@@ -1331,16 +1366,16 @@ function updateWorldMap(year) {
     }
     else if (year === '1995') {
         aseanCodes.forEach(code => {
-            const el = document.getElementById(code);
+            const el = getCountrySvgElement(code);
             if (el) {
                 el.setAttribute('class', 'active-asean');
-                if (code !== 'vn') drawFlowCurve(code, 'asean');
+                if (code.toLowerCase() !== 'vn') drawFlowCurve(code, 'asean');
             }
         });
     } 
     else if (year === '1998') {
         apecCodes.forEach(code => {
-            const el = document.getElementById(code);
+            const el = getCountrySvgElement(code);
             if (el) {
                 el.setAttribute('class', 'active-apec');
             }
@@ -1349,7 +1384,7 @@ function updateWorldMap(year) {
         apecHubs.forEach(code => drawFlowCurve(code, 'apec'));
     }
     else if (year === '2001') {
-        const usEl = document.getElementById('us');
+        const usEl = getCountrySvgElement('us');
         if (usEl) {
             usEl.setAttribute('class', 'active-bta');
         }
@@ -1357,7 +1392,7 @@ function updateWorldMap(year) {
     }
     else if (year === '2007') {
         document.querySelectorAll('#worldMapSvg path').forEach(path => {
-            if (path.id !== 'vn') {
+            if ((path.id || '').toLowerCase() !== 'vn') {
                 path.setAttribute('class', 'active-wto');
             }
         });
@@ -1366,16 +1401,16 @@ function updateWorldMap(year) {
     }
     else if (year === '2019') {
         cptppCodes.forEach(code => {
-            const el = document.getElementById(code);
+            const el = getCountrySvgElement(code);
             if (el) {
                 el.setAttribute('class', 'active-cptpp');
-                if (code !== 'vn') drawFlowCurve(code, 'cptpp');
+                if (code.toLowerCase() !== 'vn') drawFlowCurve(code, 'cptpp');
             }
         });
     }
     else if (year === '2020') {
         euCodes.forEach(code => {
-            const el = document.getElementById(code);
+            const el = getCountrySvgElement(code);
             if (el) {
                 el.setAttribute('class', 'active-evfta');
             }
@@ -1385,16 +1420,16 @@ function updateWorldMap(year) {
     }
     else if (year === '2022') {
         rcepCodes.forEach(code => {
-            const el = document.getElementById(code);
+            const el = getCountrySvgElement(code);
             if (el) {
                 el.setAttribute('class', 'active-rcep');
-                if (code !== 'vn') drawFlowCurve(code, 'rcep');
+                if (code.toLowerCase() !== 'vn') drawFlowCurve(code, 'rcep');
             }
         });
     }
     else if (year === '2025' || year === 'all') {
         document.querySelectorAll('#worldMapSvg path').forEach(path => {
-            if (path.id !== 'vn') {
+            if ((path.id || '').toLowerCase() !== 'vn') {
                 path.setAttribute('class', 'active-2025');
             }
         });
@@ -1714,7 +1749,7 @@ function setActiveAccordionItem(index) {
         const isActive = itemIndex === index;
         el.classList.toggle('active-item', isActive);
         if (content) {
-            content.style.maxHeight = isActive ? `${content.scrollHeight + 24}px` : '0';
+            content.style.maxHeight = isActive ? 'none' : '0';
         }
     });
 }
@@ -2261,12 +2296,15 @@ function initTabNavigation() {
             });
             document.getElementById(targetTab).classList.add('active-content');
 
-            if (globeInstance && globeInstance.controls()) {
-                if (targetTab === 'tab-impact') {
-                    globeInstance.controls().autoRotate = isGlobeRotating;
-                } else {
-                    globeInstance.controls().autoRotate = false;
+            const globeMapEl = document.getElementById('globeMap');
+            if (targetTab === 'tab-impact') {
+                if (currentMapMode === '3d') {
+                    if (globeMapEl) globeMapEl.classList.add('active-layer');
+                    resumeGlobeEngine();
                 }
+            } else {
+                if (globeMapEl) globeMapEl.classList.remove('active-layer');
+                pauseGlobeEngine();
             }
 
             if (targetTab === 'tab-solutions') {
@@ -2429,6 +2467,7 @@ function loadMap() {
             if (!svg) return;
             
             svg.setAttribute('id', 'worldMapSvg');
+            svg.setAttribute('preserveAspectRatio', 'none');
             
             // Inject drop-shadow filters
             const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
@@ -2467,7 +2506,7 @@ function loadMap() {
 // App bootstrapping
 document.addEventListener('DOMContentLoaded', () => {
     syncMindmapStaticLabels();
-    switchMapMode('3d');
+    init3DGlobe();
     initTabNavigation();
     initChart();
     setupDOMListeners();
