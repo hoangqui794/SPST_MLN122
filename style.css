@@ -1473,6 +1473,99 @@ body.image-lightbox-open {
 /* ==========================================
    9. TAB 2: SOLUTIONS MINDMAP (6.2.3)
    ========================================== */
+
+/* Global & Branch Icebreaker Cards */
+.icebreaker-global-card {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(245, 158, 11, 0.08) 50%, rgba(59, 130, 246, 0.08) 100%);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-left: 4px solid var(--danger);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+}
+
+.icebreaker-global-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100%;
+    background: radial-gradient(circle at 100% 0%, rgba(239, 68, 68, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.icebreaker-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 20px;
+    color: #fca5a5;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
+
+.pulse-icon {
+    animation: pulseMic 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseMic {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; text-shadow: 0 0 8px var(--danger); }
+}
+
+.icebreaker-question {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin: 0;
+}
+
+.icebreaker-question strong {
+    color: #fbbf24;
+    text-decoration: underline decoration-style wavy decoration-color rgba(251, 191, 36, 0.4);
+}
+
+.solution-icebreaker-box {
+    background: rgba(244, 63, 94, 0.08);
+    border: 1px dashed rgba(244, 63, 94, 0.35);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    margin: 0.75rem 0 1rem 0;
+}
+
+.solution-icebreaker-box .icebreaker-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #f43f5e;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.4rem;
+}
+
+.solution-icebreaker-box .icebreaker-text {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-primary);
+    font-style: italic;
+    margin: 0;
+}
+
 .solutions-layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -1939,43 +2032,275 @@ body.has-focus-panel .radar-grid {
     text-align: center;
 }
 
-/* Collapsible tree layout for mobile/small screens */
-@media (max-width: 600px) {
-    .mindmap-viewport {
-        height: auto;
-        min-height: 250px;
-        background: transparent;
-        border: none;
+/* Mobile UX Toast Notification */
+.mobile-ux-toast {
+    position: fixed;
+    top: 1.25rem;
+    left: 50%;
+    transform: translate(-50%, -20px);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 18px rgba(139, 92, 246, 0.3);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    z-index: 10005;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    width: max-content;
+    max-width: 90vw;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.mobile-ux-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+
+.mobile-ux-toast i {
+    color: #fbbf24;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* Native Mobile Card List & Bottom Sheet UX (< 768px) */
+@media (max-width: 768px) {
+    .icebreaker-global-card {
+        padding: 1rem 1.15rem;
+        margin-bottom: 1rem;
+        border-radius: 14px;
     }
-    
-    .mindmap-svg {
-        display: none;
+
+    .icebreaker-question {
+        font-size: 0.92rem;
+        line-height: 1.5;
     }
-    
-    .mindmap-nodes {
-        position: relative;
-        display: flex;
+
+    .mindmap-info {
         flex-direction: column;
-        gap: 1rem;
-        height: auto;
-        padding: 1rem 0;
-    }
-    
-    .node-root {
-        position: relative;
-        left: 0;
-        top: 0;
-        transform: none;
-        align-self: center;
+        align-items: flex-start;
+        gap: 0.6rem;
         margin-bottom: 1rem;
     }
-    
-    .node-branch {
-        position: relative;
-        left: 0;
-        top: 0;
-        transform: none !important;
+
+    .mindmap-present-btn {
         width: 100%;
+        justify-content: center;
+        padding: 0.6rem;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    .mindmap-container {
+        padding: 1rem 0.85rem;
+        min-height: 0;
+        height: auto;
+        border-radius: 16px;
+    }
+
+    /* Transform Radar Canvas into Mobile Vertical Interactive Card List */
+    .mindmap-viewport {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 0.25rem 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    .mindmap-svg,
+    .radar-rings-bg,
+    .radar-sweep-effect {
+        display: none !important;
+    }
+
+    .radar-grid {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    body.has-focus-panel .radar-grid {
+        transform: none !important;
+    }
+
+    /* Center Root -> Mobile Header Card */
+    .radar-root {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 0.25rem;
+    }
+
+    .radar-root-inner {
+        border-radius: 14px !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        padding: 0.75rem 1rem !important;
+        gap: 0.85rem !important;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(15, 23, 42, 0.95)) !important;
+        border: 1px solid rgba(139, 92, 246, 0.4) !important;
+    }
+
+    .radar-root .node-icon {
+        font-size: 1.3rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .radar-root .node-content h4 {
+        font-size: 0.88rem !important;
+        letter-spacing: 0.5px;
+    }
+
+    .radar-root .node-content p {
+        font-size: 0.72rem !important;
+    }
+
+    /* Branch Nodes (01 to 06) -> Mobile Interactive Cards */
+    .radar-node {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 58px;
+    }
+
+    .radar-node-inner {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 58px;
+        padding: 0.75rem 1rem !important;
+        border-radius: 14px !important;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 0.75rem !important;
+    }
+
+    .radar-node.active .radar-node-inner {
+        border-color: var(--node-accent) !important;
+        box-shadow: 0 0 20px rgba(var(--node-accent-rgb), 0.25) !important;
+        background: linear-gradient(135deg, rgba(var(--node-accent-rgb), 0.18), rgba(15, 23, 42, 0.95)) !important;
+    }
+
+    .radar-node .node-content {
+        flex: 1;
+        text-align: left !important;
+    }
+
+    .radar-node .node-content h4 {
+        font-size: 0.9rem !important;
+        margin: 0 !important;
+    }
+
+    .radar-node .node-content p {
+        font-size: 0.75rem !important;
+        margin: 0.15rem 0 0 !important;
+    }
+
+    .radar-node .node-keywords {
+        display: none !important;
+    }
+
+    .radar-node-inner::after {
+        content: '\f054';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .radar-node.active .radar-node-inner::after {
+        color: var(--node-accent);
+        transform: translateX(3px);
+    }
+
+    /* Mobile Bottom Sheet Modal for Focus Detail Panel */
+    .mindmap-focus-panel {
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        top: auto !important;
+        width: 100vw !important;
+        max-height: 85vh !important;
+        border-radius: 24px 24px 0 0 !important;
+        border-left: none !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 0 -12px 50px rgba(0, 0, 0, 0.8) !important;
+        animation: mobileSheetSlideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+    }
+
+    @keyframes mobileSheetSlideUp {
+        from { transform: translateY(100%); }
+        to   { transform: translateY(0); }
+    }
+
+    .mindmap-focus-panel.closing {
+        animation: mobileSheetSlideDown 0.3s cubic-bezier(0.6, 0, 0.8, 0) both !important;
+    }
+
+    @keyframes mobileSheetSlideDown {
+        from { transform: translateY(0); }
+        to   { transform: translateY(105%); }
+    }
+
+    .mindmap-panel-veil {
+        background: rgba(0, 0, 0, 0.65) !important;
+        pointer-events: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .icebreaker-global-card {
+        padding: 0.85rem 1rem;
+        border-left-width: 3px;
+    }
+
+    .icebreaker-badge {
+        font-size: 0.72rem;
+        padding: 0.15rem 0.5rem;
+    }
+
+    .icebreaker-question {
+        font-size: 0.86rem;
+    }
+
+    .mindmap-container {
+        padding: 0.85rem 0.65rem;
+        border-radius: 12px;
+    }
+
+    .solution-icebreaker-box {
+        padding: 0.7rem 0.85rem;
+    }
+
+    .solution-icebreaker-box .icebreaker-text {
+        font-size: 0.85rem;
     }
 }
 
@@ -1986,6 +2311,8 @@ body.mindmap-fullscreen-mode {
 }
 
 body.mindmap-fullscreen-mode header,
+body.mindmap-fullscreen-mode .icebreaker-global-card,
+body.mindmap-fullscreen-mode .autonomy-note-section,
 body.mindmap-fullscreen-mode .tab-content:not(#tab-solutions) {
     display: none !important;
 }
