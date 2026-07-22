@@ -4673,25 +4673,6 @@ body.has-focus-panel .radar-node.active {
     color: #8a2525;
 }
 
-.mln-chat-citations {
-    display: grid;
-    gap: 7px;
-    margin: 11px 0 0;
-    padding: 0;
-    list-style: none;
-}
-
-.mln-chat-citation {
-    padding: 8px 9px;
-    border-radius: 8px;
-    background: #edf5f4;
-    color: #28535a;
-    font-size: 0.76rem;
-}
-
-.mln-chat-citation strong { display: block; margin-bottom: 3px; }
-.mln-chat-citation q { color: #4b6266; }
-
 .mln-chat-typing {
     display: inline-flex;
     align-items: center;
