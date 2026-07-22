@@ -410,6 +410,7 @@ const solutionsData = {
         accent: "#F43F5E",
         title: "Nâng cao năng lực cạnh tranh quốc tế của nền kinh tế",
         subtitle: "Doanh nghiệp thích ứng nhanh, Nhà nước kiến tạo điều kiện cạnh tranh",
+        icebreaker: "Gần đây, các bạn có đặt món đồ nào từ nước ngoài trên Shopee hay TikTok Shop không? Mọi người thấy phí ship và tốc độ giao hàng của họ so với mua từ các shop trong nước thì như thế nào?",
         theory: "Năng lực cạnh tranh là điều kiện trực tiếp để hội nhập có hiệu quả. Doanh nghiệp phải học cách vận hành theo chuẩn toàn cầu, còn Nhà nước hỗ trợ bằng nguồn nhân lực, hạ tầng, thông tin, thể chế và môi trường kinh doanh thuận lợi.",
         quote: "Doanh nghiệp và đội ngũ doanh nhân là lực lượng nòng cốt trong tiến trình hội nhập.",
         extraHtml: `
@@ -855,12 +856,20 @@ function updateChartHighlight(selectedYear) {
 // 4. MULTI-MODE GEOGRAPHICAL MAP ENGINE (3D GLOBE, 2D SATELLITE, 2D VECTOR FALLBACK)
 let globeInstance = null;
 let worldGeoJson = null;
-let isGlobeRotating = true;
+let isGlobeRotating = window.innerWidth >= 768; // Default off on mobile to prevent lag & save battery
 let isGlobeSatellite = false;
-
-
-
 let currentMapMode = '3d';
+
+// Page Visibility API: Pause 3D animation loop when tab is hidden to save GPU/CPU
+document.addEventListener('visibilitychange', () => {
+    if (globeInstance && globeInstance.controls()) {
+        if (document.hidden) {
+            globeInstance.controls().autoRotate = false;
+        } else if (currentMapMode === '3d' && document.querySelector('#tab-impact.active-content')) {
+            globeInstance.controls().autoRotate = isGlobeRotating;
+        }
+    }
+});
 
 // Fetch GeoJSON borders from CDN with robust fallback
 function fetchGeoJson() {
@@ -1127,6 +1136,9 @@ function switchMapMode(mode) {
             init3DGlobe();
         } else {
             updateGlobeData();
+            if (globeInstance.controls()) {
+                globeInstance.controls().autoRotate = isGlobeRotating;
+            }
         }
         // Force size refresh to ensure WebGL canvas matches container clientWidth/clientHeight
         if (globeInstance) {
@@ -1136,12 +1148,17 @@ function switchMapMode(mode) {
                 globeInstance.height(mapEl.clientHeight);
             }
         }
-    } else if (mode === 'svg') {
-        const svgEl = document.getElementById('worldMapSvg');
-        if (!svgEl) {
-            loadMap();
-        } else {
-            updateWorldMap(year);
+    } else {
+        if (globeInstance && globeInstance.controls()) {
+            globeInstance.controls().autoRotate = false;
+        }
+        if (mode === 'svg') {
+            const svgEl = document.getElementById('worldMapSvg');
+            if (!svgEl) {
+                loadMap();
+            } else {
+                updateWorldMap(year);
+            }
         }
     }
 }
@@ -1650,6 +1667,10 @@ function drawMindmapLines() {
 
     const gridContainer = document.querySelector('.radar-grid') || viewport;
     const containerRect = gridContainer.getBoundingClientRect();
+    if (containerRect.width && containerRect.height) {
+        svg.setAttribute('width', containerRect.width);
+        svg.setAttribute('height', containerRect.height);
+    }
     const centerRect = centerNode.getBoundingClientRect();
     const activeRect = activeNode.getBoundingClientRect();
 
@@ -1819,11 +1840,20 @@ function handleBranchClick(branchName, keywordIndex = 0) {
         ? `<blockquote class="solution-quote">${branchInfo.quote}</blockquote>`
         : '';
     const extraHtml = branchInfo.extraHtml || '';
+    const icebreakerHtml = branchInfo.icebreaker
+        ? `
+            <div class="solution-icebreaker-box">
+                <div class="icebreaker-label"><i class="fa-solid fa-microphone-lines"></i> 🎤 Tương tác mở đầu (Phá băng Phương hướng 05)</div>
+                <p class="icebreaker-text">"${branchInfo.icebreaker}"</p>
+            </div>
+        `
+        : '';
         
     const theoryEl = document.getElementById('solution-theory');
     if (theoryEl) {
         theoryEl.innerHTML = `
             <div class="solution-keyword-strip">${keywordHtml}</div>
+            ${icebreakerHtml}
             <div><i class="fa-solid fa-quote-left" style="opacity:0.25; margin-right:0.5rem;"></i>${branchInfo.theory}</div>
             ${extraHtml}
             ${quoteHtml}
@@ -1841,7 +1871,7 @@ function handleBranchClick(branchName, keywordIndex = 0) {
         contentArea.classList.remove('hidden');
     }
 
-    if (document.body.classList.contains('mindmap-fullscreen-mode')) {
+    if (document.body.classList.contains('mindmap-fullscreen-mode') || window.innerWidth <= 768) {
         renderMindmapFocusPanel(branchName, keywordIndex);
     }
 
@@ -1969,6 +1999,12 @@ function renderMindmapFocusPanel(branchName, keywordIndex = 0) {
         </div>
         <div class="focus-panel-scroll">
             <div class="focus-panel-body">
+                ${branchInfo.icebreaker ? `
+                    <div class="solution-icebreaker-box">
+                        <div class="icebreaker-label"><i class="fa-solid fa-microphone-lines"></i> 🎤 Tương tác mở đầu (Phá băng Phương hướng 05)</div>
+                        <p class="icebreaker-text">"${branchInfo.icebreaker}"</p>
+                    </div>
+                ` : ''}
                 <div class="focus-body-label">Từ khóa chính</div>
                 <div class="focus-panel-keywords">
                     ${keywordsHtml}
@@ -2062,7 +2098,35 @@ function handleKeywordClick(branchName, keywordIndex) {
     }
 }
 
+function showMobileToast(message) {
+    let toast = document.getElementById('mobile-ux-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'mobile-ux-toast';
+        toast.className = 'mobile-ux-toast';
+        document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<i class="fa-solid fa-mobile-screen-button"></i> <span>${message}</span>`;
+    toast.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3500);
+}
+
 function toggleMindmapFullscreen(forceState = null) {
+    // Prevent desktop fullscreen mode on Mobile (< 768px) to avoid broken layout
+    if (window.innerWidth < 768) {
+        showMobileToast('Giao diện đã tối ưu dạng thẻ cho điện thoại. Chạm trực tiếp vào từng thẻ bên dưới để xem!');
+        const viewport = document.querySelector('.mindmap-viewport');
+        if (viewport) {
+            viewport.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        const activeBranch = activeSolutionBranch || 'awareness';
+        handleBranchClick(activeBranch, activeSolutionKeywordIndex || 0);
+        return;
+    }
+
     const nextState = forceState === null
         ? !document.body.classList.contains('mindmap-fullscreen-mode')
         : forceState;
@@ -2088,7 +2152,11 @@ function toggleMindmapFullscreen(forceState = null) {
         if (nextState && !document.querySelector('.radar-node.active')) {
             handleBranchClick('awareness');
         }
-    }, 120);
+    }, 50);
+
+    setTimeout(() => {
+        drawMindmapLines();
+    }, 300);
 }
 
 function openImageLightbox() {
@@ -2131,8 +2199,13 @@ function syncMindmapStaticLabels() {
     if (infoTitle) infoTitle.innerHTML = '<i class="fa-solid fa-diagram-project"></i> Sơ đồ tư duy 6.2.3';
     if (infoDesc) infoDesc.textContent = '6 phương hướng nâng cao hiệu quả hội nhập kinh tế quốc tế của Việt Nam:';
     if (presentBtn && !document.body.classList.contains('mindmap-fullscreen-mode')) {
-        presentBtn.innerHTML = '<i class="fa-solid fa-expand"></i> Trình chiếu';
-        presentBtn.title = 'Trình chiếu toàn màn hình';
+        if (window.innerWidth < 768) {
+            presentBtn.innerHTML = '<i class="fa-solid fa-mobile-screen-button"></i> Dạng thẻ di động';
+            presentBtn.title = 'Giao diện dạng thẻ tối ưu cho điện thoại';
+        } else {
+            presentBtn.innerHTML = '<i class="fa-solid fa-expand"></i> Trình chiếu';
+            presentBtn.title = 'Trình chiếu toàn màn hình';
+        }
     }
     if (root) root.innerHTML = '<h4>HỘI NHẬP KINH TẾ</h4><p>Nâng cao hiệu quả</p>';
     if (footerTip) footerTip.innerHTML = '<i class="fa-solid fa-circle-info"></i> Bấm vào từng nhánh hoặc từ khóa để xem nội dung chi tiết và trình bày theo từng bước.';
@@ -2187,6 +2260,14 @@ function initTabNavigation() {
                 content.classList.remove('active-content');
             });
             document.getElementById(targetTab).classList.add('active-content');
+
+            if (globeInstance && globeInstance.controls()) {
+                if (targetTab === 'tab-impact') {
+                    globeInstance.controls().autoRotate = isGlobeRotating;
+                } else {
+                    globeInstance.controls().autoRotate = false;
+                }
+            }
 
             if (targetTab === 'tab-solutions') {
                 setTimeout(() => {
