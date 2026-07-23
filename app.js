@@ -1878,7 +1878,7 @@ function handleBranchClick(branchName, keywordIndex = 0) {
     const icebreakerHtml = branchInfo.icebreaker
         ? `
             <div class="solution-icebreaker-box">
-                <div class="icebreaker-label"><i class="fa-solid fa-microphone-lines"></i> 🎤 Tương tác mở đầu (Phá băng Phương hướng 05)</div>
+                <div class="icebreaker-label"><i class="fa-solid fa-circle-question"></i> Câu hỏi</div>
                 <p class="icebreaker-text">"${branchInfo.icebreaker}"</p>
             </div>
         `
@@ -2036,7 +2036,7 @@ function renderMindmapFocusPanel(branchName, keywordIndex = 0) {
             <div class="focus-panel-body">
                 ${branchInfo.icebreaker ? `
                     <div class="solution-icebreaker-box">
-                        <div class="icebreaker-label"><i class="fa-solid fa-microphone-lines"></i> 🎤 Tương tác mở đầu (Phá băng Phương hướng 05)</div>
+                        <div class="icebreaker-label"><i class="fa-solid fa-circle-question"></i> Câu hỏi</div>
                         <p class="icebreaker-text">"${branchInfo.icebreaker}"</p>
                     </div>
                 ` : ''}
