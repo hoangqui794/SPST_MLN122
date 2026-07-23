@@ -2515,6 +2515,9 @@ body.mindmap-fullscreen-mode .keyword-node {
 body.mindmap-fullscreen-mode .keyword-node:nth-child(2) { animation-delay: 0.04s; }
 body.mindmap-fullscreen-mode .keyword-node:nth-child(3) { animation-delay: 0.08s; }
 body.mindmap-fullscreen-mode .keyword-node:nth-child(4) { animation-delay: 0.12s; }
+body.mindmap-fullscreen-mode .keyword-node:nth-child(5) { animation-delay: 0.16s; }
+body.mindmap-fullscreen-mode .keyword-node:nth-child(6) { animation-delay: 0.20s; }
+body.mindmap-fullscreen-mode .keyword-node:nth-child(7) { animation-delay: 0.24s; }
 
 @keyframes keywordFloatIn {
     from {
@@ -2884,6 +2887,9 @@ body.mindmap-fullscreen-mode .branch-autonomy .node-keywords { color: var(--dang
 body.mindmap-fullscreen-mode .keyword-node:nth-child(2) { animation-delay: 0.04s; }
 body.mindmap-fullscreen-mode .keyword-node:nth-child(3) { animation-delay: 0.08s; }
 body.mindmap-fullscreen-mode .keyword-node:nth-child(4) { animation-delay: 0.12s; }
+body.mindmap-fullscreen-mode .keyword-node:nth-child(5) { animation-delay: 0.16s; }
+body.mindmap-fullscreen-mode .keyword-node:nth-child(6) { animation-delay: 0.20s; }
+body.mindmap-fullscreen-mode .keyword-node:nth-child(7) { animation-delay: 0.24s; }
 
 @keyframes keywordFloatIn {
     from {
