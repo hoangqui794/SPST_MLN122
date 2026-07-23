@@ -384,9 +384,10 @@ const solutionsData = {
         theory: "Việt Nam cần tích cực tham gia các liên kết kinh tế quốc tế và khu vực, đồng thời thực hiện nghiêm túc các cam kết để tạo niềm tin, nâng tầm hội nhập và bảo đảm lợi ích quốc gia.",
         keywords: ["Song phương", "Đa phương", "Thực hiện cam kết", "Uy tín quốc gia"],
         items: [
-            { title: "Mở rộng quan hệ song phương và đa phương", content: "Duy trì quan hệ ngoại giao, thương mại, đầu tư với nhiều quốc gia, vùng lãnh thổ; tham gia các tổ chức và diễn đàn như ASEAN, APEC, ASEM, WTO." },
-            { title: "Thực hiện nghiêm túc các cam kết", content: "Triển khai cam kết về thuế quan, dịch vụ, đầu tư, minh bạch chính sách và cải cách thể chế theo các hiệp định đã ký." },
-            { title: "Chủ động đóng góp trong sân chơi chung", content: "Không chỉ tham gia thụ động, Việt Nam cần đề xuất sáng kiến, phối hợp đa ngành, đa phương và nâng cao vai trò trong các cơ chế hợp tác." }
+            { title: "Quan hệ hợp tác song phương", content: "Thiết lập quan hệ ngoại giao, mở rộng quan hệ thương mại, đầu tư song phương với nhiều quốc gia và vùng lãnh thổ; ký kết các hiệp định thương mại song phương, hiệp định khuyến khích bảo hộ đầu tư và tránh đánh thuế hai lần." },
+            { title: "Hội nhập kinh tế đa phương", content: "Tích cực tham gia các liên kết kinh tế quốc tế và khu vực, là thành viên có trách nhiệm của các tổ chức, diễn đàn lớn như ASEAN, APEC, ASEM, WTO... và chủ động đóng góp sáng kiến chung." },
+            { title: "Thực hiện nghiêm túc các cam kết", content: "Triển khai đầy đủ và nghiêm túc các cam kết hội nhập kinh tế quốc tế, đặc biệt là cắt giảm thuế quan, mở cửa thị trường dịch vụ, đầu tư, minh bạch chính sách và cải cách thể chế." },
+            { title: "Nâng cao uy tín quốc gia", content: "Việc tích cực tham gia các liên kết kinh tế quốc tế và thực hiện nghiêm túc các cam kết góp phần nâng cao uy tín, vai trò của Việt Nam trong các tổ chức này, tạo được sự tin cậy, tôn trọng của cộng đồng quốc tế." }
         ]
     },
     institution: {
