@@ -411,7 +411,7 @@ const solutionsData = {
         accent: "#F43F5E",
         title: "Nâng cao năng lực cạnh tranh quốc tế của nền kinh tế",
         subtitle: "Doanh nghiệp thích ứng nhanh, Nhà nước kiến tạo điều kiện cạnh tranh",
-        icebreaker: "Gần đây, các bạn có đặt món đồ nào từ nước ngoài trên Shopee hay TikTok Shop không? Mọi người thấy phí ship và tốc độ giao hàng của họ so với mua từ các shop trong nước thì như thế nào?",
+        icebreaker: "Hàng ngày, có bạn nào ở đây hay lướt TikTok Shop, Shopee hay Lazada để mua đồ không? Và món đồ gần đây nhất bạn mua là của thương hiệu Việt Nam hay là hàng nước ngoài?",
         theory: "Năng lực cạnh tranh là điều kiện trực tiếp để hội nhập có hiệu quả. Doanh nghiệp phải học cách vận hành theo chuẩn toàn cầu, còn Nhà nước hỗ trợ bằng nguồn nhân lực, hạ tầng, thông tin, thể chế và môi trường kinh doanh thuận lợi.",
         quote: "Doanh nghiệp và đội ngũ doanh nhân là lực lượng nòng cốt trong tiến trình hội nhập.",
         extraHtml: `
