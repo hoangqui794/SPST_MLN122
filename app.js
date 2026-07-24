@@ -2532,8 +2532,9 @@ function initMlnChatbot() {
     const input = document.getElementById('mln-chat-input');
     const sendButton = document.getElementById('mln-chat-send');
     const messages = document.getElementById('mln-chat-messages');
+    const webSearch = document.getElementById('mln-chat-web-search');
 
-    if (!launcher || !panel || !closeButton || !form || !input || !sendButton || !messages) return;
+    if (!launcher || !panel || !closeButton || !form || !input || !sendButton || !messages || !webSearch) return;
 
     const history = [];
 
@@ -2548,13 +2549,30 @@ function initMlnChatbot() {
         messages.scrollTop = messages.scrollHeight;
     }
 
-    function addMessage(role, content) {
+    function addMessage(role, content, citations = []) {
         const message = document.createElement('article');
         message.className = `mln-chat-message mln-chat-message--${role}`;
 
         const paragraph = document.createElement('p');
         paragraph.textContent = content;
         message.appendChild(paragraph);
+
+        const webCitations = citations.filter((citation) => citation?.source_type === 'web' && citation?.url);
+        if (webCitations.length) {
+            const sources = document.createElement('ul');
+            sources.className = 'mln-chat-sources';
+            webCitations.forEach((citation) => {
+                const item = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = citation.url;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = citation.document || citation.url;
+                item.appendChild(link);
+                sources.appendChild(item);
+            });
+            message.appendChild(sources);
+        }
 
         messages.appendChild(message);
         scrollToLatest();
@@ -2564,7 +2582,9 @@ function initMlnChatbot() {
         const typing = document.createElement('div');
         typing.className = 'mln-chat-typing';
         typing.id = 'mln-chat-typing';
-        typing.textContent = 'Đang tìm trong tài liệu…';
+        typing.textContent = webSearch.checked
+            ? 'Đang tra cứu Internet…'
+            : 'Đang tìm trong tài liệu…';
         messages.appendChild(typing);
         scrollToLatest();
     }
@@ -2589,7 +2609,11 @@ function initMlnChatbot() {
             const response = await fetch(CHAT_API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-                body: JSON.stringify({ message: text, history: history.slice(-CHAT_HISTORY_LIMIT) })
+                body: JSON.stringify({
+                    message: text,
+                    history: history.slice(-CHAT_HISTORY_LIMIT),
+                    web_search: webSearch.checked
+                })
             });
 
             let result = null;
@@ -2605,7 +2629,7 @@ function initMlnChatbot() {
 
             history.push({ role: 'user', content: text });
             history.push({ role: 'assistant', content: result.answer });
-            addMessage('assistant', result.answer);
+            addMessage('assistant', result.answer, result.citations || []);
         } catch (error) {
             addMessage('error', error.message || 'Không thể kết nối với trợ lý học tập.');
         } finally {

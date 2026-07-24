@@ -5067,6 +5067,34 @@ body.has-focus-panel .radar-node.active {
     font-size: 0.68rem;
 }
 
+.mln-chat-web-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: auto;
+    color: #718285;
+    cursor: pointer;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.mln-chat-web-toggle input {
+    width: 14px;
+    height: 14px;
+    accent-color: #0d5c63;
+}
+
+.mln-chat-sources {
+    display: grid;
+    gap: 4px;
+    margin: 10px 0 0;
+    padding: 8px 0 0 18px;
+    border-top: 1px solid #d7e5e5;
+    font-size: 0.76rem;
+}
+
+.mln-chat-sources a { color: #0d5c63; font-weight: 700; }
+
 .mln-chat-form-footer button {
     border: 0;
     border-radius: 8px;
